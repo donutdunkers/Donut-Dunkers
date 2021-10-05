@@ -54,6 +54,8 @@ public class BallController : MonoBehaviour
 					}
 					break;
 			}
+		} else {
+			this.SetForwardDirection(-this.transform.forward);
 		}
 	}
 }

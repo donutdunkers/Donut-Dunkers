@@ -31,7 +31,7 @@ public class LevelCamera : MonoBehaviour {
 	private void Start() {
 		this.camera = this.GetComponentInChildren<Camera>();
 		
-		float average = (LevelData.Instance.xSize + LevelData.Instance.ySize + LevelData.Instance.zSize) / 3f;
+		float average = (LevelData.Instance.size + LevelData.Instance.size + LevelData.Instance.size) / 3f;
 		this.camera.transform.position = new Vector3(0f, 0f, -(average * 2f));
 	}
 	

@@ -27,9 +27,13 @@ public class PlayerGridSelection : MonoBehaviour
 		
 		if (this.currentGrid != null) {
 			if (Input.GetMouseButtonDown(0)) {
-				LevelData.Instance.ball.gameObject.SetActive(true);
-				LevelData.Instance.ball.transform.position = this.currentGrid.transform.position + this.currentGrid.transform.forward * 5f;
-				LevelData.Instance.ball.SetForwardDirection(-this.currentGrid.transform.forward);
+				if (BallController.Instance.IsMoving) {
+					return;
+				}
+				BallController.Instance.gameObject.SetActive(true);
+			//	BallController.Instance.transform.position = this.currentGrid.transform.position + this.currentGrid.transform.forward * 5f;
+				BallController.Instance.SetForwardDirection(this.currentGrid.transform.forward);
+				BallController.Instance.IsMoving = true;
 			}
 		}
 	}

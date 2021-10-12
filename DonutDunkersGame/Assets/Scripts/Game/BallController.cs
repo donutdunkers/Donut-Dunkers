@@ -1,8 +1,21 @@
 using System;
 using UnityEngine;
 
-public class BallController : MonoBehaviour
-{
+public class BallController : MonoBehaviour {
+	
+    private static BallController _Instance;
+    public static BallController Instance
+    {
+        get
+        {
+            if (_Instance == null)
+            {
+                _Instance = FindObjectOfType<BallController>();
+            }
+            return _Instance;
+        }
+    }
+	
 	[NonSerialized]
 	public Rigidbody rigidbody;
 	
@@ -17,17 +30,36 @@ public class BallController : MonoBehaviour
 	
 	public Vector3 forwardDirection;
 	
+	[SerializeField]
+	private bool isMoving = false;
+	
+	public bool IsMoving {
+		set {
+			this.isMoving = value;
+		} get {
+			return this.isMoving;
+		}
+	}
+	
 	private void Awake() {
 		this.rigidbody = this.GetComponent<Rigidbody>();
 	}
 	
 	private void Start() {
-		this.gameObject.SetActive(false);
+		this.Initialize();
+	//	this.gameObject.SetActive(false);
+	}
+	
+	public void Initialize() {
+		// this.transform.position = LevelData.Instance.LevelStartPosition;
+		this.isMoving = false;
 	}
 	
 	private void FixedUpdate() {
-		this.transform.position += this.transform.forward * 10f * Time.fixedDeltaTime;
-	//	this.rigidbody.MovePosition(this.transform.localPosition + (this.transform.forward * 20f * Time.fixedDeltaTime));
+		if (!this.isMoving) {
+			return;
+		}
+		this.transform.position = this.transform.position + this.transform.forward * 10f * Time.fixedDeltaTime;
 	}
 	
 	public void SetForwardDirection(Vector3 forward) {
@@ -39,11 +71,15 @@ public class BallController : MonoBehaviour
 		if (terrain != null) {
 			switch (terrain.terrainType) {
 				case LevelTerrain.TerrainType.Wall:
-					this.SetForwardDirection(-this.transform.forward);
+					this.isMoving = false;
+					Vector3 otherPos = terrain.transform.position;
+					this.transform.position = otherPos - this.transform.forward;
 					break;
 				case LevelTerrain.TerrainType.Angle:
 					if (this.transform.forward == other.gameObject.transform.right || this.transform.forward == -other.gameObject.transform.right || this.transform.forward == other.gameObject.transform.up || this.transform.forward == other.gameObject.transform.forward) {
-						this.SetForwardDirection(-this.transform.forward);
+						this.isMoving = false;
+						Vector3 otherPos2 = terrain.transform.position;
+						this.transform.position = otherPos2 - this.transform.forward;
 					} else {
 						this.transform.position = other.transform.position;
 						if (this.transform.forward == -other.gameObject.transform.forward) {

@@ -31,6 +31,16 @@ public class LevelData : MonoBehaviour {
 	[SerializeField]
 	private Transform levelGridContainer;
 	
+	private Vector3 startPos;
+	
+	public Vector3 StartPos {
+		set {
+			this.startPos = value;
+		} get {
+			return this.startPos;
+		}
+	}
+	
 	private void Start() {
 		this.GenerateGridTiles();
 	}

@@ -46,6 +46,7 @@ public class BallController : MonoBehaviour {
 	}
 	
 	private void Start() {
+		LevelData.Instance.StartPos = this.transform.localPosition;
 		this.Initialize();
 	//	this.gameObject.SetActive(false);
 	}
@@ -53,6 +54,21 @@ public class BallController : MonoBehaviour {
 	public void Initialize() {
 		// this.transform.position = LevelData.Instance.LevelStartPosition;
 		this.isMoving = false;
+	}
+	
+	private void Update() {
+		this.HandleLevelExit();
+	}
+	
+	private void HandleLevelExit() {
+		float distance = LevelData.Instance.size;
+		bool flagX = this.transform.position.x > distance || this.transform.position.x < -distance;
+		bool flagY = this.transform.position.y > distance || this.transform.position.y < -distance;
+		bool flagZ = this.transform.position.z > distance || this.transform.position.z < -distance;
+		if (flagX || flagY || flagZ) {
+			this.transform.localPosition = LevelData.Instance.StartPos;
+			this.isMoving = false;
+		}
 	}
 	
 	private void FixedUpdate() {

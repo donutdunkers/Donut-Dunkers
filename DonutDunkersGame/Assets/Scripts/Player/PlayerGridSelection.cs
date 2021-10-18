@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGridSelection : MonoBehaviour
-{
+public class PlayerGridSelection : MonoBehaviour {
+	
     private static PlayerGridSelection _Instance;
     public static PlayerGridSelection Instance
     {
@@ -23,13 +23,21 @@ public class PlayerGridSelection : MonoBehaviour
     
 	
 	private void Update() {
+		if (LevelData.Instance.Turns <= 0) {
+			return;
+		}
+		
 		this.HandleGridSelection();
 		
 		if (this.currentGrid != null) {
-			if (Input.GetMouseButtonDown(0)) {
-				LevelData.Instance.ball.gameObject.SetActive(true);
-				LevelData.Instance.ball.transform.position = this.currentGrid.transform.position + this.currentGrid.transform.forward * 5f;
-				LevelData.Instance.ball.SetForwardDirection(-this.currentGrid.transform.forward);
+			if (PlayerInput.Instance.GetMouseLeftClick()) {
+				if (BallController.Instance.IsMoving) {
+					return;
+				}
+				BallController.Instance.gameObject.SetActive(true);
+			//	BallController.Instance.transform.position = this.currentGrid.transform.position + this.currentGrid.transform.forward * 5f;
+				BallController.Instance.SetForwardDirection(-this.currentGrid.transform.forward);
+				BallController.Instance.IsMoving = true;
 			}
 		}
 	}

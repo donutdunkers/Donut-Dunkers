@@ -1,8 +1,21 @@
 using System;
 using UnityEngine;
 
-public class BallController : MonoBehaviour
-{
+public class BallController : MonoBehaviour, ICanReset {
+	
+    private static BallController _Instance;
+    public static BallController Instance
+    {
+        get
+        {
+            if (_Instance == null)
+            {
+                _Instance = FindObjectOfType<BallController>();
+            }
+            return _Instance;
+        }
+    }
+	
 	[NonSerialized]
 	public Rigidbody rigidbody;
 	
@@ -17,17 +30,63 @@ public class BallController : MonoBehaviour
 	
 	public Vector3 forwardDirection;
 	
+	[SerializeField]
+	private bool isMoving = false;
+	
+	public bool IsMoving {
+		set {
+			this.isMoving = value;
+		} get {
+			return this.isMoving;
+		}
+	}
+	
+	private bool isAlive = true;
+	
+	public bool IsAlive {
+		set {
+			this.isAlive = value;
+		} get {
+			return this.isAlive;
+		}
+	}
+	
 	private void Awake() {
 		this.rigidbody = this.GetComponent<Rigidbody>();
 	}
 	
 	private void Start() {
-		this.gameObject.SetActive(false);
+		LevelData.Instance.StartPos = this.transform.localPosition;
+		this.Initialize();
+	//	this.gameObject.SetActive(false);
+	}
+	
+	public void Initialize() {
+		this.transform.localPosition = LevelData.Instance.LevelStartPosition;
+		this.isMoving = false;
+		this.isAlive = true;
+	}
+	
+	private void Update() {
+		this.HandleLevelExit();
+	}
+	
+	private void HandleLevelExit() {
+		float distance = LevelData.Instance.size;
+		bool flagX = this.transform.position.x > distance || this.transform.position.x < -distance;
+		bool flagY = this.transform.position.y > distance || this.transform.position.y < -distance;
+		bool flagZ = this.transform.position.z > distance || this.transform.position.z < -distance;
+		if (flagX || flagY || flagZ) {
+			this.transform.localPosition = LevelData.Instance.StartPos;
+			this.isMoving = false;
+		}
 	}
 	
 	private void FixedUpdate() {
-		this.transform.position += this.transform.forward * 10f * Time.fixedDeltaTime;
-	//	this.rigidbody.MovePosition(this.transform.localPosition + (this.transform.forward * 20f * Time.fixedDeltaTime));
+		if (!this.isMoving) {
+			return;
+		}
+		this.transform.position = this.transform.position + this.transform.forward * 10f * Time.fixedDeltaTime;
 	}
 	
 	public void SetForwardDirection(Vector3 forward) {
@@ -35,27 +94,16 @@ public class BallController : MonoBehaviour
 	}
 	
 	public void OnCollisionEnter(Collision other) {
-		LevelTerrain terrain = other.gameObject.GetComponent<LevelTerrain>();
-		if (terrain != null) {
-			switch (terrain.terrainType) {
-				case LevelTerrain.TerrainType.Wall:
-					this.SetForwardDirection(-this.transform.forward);
-					break;
-				case LevelTerrain.TerrainType.Angle:
-					if (this.transform.forward == other.gameObject.transform.right || this.transform.forward == -other.gameObject.transform.right || this.transform.forward == other.gameObject.transform.up || this.transform.forward == other.gameObject.transform.forward) {
-						this.SetForwardDirection(-this.transform.forward);
-					} else {
-						this.transform.position = other.transform.position;
-						if (this.transform.forward == -other.gameObject.transform.forward) {
-							this.SetForwardDirection(other.gameObject.transform.up);
-						} else if (this.transform.forward == -other.gameObject.transform.up) {
-							this.SetForwardDirection(other.gameObject.transform.forward);
-						}
-					}
-					break;
-			}
-		} else {
-			this.SetForwardDirection(-this.transform.forward);
+		ObjectInteraction interaction = other.gameObject.GetComponent<ObjectInteraction>();
+		if (interaction != null) {
+			interaction.PlayerInteraction();
+		}
+	}
+	
+	public void OnTriggerEnter(Collider other) {
+		ObjectInteraction interaction = other.gameObject.GetComponent<ObjectInteraction>();
+		if (interaction != null) {
+			interaction.PlayerInteraction();
 		}
 	}
 }

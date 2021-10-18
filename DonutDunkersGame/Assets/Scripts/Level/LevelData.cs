@@ -21,6 +21,20 @@ public class LevelData : MonoBehaviour {
 	[SerializeField, Range(4, 20)]
 	public int size = 4;
 	
+	[SerializeField]
+	private int turns = 10;
+	
+	private int initialTurns;
+	
+	public int Turns {
+		set {
+			LevelUI.Instance.SetRemainingTurns(value);
+			this.turns = value;
+		} get {
+			return this.turns;
+		}
+	}
+	
 	public GameObject tilePrefab;
 	
 	public BallController ball;
@@ -41,8 +55,29 @@ public class LevelData : MonoBehaviour {
 		}
 	}
 	
+	private ObjRing[] rings;
+	
+	public IList<ICanReset> canReset;
+	
+	[NonSerialized]
+	public Vector3 LevelStartPosition;
+	
+	private void Awake() {
+		this.initialTurns = this.turns;
+		this.LevelStartPosition = BallController.Instance.transform.localPosition;
+	}
+	
 	private void Start() {
 		this.GenerateGridTiles();
+		
+		this.rings = (ObjRing[])FindObjectsOfType<ObjRing>();
+		this.canReset = InterfaceHelper.FindObjects<ICanReset>();
+	}
+	
+	private void Update() {
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			this.ResetLevel();
+		}
 	}
 	
 	private void OnDrawGizmos() {
@@ -241,5 +276,21 @@ public class LevelData : MonoBehaviour {
 			}
 		}
 	*/
+	}
+
+	public bool CheckLevelCompletion() {
+		for (int i = 0; i < this.rings.Length; i++) {
+			if (!this.rings[i].IsObtained()) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public void ResetLevel() {
+		for (int i = 0; i < this.canReset.Count; i++) {
+			this.canReset[i].Initialize();
+		}
+		this.Turns = this.initialTurns;
 	}
 }

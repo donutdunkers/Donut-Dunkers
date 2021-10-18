@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class BallController : MonoBehaviour {
+public class BallController : MonoBehaviour, ICanReset {
 	
     private static BallController _Instance;
     public static BallController Instance
@@ -41,6 +41,16 @@ public class BallController : MonoBehaviour {
 		}
 	}
 	
+	private bool isAlive = true;
+	
+	public bool IsAlive {
+		set {
+			this.isAlive = value;
+		} get {
+			return this.isAlive;
+		}
+	}
+	
 	private void Awake() {
 		this.rigidbody = this.GetComponent<Rigidbody>();
 	}
@@ -52,8 +62,9 @@ public class BallController : MonoBehaviour {
 	}
 	
 	public void Initialize() {
-		// this.transform.position = LevelData.Instance.LevelStartPosition;
+		this.transform.localPosition = LevelData.Instance.LevelStartPosition;
 		this.isMoving = false;
+		this.isAlive = true;
 	}
 	
 	private void Update() {
@@ -83,31 +94,16 @@ public class BallController : MonoBehaviour {
 	}
 	
 	public void OnCollisionEnter(Collision other) {
-		LevelTerrain terrain = other.gameObject.GetComponent<LevelTerrain>();
-		if (terrain != null) {
-			switch (terrain.terrainType) {
-				case LevelTerrain.TerrainType.Wall:
-					this.isMoving = false;
-					Vector3 otherPos = terrain.transform.position;
-					this.transform.position = otherPos - this.transform.forward;
-					break;
-				case LevelTerrain.TerrainType.Angle:
-					if (this.transform.forward == other.gameObject.transform.right || this.transform.forward == -other.gameObject.transform.right || this.transform.forward == other.gameObject.transform.up || this.transform.forward == other.gameObject.transform.forward) {
-						this.isMoving = false;
-						Vector3 otherPos2 = terrain.transform.position;
-						this.transform.position = otherPos2 - this.transform.forward;
-					} else {
-						this.transform.position = other.transform.position;
-						if (this.transform.forward == -other.gameObject.transform.forward) {
-							this.SetForwardDirection(other.gameObject.transform.up);
-						} else if (this.transform.forward == -other.gameObject.transform.up) {
-							this.SetForwardDirection(other.gameObject.transform.forward);
-						}
-					}
-					break;
-			}
-		} else {
-			this.SetForwardDirection(-this.transform.forward);
+		ObjectInteraction interaction = other.gameObject.GetComponent<ObjectInteraction>();
+		if (interaction != null) {
+			interaction.PlayerInteraction();
+		}
+	}
+	
+	public void OnTriggerEnter(Collider other) {
+		ObjectInteraction interaction = other.gameObject.GetComponent<ObjectInteraction>();
+		if (interaction != null) {
+			interaction.PlayerInteraction();
 		}
 	}
 }

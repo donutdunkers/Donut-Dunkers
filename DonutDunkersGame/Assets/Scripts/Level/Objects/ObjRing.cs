@@ -1,11 +1,20 @@
 using System;
 using UnityEngine;
 
-public class ObjRing : MonoBehaviour {
-    [SerializeField]
-	private GameObject ringObject;
+public class ObjRing : ObjectInteraction, ICanReset {
 	
-	private void OnTriggerEnter(Collider other) {
-		this.ringObject.SetActive(false);
+	[SerializeField]
+	private GameObject parentObj;
+	
+	public override void PlayerInteraction() {
+		this.parentObj.SetActive(false);
+	}
+	
+	public bool IsObtained() {
+		return !this.parentObj.activeSelf;
+	}
+	
+	public void Initialize() {
+		this.parentObj.SetActive(true);
 	}
 }

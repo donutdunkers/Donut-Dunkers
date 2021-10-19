@@ -35,7 +35,7 @@ public class LevelData : MonoBehaviour {
 		}
 	}
 	
-	public GameObject tilePrefab;
+	public GameObject tilePrefab, wallPrefab;
 	
 	public BallController ball;
 	
@@ -69,6 +69,7 @@ public class LevelData : MonoBehaviour {
 	
 	private void Start() {
 		this.GenerateGridTiles();
+		this.GenerateGridWalls();
 		
 		this.rings = (ObjRing[])FindObjectsOfType<ObjRing>();
 		this.canReset = InterfaceHelper.FindObjects<ICanReset>();
@@ -174,10 +175,9 @@ public class LevelData : MonoBehaviour {
 			gridTile.gridSide = LevelGridSelection.GridSide.Back;
 			gridTile = null;
 		}
-		
-		
-		/*
-		THE BELOW CODE IS OUTDATED AND NO LONGER USED AS WE'VE CHANGED THE OVERALL GAMEPLAY FOR THIS GAME
+	}
+
+	private void GenerateGridWalls() {
 		
 		int divX = (int)Mathf.Floor(this.size / 2f);
 		int divY = (int)Mathf.Floor(this.size / 2f);
@@ -194,14 +194,9 @@ public class LevelData : MonoBehaviour {
 		// Generate Top
 		for (int x = 0; x < this.size; x++) {
 			for (int z = 0; z < this.size; z++) {
-				Vector3 pos = new Vector3(initX + x, (this.size / 2) + 1, initZ + z);
-				GameObject tile = Instantiate(this.tilePrefab, pos, Quaternion.identity, this.levelGridContainer);
-				tile.transform.forward = Vector3.up;
-				tile.transform.localScale = Vector3.one * 0.25f;
-				LevelGridSelection gridTile = tile.GetComponent<LevelGridSelection>();
-				if (gridTile != null) {
-					gridTile.gridSide = LevelGridSelection.GridSide.Top;
-				}
+				Vector3 pos = new Vector3(initX + x, (this.size / 2), initZ + z);
+				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
+				tile.transform.forward = -Vector3.up;
 			}
 		}
 					
@@ -209,73 +204,47 @@ public class LevelData : MonoBehaviour {
 		// Generate Bottom
 		for (int x = 0; x < this.size; x++) {
 			for (int z = 0; z < this.size; z++) {
-				Vector3 pos = new Vector3(initX + x, -(this.size / 2) - 1, initZ + z);
-				GameObject tile = Instantiate(this.tilePrefab, pos, Quaternion.identity, this.levelGridContainer);
-				tile.transform.forward = -Vector3.up;
-				tile.transform.localScale = Vector3.one * 0.25f;
-				LevelGridSelection gridTile = tile.GetComponent<LevelGridSelection>();
-				if (gridTile != null) {
-					gridTile.gridSide = LevelGridSelection.GridSide.Bottom;
-				}
+				Vector3 pos = new Vector3(initX + x, -(this.size / 2), initZ + z);
+				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
+				tile.transform.forward = Vector3.up;
 			}
 		}
 		
 		// Generate Right
 		for (int y = 0; y < this.size; y++) {
 			for (int z = 0; z < this.size; z++) {
-				Vector3 pos = new Vector3((this.size / 2) + 1, initY + y, initZ + z);
-				GameObject tile = Instantiate(this.tilePrefab, pos, Quaternion.identity, this.levelGridContainer);
-				tile.transform.forward = Vector3.right;
-				tile.transform.localScale = Vector3.one * 0.25f;
-				LevelGridSelection gridTile = tile.GetComponent<LevelGridSelection>();
-				if (gridTile != null) {
-					gridTile.gridSide = LevelGridSelection.GridSide.Right;
-				}
+				Vector3 pos = new Vector3((this.size / 2), initY + y, initZ + z);
+				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
+				tile.transform.forward = -Vector3.right;
 			}
 		}
 	
 		// Generate Left
 		for (int y = 0; y < this.size; y++) {
 			for (int z = 0; z < this.size; z++) {
-				Vector3 pos = new Vector3(-(this.size / 2) - 1, initY + y, initZ + z);
-				GameObject tile = Instantiate(this.tilePrefab, pos, Quaternion.identity, this.levelGridContainer);
-				tile.transform.forward = -Vector3.right;
-				tile.transform.localScale = Vector3.one * 0.25f;
-				LevelGridSelection gridTile = tile.GetComponent<LevelGridSelection>();
-				if (gridTile != null) {
-					gridTile.gridSide = LevelGridSelection.GridSide.Left;
-				}
+				Vector3 pos = new Vector3(-(this.size / 2), initY + y, initZ + z);
+				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
+				tile.transform.forward = Vector3.right;
 			}
 		}
 	
 		// Generate Front
 		for (int y = 0; y < this.size; y++) {
 			for (int x = 0; x < this.size; x++) {
-				Vector3 pos = new Vector3(initX + x, initY + y, (this.size / 2) + 1);
-				GameObject tile = Instantiate(this.tilePrefab, pos, Quaternion.identity, this.levelGridContainer);
-				tile.transform.forward = Vector3.forward;
-				tile.transform.localScale = Vector3.one * 0.25f;
-				LevelGridSelection gridTile = tile.GetComponent<LevelGridSelection>();
-				if (gridTile != null) {
-					gridTile.gridSide = LevelGridSelection.GridSide.Front;
-				}
+				Vector3 pos = new Vector3(initX + x, initY + y, (this.size / 2));
+				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
+				tile.transform.forward = -Vector3.forward;
 			}
 		}
 	
 		// Generate Back
 		for (int y = 0; y < this.size; y++) {
 			for (int x = 0; x < this.size; x++) {
-				Vector3 pos = new Vector3(initX + x, initY + y, -(this.size / 2) - 1);
-				GameObject tile = Instantiate(this.tilePrefab, pos, Quaternion.identity, this.levelGridContainer);
-				tile.transform.forward = -Vector3.forward;
-				tile.transform.localScale = Vector3.one * 0.25f;
-				LevelGridSelection gridTile = tile.GetComponent<LevelGridSelection>();
-				if (gridTile != null) {
-					gridTile.gridSide = LevelGridSelection.GridSide.Back;
-				}
+				Vector3 pos = new Vector3(initX + x, initY + y, -(this.size / 2));
+				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
+				tile.transform.forward = Vector3.forward;
 			}
 		}
-	*/
 	}
 
 	public bool CheckLevelCompletion() {

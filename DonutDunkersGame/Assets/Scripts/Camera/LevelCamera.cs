@@ -41,21 +41,22 @@ public class LevelCamera : MonoBehaviour {
 	private void Update() {
 		if (Input.GetMouseButton(0)) {
 			this.mPosDelta = Input.mousePosition - this.mPrevPos;
-			
+			/*
 			if (this.mPosDelta.magnitude > this.rotationSpeed) {
 				this.rotationSpeed = this.mPosDelta.magnitude;
 				this.rotationSpeed = Mathf.Clamp(this.rotationSpeed, 0f, 50f);
 			}
+			*/
 		}
-		if (this.rotationSpeed > 0.2f) {
+	//	if (this.rotationSpeed > 0.2f) {
 			if (Vector3.Dot(this.transform.up, Vector3.up) >= 0f) {
-				this.pivot.Rotate(Vector3.up, -Vector3.Dot(this.mPosDelta * (this.rotationSpeed * Time.deltaTime), Camera.main.transform.right), Space.World);
+				this.pivot.Rotate(Vector3.up, -Vector3.Dot(this.mPosDelta, Camera.main.transform.right), Space.World);
 			} else {
-				this.pivot.Rotate(Vector3.up, Vector3.Dot(this.mPosDelta * (this.rotationSpeed * Time.deltaTime), Camera.main.transform.right), Space.World);
+				this.pivot.Rotate(Vector3.up, Vector3.Dot(this.mPosDelta, Camera.main.transform.right), Space.World);
 			}
-			this.pivot.Rotate(Camera.main.transform.right, Vector3.Dot(this.mPosDelta * (this.rotationSpeed * Time.deltaTime), Camera.main.transform.up), Space.World);
-			this.rotationSpeed -= Time.deltaTime;
-		}
+			this.pivot.Rotate(Camera.main.transform.right, Vector3.Dot(this.mPosDelta, Camera.main.transform.up), Space.World);
+		//	this.rotationSpeed -= Time.deltaTime;
+	//	}
 		this.mPrevPos = Input.mousePosition;
 	}
 }

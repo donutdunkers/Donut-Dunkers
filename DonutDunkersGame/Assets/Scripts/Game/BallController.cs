@@ -79,6 +79,7 @@ public class BallController : MonoBehaviour, ICanReset {
 		if (flagX || flagY || flagZ) {
 			this.transform.localPosition = LevelData.Instance.StartPos;
 			this.isMoving = false;
+			LevelData.Instance.ResetLevel();
 		}
 	}
 	

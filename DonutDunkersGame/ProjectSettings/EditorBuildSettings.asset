@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu_Welcome.unity
+    guid: 1eed2e4ab7869eb4b84db8dda66aba7a
+  - enabled: 1
+    path: Assets/Scenes/Menu_Main.unity
+    guid: c86036355beaf6646b20eb0025dd62cb
+  - enabled: 1
     path: Assets/Scenes/Test_CubeGame.unity
     guid: 6ce1c9a0a8102314884c0298bf41de35
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_01.unity
+    guid: 78fc4c6ba57570348b53feb64b94ad2a
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_03.unity
+    guid: f1bca445f667fc3479757fb303aa9f36
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_02.unity
+    guid: bfc4b48fbb77fb64ca29cf1533d7447a
   m_configObjects: {}

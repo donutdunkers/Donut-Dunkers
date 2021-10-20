@@ -71,6 +71,8 @@ public class LevelData : MonoBehaviour {
 		this.GenerateGridTiles();
 		this.GenerateGridWalls();
 		
+		this.Turns = this.initialTurns;
+		
 		this.rings = (ObjRing[])FindObjectsOfType<ObjRing>();
 		this.canReset = InterfaceHelper.FindObjects<ICanReset>();
 	}

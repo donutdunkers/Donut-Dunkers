@@ -140,7 +140,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7926431798725524968
 CanvasRenderer:
@@ -170,7 +170,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Paused
+  m_text: 'Paused
+
+
+    Press E to end the level'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}

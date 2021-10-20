@@ -13,9 +13,12 @@ public class GameMenuUI : MonoBehaviour {
     [SerializeField, Tooltip("Set this for each level")]
     private string nextLevelSceneName;
 
+    private bool gameEnded = false;
+
     private void Start() {
         pauseMenu.SetActive(false);
         endGameMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
 
@@ -33,8 +36,9 @@ public class GameMenuUI : MonoBehaviour {
     }
 
     public void RestartLevel() {
+        HidePauseMenu();
+        gameEnded = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        TogglePauseMenu();
     }
     
     public void NextLevel() {
@@ -48,21 +52,33 @@ public class GameMenuUI : MonoBehaviour {
     }
 
     public void TogglePauseMenu() {
+
+        if (gameEnded) {
+            return;
+        }
+
         bool isPaused = pauseMenu.activeSelf;
         if (isPaused) {
-            //this is probably not how we want to handle this
-            Time.timeScale = 1;
-            pauseMenu.SetActive(false);
+            HidePauseMenu();
         } else {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
-        
-        }
-    
+            ShowPauseMenu();
+        }  
+    }
+    //time scale doesn't really do what we want here, need to block input seperately
+    private void ShowPauseMenu() {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    private void HidePauseMenu() {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void ShowEndScreen() {
+        HidePauseMenu();
         endGameMenu.SetActive(true);
+        gameEnded = true;
         Time.timeScale = 0;
     }
 

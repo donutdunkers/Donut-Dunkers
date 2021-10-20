@@ -10,6 +10,8 @@ public class GameMenuUI : MonoBehaviour {
     private GameObject pauseMenu;
     [SerializeField]
     private GameObject endGameMenu;
+    [SerializeField, Tooltip("Set this for each level")]
+    private string nextLevelSceneName;
 
     private void Start() {
         pauseMenu.SetActive(false);
@@ -23,23 +25,32 @@ public class GameMenuUI : MonoBehaviour {
         {
             TogglePauseMenu();
         }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            ShowEndScreen();
+        }
     }
 
     public void RestartLevel() {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        TogglePauseMenu();
     }
     
     public void NextLevel() {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (nextLevelSceneName != "") {
+            SceneManager.LoadScene(nextLevelSceneName);
+        }
     }
 
     public void ExitToMain() {
-        //SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu_Main");
     }
 
     public void TogglePauseMenu() {
         bool isPaused = pauseMenu.activeSelf;
         if (isPaused) {
+            //this is probably not how we want to handle this
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
         } else {
@@ -52,6 +63,7 @@ public class GameMenuUI : MonoBehaviour {
 
     public void ShowEndScreen() {
         endGameMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void LoadNextScene(string sceneToLoad)

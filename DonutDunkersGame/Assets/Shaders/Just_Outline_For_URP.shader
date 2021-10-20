@@ -2,7 +2,7 @@ Shader "Custom/Just_Outline_For_URP"
 {
     Properties
     {
-        _Amount ("Outline Thickness", Range(0.0,3.0)) = 1.5
+        _Amount ("Outline Thickness", Range(0.0,10.0)) = 1.5
         _OutlineCol ("Outline Color", Color) = (0,0,0,1)
     }
     SubShader

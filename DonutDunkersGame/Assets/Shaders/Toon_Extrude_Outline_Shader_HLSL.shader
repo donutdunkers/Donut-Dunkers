@@ -3,7 +3,7 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
     Properties
     {
         _MainTex ("Albedo Map", 2D) = "white" {}
-        _BumpMap ("Normal Map", 2D) = "bump" {}
+        [NoScaleOffset]_BumpMap ("Normal Map", 2D) = "bump" {}
         _ShadeNum ("Shade Number", Range(1,10)) = 3.0
         _Gloss ("Gloss", Range (0,1)) = 0.5
         _ShadowColor ("Shadow Color", Color) = (0,0,0,1)

@@ -34,8 +34,8 @@ public class PlayerGridSelection : MonoBehaviour {
 				if (BallController.Instance.IsMoving) {
 					return;
 				}
+				LevelData.Instance.Turns--;
 				BallController.Instance.gameObject.SetActive(true);
-			//	BallController.Instance.transform.position = this.currentGrid.transform.position + this.currentGrid.transform.forward * 5f;
 				BallController.Instance.SetForwardDirection(-this.currentGrid.transform.forward);
 				BallController.Instance.IsMoving = true;
 			}

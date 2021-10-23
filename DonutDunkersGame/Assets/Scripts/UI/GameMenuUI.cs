@@ -24,14 +24,16 @@ public class GameMenuUI : MonoBehaviour {
 
 
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        bool isOutOfTurns = LevelData.Instance.Turns <= 0;
+
+        if (isOutOfTurns || LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {
-            TogglePauseMenu();
+            ShowEndScreen(isOutOfTurns);
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ShowEndScreen();
+            TogglePauseMenu();
         }
     }
 
@@ -75,9 +77,10 @@ public class GameMenuUI : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-    public void ShowEndScreen() {
+    public void ShowEndScreen(bool isOutOfTurns) {
         HidePauseMenu();
         endGameMenu.SetActive(true);
+        endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);
         gameEnded = true;
         Time.timeScale = 0;
     }

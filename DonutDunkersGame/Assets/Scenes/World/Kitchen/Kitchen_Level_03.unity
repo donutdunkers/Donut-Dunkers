@@ -1192,6 +1192,59 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f7e949b5e3a38b44a7fe8d3846875f0, type: 3}
+--- !u!1 &1035590239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1839306882818728477, guid: 1f7e949b5e3a38b44a7fe8d3846875f0, type: 3}
+  m_PrefabInstance: {fileID: 1035590238}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1035590240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1839306881223748418, guid: 1f7e949b5e3a38b44a7fe8d3846875f0, type: 3}
+  m_PrefabInstance: {fileID: 1035590238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1035590241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1839306882155195395, guid: 1f7e949b5e3a38b44a7fe8d3846875f0, type: 3}
+  m_PrefabInstance: {fileID: 1035590238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1035590242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1839306883071046225, guid: 1f7e949b5e3a38b44a7fe8d3846875f0, type: 3}
+  m_PrefabInstance: {fileID: 1035590238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1035590243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035590239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e406d54fa93f43478da6583b5323e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 1035590242}
+  collectionText: {fileID: 1035590241}
+  moveCountText: {fileID: 1035590240}
 --- !u!1 &1035746554
 GameObject:
   m_ObjectHideFlags: 0

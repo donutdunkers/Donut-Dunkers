@@ -23,7 +23,9 @@ public class LevelData : MonoBehaviour {
 	
 	[SerializeField]
 	private int turns = 10;
-	
+
+	private int ringsCollected = 0;
+
 	private int initialTurns;
 	
 	public int Turns {
@@ -34,6 +36,22 @@ public class LevelData : MonoBehaviour {
 			return this.turns;
 		}
 	}
+
+	public int TurnsTaken {
+		get {
+			return this.initialTurns - this.turns;
+		}
+    }
+
+	public int RingsCollected
+    {
+		set {
+			ringsCollected = value;
+        } get {
+			return this.ringsCollected;
+        }
+    }
+
 	
 	public GameObject tilePrefab, wallPrefab;
 	
@@ -56,7 +74,14 @@ public class LevelData : MonoBehaviour {
 	}
 	
 	private ObjRing[] rings;
-	
+
+	public int RingsInLevel
+	{
+		get {
+			return rings.Length;
+		}
+	}
+
 	public IList<ICanReset> canReset;
 	
 	[NonSerialized]

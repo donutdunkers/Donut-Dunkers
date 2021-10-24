@@ -10,6 +10,7 @@ public class WelcomeUI : MonoBehaviour
     public Transform pressAnyKeyText;
     public float osciallationOffset = 0.1f;
     public string sceneToLoad = "Menu_Main";
+    public float sceneLoadDelayTime = 0.0f; //Ryan Pumo Temp WebGL Build Code!!
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class WelcomeUI : MonoBehaviour
 
     IEnumerator LoadSceneAsync()
     {
+        yield return new WaitForSeconds(sceneLoadDelayTime); //Ryan Pumo Temp WebGL Build Code!!
+        
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
         while(!asyncLoad.isDone)
         {

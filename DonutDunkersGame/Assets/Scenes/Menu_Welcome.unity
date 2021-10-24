@@ -469,6 +469,7 @@ MonoBehaviour:
   pressAnyKeyText: {fileID: 1265895057}
   osciallationOffset: 0.05
   sceneToLoad: Menu_Main
+  sceneLoadDelayTime: 1
 --- !u!4 &763111305
 Transform:
   m_ObjectHideFlags: 0

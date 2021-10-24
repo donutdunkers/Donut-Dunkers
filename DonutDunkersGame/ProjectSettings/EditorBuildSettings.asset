@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_Main.unity
     guid: c86036355beaf6646b20eb0025dd62cb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test_CubeGame.unity
     guid: 6ce1c9a0a8102314884c0298bf41de35
   - enabled: 1

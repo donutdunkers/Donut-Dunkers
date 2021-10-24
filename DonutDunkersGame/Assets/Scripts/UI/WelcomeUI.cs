@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMODUnity;
 
 public class WelcomeUI : MonoBehaviour
 {
@@ -50,10 +51,23 @@ public class WelcomeUI : MonoBehaviour
     {
         if(Input.anyKey)
         {
+            ResumeAudio();
             return true;
             Debug.Log("Move to Start Scene");
         }
 
         return false;
+    }
+
+    bool audioResumed = false;
+
+    public void ResumeAudio() {
+        if (!audioResumed) {
+            var result = RuntimeManager.CoreSystem.mixerSuspend();
+            Debug.Log(result);
+            result = RuntimeManager.CoreSystem.mixerResume();
+            Debug.Log(result);
+            audioResumed = true;
+        }
     }
 }

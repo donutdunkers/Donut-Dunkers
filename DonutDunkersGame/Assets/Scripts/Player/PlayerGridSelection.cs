@@ -20,6 +20,8 @@ public class PlayerGridSelection : MonoBehaviour {
 	public LevelGridSelection currentGrid;
 	
 	public LayerMask gridMask;
+	
+	public LayerMask terrainMask;
     
 	
 	private void Update() {
@@ -34,10 +36,26 @@ public class PlayerGridSelection : MonoBehaviour {
 				if (BallController.Instance.IsMoving) {
 					return;
 				}
-				LevelData.Instance.Turns--;
 				BallController.Instance.gameObject.SetActive(true);
 				BallController.Instance.SetForwardDirection(-this.currentGrid.transform.forward);
+				RaycastHit hit;
+				if (Physics.Raycast(BallController.Instance.transform.position, -this.currentGrid.transform.forward, out hit, 1f, this.terrainMask)) {
+					Vector3 ballFwd = BallController.Instance.transform.forward;
+					ObjRing ring = hit.collider.GetComponent<ObjRing>();
+					ObjGelatin gelatin = hit.collider.GetComponent<ObjGelatin>();
+					if (ring != null) {
+						Vector3 ringUp = ring.transform.up;
+						if (ballFwd != ringUp && ballFwd != -ringUp) {
+							return;
+						}
+					}
+					if (ring == null && gelatin == null) {																					
+						return;
+					}																																		
+				}
+			//	BallController.Instance.transform.position = this.currentGrid.transform.position + this.currentGrid.transform.forward * 5f;
 				BallController.Instance.IsMoving = true;
+				LevelData.Instance.Turns--;
 			}
 		}
 	}

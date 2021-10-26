@@ -26,7 +26,7 @@ public class GameMenuUI : MonoBehaviour {
     private void Update() {
         bool isOutOfTurns = LevelData.Instance.Turns <= 0;
 
-        if (isOutOfTurns || LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
+        if (isOutOfTurns && !BallController.Instance.IsMoving || LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {
             ShowEndScreen(isOutOfTurns);
         }

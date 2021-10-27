@@ -31,7 +31,7 @@ public class GameMenuUI : MonoBehaviour {
             ShowEndScreen(isOutOfTurns);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePauseMenu();
         }

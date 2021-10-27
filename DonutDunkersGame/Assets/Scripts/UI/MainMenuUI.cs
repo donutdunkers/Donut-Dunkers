@@ -16,7 +16,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && uiStack.Count > 0)
+        if(Input.GetKeyDown(KeyCode.B))
         {
             EnableFromStack();
         }
@@ -39,9 +39,12 @@ public class MainMenuUI : MonoBehaviour
 
     public void EnableFromStack()
     {
-        activeUI.SetActive(false);
-        activeUI = uiStack.Pop();
-        activeUI.SetActive(true);
+        if (uiStack.Count > 0)
+        {
+            activeUI.SetActive(false);
+            activeUI = uiStack.Pop();
+            activeUI.SetActive(true);
+        }
     }
 
     public void LoadNextScene(string sceneToLoad)

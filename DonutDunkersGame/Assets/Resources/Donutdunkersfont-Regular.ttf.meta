@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 94c4db4b4fc042240ab0accbaf7ffe84
+guid: cc00a2572cb2962418efcd81719d9fd2
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Donutdunkersfont
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 94c4db4b4fc042240ab0accbaf7ffe84, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

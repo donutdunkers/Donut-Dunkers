@@ -35,7 +35,8 @@ public class LevelCamera : MonoBehaviour {
 		this.camera = this.GetComponentInChildren<Camera>();
 		
 		float average = (LevelData.Instance.size + LevelData.Instance.size + LevelData.Instance.size) / 3f;
-		this.camera.transform.position = new Vector3(0f, 0f, -(average * 2.25f));
+		this.camera.transform.position += -this.camera.transform.forward * LevelData.Instance.size;
+	//	this.pivot.transform.rotation = Quaternion.Euler(new Vector3(-10f, -45f, 10f));
 	}
 	
 	private void Update() {

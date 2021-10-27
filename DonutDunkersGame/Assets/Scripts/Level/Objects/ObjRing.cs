@@ -5,6 +5,7 @@ public class ObjRing : ObjectInteraction, ICanReset {
 	
 	public override void PlayerInteraction() {
 		if (BallController.Instance.transform.forward == this.transform.up || BallController.Instance.transform.forward == -this.transform.up) {
+			LevelData.Instance.RingsCollected += 1;
 			this.gameObject.SetActive(false);
 		} else {
 			BallController.Instance.IsMoving = false;

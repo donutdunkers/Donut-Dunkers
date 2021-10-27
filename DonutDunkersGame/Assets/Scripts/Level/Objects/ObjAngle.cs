@@ -5,9 +5,9 @@ public class ObjAngle : ObjectInteraction {
 	
     public override void PlayerInteraction() {
 		Transform ballTransform = BallController.Instance.transform;
-		if (ballTransform.forward == this.gameObject.transform.right || -ballTransform.forward == -this.gameObject.transform.right || ballTransform.forward == this.gameObject.transform.up || ballTransform.forward == this.gameObject.transform.forward) {
+		if (ballTransform.forward == this.gameObject.transform.right || ballTransform.forward == -this.gameObject.transform.right || ballTransform.forward == this.gameObject.transform.up || ballTransform.forward == this.gameObject.transform.forward) {
 			BallController.Instance.IsMoving = false;
-			ballTransform.position = this.gameObject.transform.position - ballTransform.forward;
+			BallController.Instance.transform.position = this.transform.position - BallController.Instance.transform.forward;
 		} else {
 			ballTransform.position = this.transform.position;
 			if (ballTransform.forward == -this.gameObject.transform.forward) {

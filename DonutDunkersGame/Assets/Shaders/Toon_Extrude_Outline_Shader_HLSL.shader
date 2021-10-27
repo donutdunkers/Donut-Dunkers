@@ -3,6 +3,7 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
     Properties
     {
         _MainTex ("Albedo Map", 2D) = "white" {}
+        _BaseColor ("Base Color", Color) = (1,1,1,1)
         [NoScaleOffset]_BumpMap ("Normal Map", 2D) = "bump" {}
         _ShadeNum ("Shade Number", Range(1,10)) = 3.0
         _Gloss ("Gloss", Range (0,1)) = 0.5
@@ -51,6 +52,7 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
             float _Gloss; 
             float3 _ShadowColor;
             float3 _SpecularIntensity;
+            half4 _BaseColor;
 
             v2f vert (appdata v)
             {
@@ -96,7 +98,7 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
                 //float outline = 1-step(dot(normalize(tangentNormal), normalize (viewDir)), 0.35);
 
 
-                fixed4 col =(tex2D(_MainTex, i.uv)* fixed4(colorLight,1) + (round(specularLight)/_ShadeNum));
+                fixed4 col =(tex2D(_MainTex, i.uv)* fixed4(colorLight,1) + (round(specularLight)/_ShadeNum)) * _BaseColor;
 
                 return col;
             }

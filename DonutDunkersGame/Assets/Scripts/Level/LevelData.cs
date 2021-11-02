@@ -34,6 +34,7 @@ public class LevelData : MonoBehaviour {
 				LevelUI.Instance.SetRemainingTurns(value);
 			}
 			this.turns = value;
+			Debug.Log("Updating turns");
 		} get {
 			return this.turns;
 		}
@@ -288,9 +289,37 @@ public class LevelData : MonoBehaviour {
 	}
 	
 	public void ResetLevel() {
+		this.DoResetRoutine();
 		for (int i = 0; i < this.canReset.Count; i++) {
 			this.canReset[i].Initialize();
 		}
+		this.RingsCollected = 0;
 		this.Turns = this.initialTurns;
+	}
+	
+	private bool isResetting = false;
+	
+	public bool IsResetting {
+		get {
+			return this.isResetting;
+		} set {
+			this.isResetting = value;
+		}
+	}
+	
+	private void DoResetRoutine() {
+		if (this.resetRoutine != null) {
+			this.StopCoroutine(this.resetRoutine);
+			this.resetRoutine = null;
+		}
+		this.resetRoutine = this.StartCoroutine(this.ResetRoutine());
+	}
+	
+	public Coroutine resetRoutine;
+	
+	public IEnumerator ResetRoutine() {
+		this.isResetting = true;
+		yield return new WaitForSeconds(0.25f);
+		this.isResetting = false;
 	}
 }

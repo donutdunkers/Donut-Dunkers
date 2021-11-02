@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class BallSkin : MonoBehaviour {
+public class BallSkin : MonoBehaviour, ICanReset {
 	
     private static BallSkin _Instance;
     public static BallSkin Instance
@@ -47,9 +47,10 @@ public class BallSkin : MonoBehaviour {
 				for (int i = 0; i < this.directionArrows.Length; i++) {
 					RaycastHit hit;
 					bool flag = true;
-					if (Physics.Raycast(BallController.Instance.transform.position, this.directionArrows[i].transform.up, out hit, 1f, PlayerGridSelection.Instance.TerrainMask)) {
+					if (Physics.Raycast(BallController.Instance.transform.position, this.directionArrows[i].transform.up, out hit, 1.5f, PlayerGridSelection.Instance.TerrainMask, QueryTriggerInteraction.Collide)) {
 						ObjectInteraction obj = hit.collider.GetComponent<ObjectInteraction>();
 						if (obj != null) {
+							Debug.Log(obj.gameObject.name);
 							flag = obj.CanMoveTowards();
 						}
 					}

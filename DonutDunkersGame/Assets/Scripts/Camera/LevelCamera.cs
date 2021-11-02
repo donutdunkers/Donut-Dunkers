@@ -66,7 +66,7 @@ public class LevelCamera : MonoBehaviour {
 	}
 	
 	private void Update() {
-		if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S)) {
+		if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive) {
 			this.curRotSpeed = 0f;
 		}
 		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) {

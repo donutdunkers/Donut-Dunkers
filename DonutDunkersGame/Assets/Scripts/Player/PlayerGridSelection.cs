@@ -21,8 +21,14 @@ public class PlayerGridSelection : MonoBehaviour {
 	
 	public LayerMask gridMask;
 	
-	public LayerMask terrainMask;
-    
+	public LayerMask TerrainMask {
+		get {
+			return this.terrainMask;
+		}
+	}
+	
+	[SerializeField]
+	private LayerMask terrainMask;    
 	
 	private void Update() {
 		if (LevelData.Instance.Turns <= 0) {
@@ -37,30 +43,16 @@ public class PlayerGridSelection : MonoBehaviour {
 					return;
 				}
 				BallController.Instance.gameObject.SetActive(true);
-				BallController.Instance.SetForwardDirection(-this.currentGrid.transform.forward);
-				Vector3 ballFwd = BallController.Instance.transform.forward;
 				RaycastHit hit;
-				if (Physics.Raycast(BallController.Instance.transform.position, -this.currentGrid.transform.forward, out hit, 1f, this.terrainMask)) {
-					ObjRing ring = hit.collider.GetComponent<ObjRing>();
-					ObjGelatin gelatin = hit.collider.GetComponent<ObjGelatin>();
-					ObjAngle angle = hit.collider.GetComponent<ObjAngle>();
-					ObjWarpCup cup = hit.collider.GetComponent<ObjWarpCup>();
-					if (ring != null) {
-						Vector3 ringUp = ring.transform.up;
-						if (ballFwd != ringUp && ballFwd != -ringUp) {
+				if (Physics.Raycast(BallController.Instance.transform.position, -this.currentGrid.transform.forward, out hit, 1f, this.TerrainMask)) {
+					ObjectInteraction interaction = hit.collider.GetComponent<ObjectInteraction>();
+					if (interaction != null) {
+						if (!interaction.CanMoveTowards()) {
 							return;
 						}
 					}
-					if (angle != null) {
-						Transform angleTransform = angle.transform;
-						if (ballFwd == angleTransform.right || ballFwd == -angleTransform.right || ballFwd == angleTransform.up || ballFwd == angleTransform.forward) {
-							return;
-						}
-					}
-					if (ring == null && gelatin == null && angle == null && cup == null) {
-						return;
-					}												
 				}
+				BallController.Instance.SetForwardDirection(-this.currentGrid.transform.forward);
 				BallController.Instance.IsMoving = true;
 				LevelData.Instance.Turns--;
 			}

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelCamera : MonoBehaviour {
+public class LevelCamera : MonoBehaviour, ICanReset {
 	
     private static LevelCamera _Instance;
     public static LevelCamera Instance
@@ -52,6 +52,8 @@ public class LevelCamera : MonoBehaviour {
 	
 	public void Initialize() {
 		this.isRotating = false;
+		this.transform.localEulerAngles = new Vector3(10f, 45f, 0f);
+		this.pivot.rotation = this.baseRotation;
 	}
 	
 	public void DoRotation(Quaternion rot) {

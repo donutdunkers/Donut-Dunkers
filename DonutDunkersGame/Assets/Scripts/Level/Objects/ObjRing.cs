@@ -4,14 +4,18 @@ using UnityEngine;
 public class ObjRing : ObjectInteraction, ICanReset {
 	
 	public override void PlayerInteraction() {
-		if (BallController.Instance.transform.forward == this.transform.up || BallController.Instance.transform.forward == -this.transform.up) {
+		bool flag = BallController.Instance.transform.forward.x.Equals(this.transform.up.x) || BallController.Instance.transform.forward.y.Equals(this.transform.up.y) || BallController.Instance.transform.forward.z.Equals(this.transform.up.z);
+			Debug.Log(BallController.Instance.transform.forward.ToString("F8"));
+			Debug.Log(this.transform.up.ToString("F8"));
+			Debug.Log((-this.transform.up).ToString("F8"));
+			Debug.Log(flag);
+		if (flag) {
 			LevelData.Instance.RingsCollected += 1;
 			this.gameObject.SetActive(false);
 		} else {
 			BallController.Instance.IsMoving = false;
 			BallController.Instance.CanAct = true;
 			BallController.Instance.transform.position = this.transform.position - BallController.Instance.transform.forward;
-			LevelData.Instance.Turns--;
 		}
 	}
 	

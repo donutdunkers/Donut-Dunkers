@@ -33,7 +33,7 @@ public class PlayerGridSelection : MonoBehaviour {
 	public Color idleColor, highlightColor;
 	
 	private void Update() {
-		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive) {
+		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive || LevelData.Instance.IsResetting) {
 			return;
 		}
 		

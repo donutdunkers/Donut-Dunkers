@@ -69,9 +69,9 @@ public class GameMenuUI : MonoBehaviour {
 
     public void RestartLevel() {
         HidePauseMenu();
-        endGameMenu.SetActive(false);
+	     	HideEndScreen();
         gameEnded = false;
-        LevelData.Instance.ResetLevel();
+	    	LevelData.Instance.ResetLevel();
     }
     
     public void NextLevel() {
@@ -119,6 +119,12 @@ public class GameMenuUI : MonoBehaviour {
         gameEnded = true;
         Time.timeScale = 0;
     }
+	
+	public void HideEndScreen() {
+		endGameMenu.SetActive(false);
+		gameEnded = false;
+		Time.timeScale = 1f;
+	}
 
     public void LoadNextScene(string sceneToLoad)
     {

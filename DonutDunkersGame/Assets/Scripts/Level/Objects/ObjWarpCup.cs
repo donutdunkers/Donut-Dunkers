@@ -44,7 +44,7 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 		BallSkin.Instance.transform.position = BallController.Instance.transform.position;
 		BallController.Instance.SetForwardDirection(otherCup.transform.forward);
 		BallController.Instance.IsMoving = true;
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.1f);
 		otherCup.collider.enabled = true;
 		this.warpRoutine = null;
 	}

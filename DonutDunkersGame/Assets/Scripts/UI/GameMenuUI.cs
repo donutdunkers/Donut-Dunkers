@@ -56,16 +56,22 @@ public class GameMenuUI : MonoBehaviour {
             ShowEndScreen(isOutOfTurns);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePauseMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel();
         }
     }
 
     public void RestartLevel() {
         HidePauseMenu();
+        endGameMenu.SetActive(false);
         gameEnded = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        LevelData.Instance.ResetLevel();
     }
     
     public void NextLevel() {
@@ -105,6 +111,10 @@ public class GameMenuUI : MonoBehaviour {
     public void ShowEndScreen(bool isOutOfTurns) {
         HidePauseMenu();
         endGameMenu.SetActive(true);
+        if (nextLevelSceneName.Equals(""))
+        {
+            GameObject.Find("NextLevelButton").GetComponent<Button>().interactable = false;
+        }
         endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);
         gameEnded = true;
         Time.timeScale = 0;

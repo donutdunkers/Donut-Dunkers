@@ -43,4 +43,10 @@ public class ObjAngle : ObjectInteraction, ICanReset {
 		yield return new WaitForSeconds(0.15f);
 		BallController.Instance.IsMoving = true;		
 	}
+	
+	public override bool CanMoveTowards() {
+		bool flag1 = Vector3.Dot(this.transform.up, (BallController.Instance.transform.position - this.transform.position).normalized) >= 0.9f;
+		bool flag2 = Vector3.Dot(this.transform.forward, (BallController.Instance.transform.position - this.transform.position).normalized) >= 0.9f;
+		return flag1 || flag2;
+	}
 }

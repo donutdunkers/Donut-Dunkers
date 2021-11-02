@@ -44,7 +44,7 @@ public class LevelCamera : MonoBehaviour {
 		this.camera = this.GetComponentInChildren<Camera>();
 		
 		float average = (LevelData.Instance.size + LevelData.Instance.size + LevelData.Instance.size) / 3f;
-		this.camera.transform.position += -this.camera.transform.forward * (100f * LevelData.Instance.size);
+		this.camera.transform.position = -this.camera.transform.forward * (100f * LevelData.Instance.size);
 		this.pivot = LevelData.Instance.levelRotationContainer;
 		this.baseRotation = this.pivot.rotation;
 		this.Initialize();

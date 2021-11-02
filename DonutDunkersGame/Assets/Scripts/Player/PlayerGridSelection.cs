@@ -31,7 +31,7 @@ public class PlayerGridSelection : MonoBehaviour {
 	private LayerMask terrainMask;    
 	
 	private void Update() {
-		if (LevelData.Instance.Turns <= 0) {
+		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive) {
 			return;
 		}
 		

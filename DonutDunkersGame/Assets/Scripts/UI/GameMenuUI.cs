@@ -5,6 +5,19 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameMenuUI : MonoBehaviour {
+	
+    private static GameMenuUI _Instance;
+    public static GameMenuUI Instance
+    {
+        get
+        {
+            if (_Instance == null)
+            {
+                _Instance = FindObjectOfType<GameMenuUI>();
+            }
+            return _Instance;
+        }
+    }
     
     [SerializeField]
     private GameObject pauseMenu;
@@ -14,6 +27,18 @@ public class GameMenuUI : MonoBehaviour {
     private string nextLevelSceneName;
 
     private bool gameEnded = false;
+	
+	public bool IsPauseMenuActive {
+		get {
+			return this.pauseMenu.activeSelf;
+		}
+	}
+	
+	public bool IsEndGameMenuActive {
+		get {
+			return this.endGameMenu.activeSelf;
+		}
+	}
 
     private void Start() {
         pauseMenu.SetActive(false);

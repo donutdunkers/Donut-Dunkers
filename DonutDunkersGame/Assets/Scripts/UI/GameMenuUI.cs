@@ -64,8 +64,10 @@ public class GameMenuUI : MonoBehaviour {
 
     public void RestartLevel() {
         HidePauseMenu();
+		HideEndScreen();
         gameEnded = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		LevelData.Instance.ResetLevel();
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
     public void NextLevel() {
@@ -109,6 +111,12 @@ public class GameMenuUI : MonoBehaviour {
         gameEnded = true;
         Time.timeScale = 0;
     }
+	
+	public void HideEndScreen() {
+		endGameMenu.SetActive(false);
+		gameEnded = false;
+		Time.timeScale = 1f;
+	}
 
     public void LoadNextScene(string sceneToLoad)
     {

@@ -7,4 +7,8 @@ public class ObjWall : ObjectInteraction {
 		BallController.Instance.IsMoving = false;
 		BallController.Instance.transform.position = this.transform.position - BallController.Instance.transform.forward;
 	}
+	
+	public override bool CanMoveTowards() {
+		return false;
+	}
 }

@@ -30,7 +30,9 @@ public class LevelData : MonoBehaviour {
 	
 	public int Turns {
 		set {
-			LevelUI.Instance.SetRemainingTurns(value);
+			if (LevelUI.Instance != null) {
+				LevelUI.Instance.SetRemainingTurns(value);
+			}
 			this.turns = value;
 		} get {
 			return this.turns;

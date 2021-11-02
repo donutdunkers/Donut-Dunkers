@@ -21,4 +21,9 @@ public class ObjRing : ObjectInteraction, ICanReset {
 	public void Initialize() {
 		this.gameObject.SetActive(true);
 	}
+	
+	public virtual bool CanMoveTowards() {
+		float angle = Vector3.Dot(this.transform.forward, (BallController.Instance.transform.position - this.transform.position).normalized);
+		return angle <= -0.9f || angle >= 0.9f;
+	}
 }

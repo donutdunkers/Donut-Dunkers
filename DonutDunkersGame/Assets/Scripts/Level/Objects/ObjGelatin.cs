@@ -9,4 +9,8 @@ public class ObjGelatin : ObjectInteraction {
 		BallController.Instance.IsMoving = false;
 		LevelData.Instance.Turns--;
 	}
+	
+	public override bool CanMoveTowards() {
+		return true;
+	}
 }

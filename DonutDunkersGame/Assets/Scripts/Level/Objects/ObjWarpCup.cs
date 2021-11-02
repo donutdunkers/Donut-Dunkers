@@ -48,4 +48,8 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 		otherCup.collider.enabled = true;
 		this.warpRoutine = null;
 	}
+	
+	public override bool CanMoveTowards() {
+		return Vector3.Dot(this.transform.forward, (BallController.Instance.transform.position - this.transform.position).normalized) >= 0.9f;
+	}		
 }

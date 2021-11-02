@@ -36,6 +36,11 @@ public class PlayerGridSelection : MonoBehaviour {
 		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive || LevelData.Instance.IsResetting) {
 			return;
 		}
+		if (TutorialWindow.Instance != null) {
+			if (TutorialWindow.Instance.IsTutorialActive()) {
+				return;
+			}
+		}
 		
 		this.HandleGridSelection();
 		

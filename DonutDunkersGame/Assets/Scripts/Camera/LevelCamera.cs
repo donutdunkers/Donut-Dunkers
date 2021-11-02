@@ -68,6 +68,12 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 	}
 	
 	private void Update() {
+		if (TutorialWindow.Instance != null) {
+			if (TutorialWindow.Instance.IsTutorialActive()) {
+				return;
+			}
+		}
+		
 		if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive) {
 			this.curRotSpeed = 0f;
 		}

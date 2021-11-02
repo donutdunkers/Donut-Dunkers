@@ -628,7 +628,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 576
   idleColor: {r: 0, g: 1, b: 0.98039216, a: 0.2509804}
-  highlightColor: {r: 1, g: 0.9292666, b: 0, a: 0.7490196}
+  highlightColor: {r: 1, g: 0.9292666, b: 0, a: 0.2509804}
 --- !u!1001 &7025362865612570462
 PrefabInstance:
   m_ObjectHideFlags: 0

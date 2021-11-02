@@ -48,6 +48,7 @@ public class ObjPlate : ObjectInteraction, ICanReset {
 					this.DoRoutine();
 				}
 				BallController.Instance.IsMoving = false;
+				BallController.Instance.CanAct = true;
 				BallController.Instance.transform.position = this.parentTrans.position - BallController.Instance.transform.forward;
 				break;
 			case ObjPlate.PlateType.Diagonal:
@@ -57,6 +58,7 @@ public class ObjPlate : ObjectInteraction, ICanReset {
 					this.DoRoutine();
 				} else {
 					BallController.Instance.IsMoving = false;
+					BallController.Instance.CanAct = true;
 					BallController.Instance.transform.position = this.parentTrans.position - BallController.Instance.transform.forward;
 				}
 				break;

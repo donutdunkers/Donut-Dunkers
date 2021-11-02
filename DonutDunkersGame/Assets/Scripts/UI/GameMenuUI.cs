@@ -26,12 +26,12 @@ public class GameMenuUI : MonoBehaviour {
     private void Update() {
         bool isOutOfTurns = LevelData.Instance.Turns <= 0;
 
-        if (isOutOfTurns && !BallController.Instance.IsMoving || LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
+        if (isOutOfTurns || LevelData.Instance.RingsInLevel > 0 && LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {
             ShowEndScreen(isOutOfTurns);
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePauseMenu();
         }

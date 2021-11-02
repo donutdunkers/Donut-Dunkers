@@ -9,6 +9,7 @@ public class ObjRing : ObjectInteraction, ICanReset {
 			this.gameObject.SetActive(false);
 		} else {
 			BallController.Instance.IsMoving = false;
+			BallController.Instance.CanAct = true;
 			BallController.Instance.transform.position = this.transform.position - BallController.Instance.transform.forward;
 			LevelData.Instance.Turns--;
 		}

@@ -65,6 +65,8 @@ public class LevelData : MonoBehaviour {
 	[SerializeField]
 	private Transform levelGridContainer;
 	
+	public Transform levelRotationContainer;
+	
 	private Vector3 startPos;
 	
 	public Vector3 StartPos {

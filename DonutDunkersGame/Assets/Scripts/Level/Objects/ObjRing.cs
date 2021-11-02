@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class ObjRing : ObjectInteraction, ICanReset {
 	
+	
+	
 	public override void PlayerInteraction() {
-		bool flag = BallController.Instance.transform.forward.x.Equals(this.transform.up.x) || BallController.Instance.transform.forward.y.Equals(this.transform.up.y) || BallController.Instance.transform.forward.z.Equals(this.transform.up.z);
+		bool flag = Vector3.Angle(BallController.Instance.transform.forward, this.transform.up) < 1f || Vector3.Angle(BallController.Instance.transform.forward, -this.transform.up) < 1f;
 			Debug.Log(BallController.Instance.transform.forward.ToString("F8"));
 			Debug.Log(this.transform.up.ToString("F8"));
 			Debug.Log((-this.transform.up).ToString("F8"));

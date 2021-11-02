@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Donutdunkersfont
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: cc00a2572cb2962418efcd81719d9fd2, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

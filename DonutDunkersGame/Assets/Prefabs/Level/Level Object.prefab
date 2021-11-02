@@ -452,7 +452,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.36445355, g: 0.6603774, b: 0.41988283, a: 0}
+  m_BackGroundColor: {r: 0.48601648, g: 0.4750801, b: 0.6415094, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -627,6 +627,8 @@ MonoBehaviour:
   terrainMask:
     serializedVersion: 2
     m_Bits: 576
+  idleColor: {r: 0, g: 1, b: 0.98039216, a: 0.2509804}
+  highlightColor: {r: 1, g: 0.9292666, b: 0, a: 0.7490196}
 --- !u!1001 &7025362865612570462
 PrefabInstance:
   m_ObjectHideFlags: 0

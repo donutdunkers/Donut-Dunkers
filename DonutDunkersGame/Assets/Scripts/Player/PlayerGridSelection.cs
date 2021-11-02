@@ -30,6 +30,8 @@ public class PlayerGridSelection : MonoBehaviour {
 	[SerializeField]
 	private LayerMask terrainMask;    
 	
+	public Color idleColor, highlightColor;
+	
 	private void Update() {
 		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive) {
 			return;

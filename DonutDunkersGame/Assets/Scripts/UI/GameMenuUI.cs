@@ -49,7 +49,7 @@ public class GameMenuUI : MonoBehaviour {
 
 
     private void Update() {
-        bool isOutOfTurns = LevelData.Instance.Turns <= 0;
+        bool isOutOfTurns = LevelData.Instance.Turns <= 0 && BallController.Instance.CanAct;
 
         if (isOutOfTurns || LevelData.Instance.RingsInLevel > 0 && LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {

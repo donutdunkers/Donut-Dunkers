@@ -16,7 +16,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && uiStack.Count > 0)
+        if(Input.GetKeyDown(KeyCode.B) && uiStack.Count > 0)
         {
             EnableFromStack();
         }

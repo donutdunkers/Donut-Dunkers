@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 5
-  turns: 4
+  turns: 15
   tilePrefab: {fileID: 5056693676444722562, guid: e58948b6af981804d8dbfb066c64f29e, type: 3}
   wallPrefab: {fileID: 5056693676444722562, guid: 2ff1e2c916f9bb145884e731af14baae, type: 3}
   ball: {fileID: 3039774740062608500}

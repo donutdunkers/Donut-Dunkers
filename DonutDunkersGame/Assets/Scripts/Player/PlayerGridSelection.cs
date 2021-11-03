@@ -20,11 +20,26 @@ public class PlayerGridSelection : MonoBehaviour {
 	public LevelGridSelection currentGrid;
 	
 	public LayerMask gridMask;
-    
+	
+	public LayerMask TerrainMask {
+		get {
+			return this.terrainMask;
+		}
+	}
+	
+	[SerializeField]
+	private LayerMask terrainMask;    
+	
+	public Color idleColor, highlightColor;
 	
 	private void Update() {
-		if (LevelData.Instance.Turns <= 0) {
+		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive || LevelData.Instance.IsResetting) {
 			return;
+		}
+		if (TutorialWindow.Instance != null) {
+			if (TutorialWindow.Instance.IsTutorialActive()) {
+				return;
+			}
 		}
 		
 		this.HandleGridSelection();
@@ -35,9 +50,18 @@ public class PlayerGridSelection : MonoBehaviour {
 					return;
 				}
 				BallController.Instance.gameObject.SetActive(true);
-			//	BallController.Instance.transform.position = this.currentGrid.transform.position + this.currentGrid.transform.forward * 5f;
+				RaycastHit hit;
+				if (Physics.Raycast(BallController.Instance.transform.position, -this.currentGrid.transform.forward, out hit, 1f, this.TerrainMask)) {
+					ObjectInteraction interaction = hit.collider.GetComponent<ObjectInteraction>();
+					if (interaction != null) {
+						if (!interaction.CanMoveTowards()) {
+							return;
+						}
+					}
+				}
 				BallController.Instance.SetForwardDirection(-this.currentGrid.transform.forward);
 				BallController.Instance.IsMoving = true;
+				LevelData.Instance.Turns--;
 			}
 		}
 	}

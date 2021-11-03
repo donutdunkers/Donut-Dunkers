@@ -23,17 +23,38 @@ public class LevelData : MonoBehaviour {
 	
 	[SerializeField]
 	private int turns = 10;
-	
+
+	private int ringsCollected = 0;
+
 	private int initialTurns;
 	
 	public int Turns {
 		set {
-			LevelUI.Instance.SetRemainingTurns(value);
+			if (LevelUI.Instance != null) {
+				LevelUI.Instance.SetRemainingTurns(value);
+			}
 			this.turns = value;
+			Debug.Log("Updating turns");
 		} get {
 			return this.turns;
 		}
 	}
+
+	public int TurnsTaken {
+		get {
+			return this.initialTurns - this.turns;
+		}
+    }
+
+	public int RingsCollected
+    {
+		set {
+			ringsCollected = value;
+        } get {
+			return this.ringsCollected;
+        }
+    }
+
 	
 	public GameObject tilePrefab, wallPrefab;
 	
@@ -44,6 +65,8 @@ public class LevelData : MonoBehaviour {
 	
 	[SerializeField]
 	private Transform levelGridContainer;
+	
+	public Transform levelRotationContainer;
 	
 	private Vector3 startPos;
 	
@@ -56,7 +79,14 @@ public class LevelData : MonoBehaviour {
 	}
 	
 	private ObjRing[] rings;
-	
+
+	public int RingsInLevel
+	{
+		get {
+			return rings.Length;
+		}
+	}
+
 	public IList<ICanReset> canReset;
 	
 	[NonSerialized]
@@ -70,6 +100,8 @@ public class LevelData : MonoBehaviour {
 	private void Start() {
 		this.GenerateGridTiles();
 		this.GenerateGridWalls();
+		
+		this.Turns = this.initialTurns;
 		
 		this.rings = (ObjRing[])FindObjectsOfType<ObjRing>();
 		this.canReset = InterfaceHelper.FindObjects<ICanReset>();
@@ -257,9 +289,37 @@ public class LevelData : MonoBehaviour {
 	}
 	
 	public void ResetLevel() {
+		this.DoResetRoutine();
 		for (int i = 0; i < this.canReset.Count; i++) {
 			this.canReset[i].Initialize();
 		}
+		this.RingsCollected = 0;
 		this.Turns = this.initialTurns;
+	}
+	
+	private bool isResetting = false;
+	
+	public bool IsResetting {
+		get {
+			return this.isResetting;
+		} set {
+			this.isResetting = value;
+		}
+	}
+	
+	private void DoResetRoutine() {
+		if (this.resetRoutine != null) {
+			this.StopCoroutine(this.resetRoutine);
+			this.resetRoutine = null;
+		}
+		this.resetRoutine = this.StartCoroutine(this.ResetRoutine());
+	}
+	
+	public Coroutine resetRoutine;
+	
+	public IEnumerator ResetRoutine() {
+		this.isResetting = true;
+		yield return new WaitForSeconds(0.25f);
+		this.isResetting = false;
 	}
 }

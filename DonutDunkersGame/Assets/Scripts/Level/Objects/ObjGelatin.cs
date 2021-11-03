@@ -7,6 +7,10 @@ public class ObjGelatin : ObjectInteraction {
     public override void PlayerInteraction() {
 		BallController.Instance.transform.position = this.transform.position;
 		BallController.Instance.IsMoving = false;
-		LevelData.Instance.Turns--;
+		BallController.Instance.CanAct = true;
+	}
+	
+	public override bool CanMoveTowards() {
+		return true;
 	}
 }

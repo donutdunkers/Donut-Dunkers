@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static SaveData _Instance;
+    public static SaveData Instance
     {
-        
+        get
+        {
+            if (_Instance == null)
+            {
+                _Instance = FindObjectOfType<SaveData>();
+            }
+            return _Instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void BeatLevel(string levelKey) {
+        PlayerPrefs.SetInt(levelKey, 1);
+        PlayerPrefs.Save();
     }
 }

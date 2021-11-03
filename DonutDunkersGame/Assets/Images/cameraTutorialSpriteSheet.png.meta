@@ -1,0 +1,1944 @@
+fileFormatVersion: 2
+guid: 7e0c1460c9ca9684893dd8623805f9bd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7096330808471657335
+    second: cameraTutorialSpriteSheet_0
+  - first:
+      213: 5176308063468844739
+    second: cameraTutorialSpriteSheet_1
+  - first:
+      213: -2947114845117795622
+    second: cameraTutorialSpriteSheet_2
+  - first:
+      213: 6384795171748943860
+    second: cameraTutorialSpriteSheet_3
+  - first:
+      213: -8082351087653131298
+    second: cameraTutorialSpriteSheet_4
+  - first:
+      213: 429330677857518169
+    second: cameraTutorialSpriteSheet_5
+  - first:
+      213: -4357330359861937633
+    second: cameraTutorialSpriteSheet_6
+  - first:
+      213: 8056354033134651387
+    second: cameraTutorialSpriteSheet_7
+  - first:
+      213: 4100850343738545613
+    second: cameraTutorialSpriteSheet_8
+  - first:
+      213: 2604634272254174060
+    second: cameraTutorialSpriteSheet_9
+  - first:
+      213: -5174039019743458456
+    second: cameraTutorialSpriteSheet_10
+  - first:
+      213: 6761369903359828687
+    second: cameraTutorialSpriteSheet_11
+  - first:
+      213: 5414112462505284874
+    second: cameraTutorialSpriteSheet_12
+  - first:
+      213: -4313135800384214825
+    second: cameraTutorialSpriteSheet_13
+  - first:
+      213: 2998933771405406299
+    second: cameraTutorialSpriteSheet_14
+  - first:
+      213: -2053534499846424606
+    second: cameraTutorialSpriteSheet_15
+  - first:
+      213: -5369777562980792610
+    second: cameraTutorialSpriteSheet_16
+  - first:
+      213: 6524231562424227426
+    second: cameraTutorialSpriteSheet_17
+  - first:
+      213: 4945615194642095672
+    second: cameraTutorialSpriteSheet_18
+  - first:
+      213: 2047742737816049827
+    second: cameraTutorialSpriteSheet_19
+  - first:
+      213: 8724843471871203641
+    second: cameraTutorialSpriteSheet_20
+  - first:
+      213: 6033087457684873862
+    second: cameraTutorialSpriteSheet_21
+  - first:
+      213: -8493056319806796401
+    second: cameraTutorialSpriteSheet_22
+  - first:
+      213: 3244986884927641576
+    second: cameraTutorialSpriteSheet_23
+  - first:
+      213: -4559797842487810042
+    second: cameraTutorialSpriteSheet_24
+  - first:
+      213: 8839771899327179782
+    second: cameraTutorialSpriteSheet_25
+  - first:
+      213: 5933682933047792972
+    second: cameraTutorialSpriteSheet_26
+  - first:
+      213: -9176273652194204827
+    second: cameraTutorialSpriteSheet_27
+  - first:
+      213: -577463637552272492
+    second: cameraTutorialSpriteSheet_28
+  - first:
+      213: -5717691897797950825
+    second: cameraTutorialSpriteSheet_29
+  - first:
+      213: -7872506211365959221
+    second: cameraTutorialSpriteSheet_30
+  - first:
+      213: 5650707561901707798
+    second: cameraTutorialSpriteSheet_31
+  - first:
+      213: 6950262251057794566
+    second: cameraTutorialSpriteSheet_32
+  - first:
+      213: 3831811179469642213
+    second: cameraTutorialSpriteSheet_33
+  - first:
+      213: 2760540800291719462
+    second: cameraTutorialSpriteSheet_34
+  - first:
+      213: 8726482565209081095
+    second: cameraTutorialSpriteSheet_35
+  - first:
+      213: -7493196356216496347
+    second: cameraTutorialSpriteSheet_36
+  - first:
+      213: 2012952814853360087
+    second: cameraTutorialSpriteSheet_37
+  - first:
+      213: -1860181441017096994
+    second: cameraTutorialSpriteSheet_38
+  - first:
+      213: 5074554359520740829
+    second: cameraTutorialSpriteSheet_39
+  - first:
+      213: -2819451940712851715
+    second: cameraTutorialSpriteSheet_40
+  - first:
+      213: -5953803431158225648
+    second: cameraTutorialSpriteSheet_41
+  - first:
+      213: -7200775130847691295
+    second: cameraTutorialSpriteSheet_42
+  - first:
+      213: -5658816936248847969
+    second: cameraTutorialSpriteSheet_43
+  - first:
+      213: 2480989579517562960
+    second: cameraTutorialSpriteSheet_44
+  - first:
+      213: 8113942263525435855
+    second: cameraTutorialSpriteSheet_45
+  - first:
+      213: 1185014486740159916
+    second: cameraTutorialSpriteSheet_46
+  - first:
+      213: 3470395121047197805
+    second: cameraTutorialSpriteSheet_47
+  - first:
+      213: 7711472279827839464
+    second: cameraTutorialSpriteSheet_48
+  - first:
+      213: -165089757870356060
+    second: cameraTutorialSpriteSheet_49
+  - first:
+      213: -6864221580446555262
+    second: cameraTutorialSpriteSheet_50
+  - first:
+      213: -6886936213793867928
+    second: cameraTutorialSpriteSheet_51
+  - first:
+      213: 1439402985782839581
+    second: cameraTutorialSpriteSheet_52
+  - first:
+      213: -9096002760949690028
+    second: cameraTutorialSpriteSheet_53
+  - first:
+      213: -3140273811421159124
+    second: cameraTutorialSpriteSheet_54
+  - first:
+      213: -3040590054597191768
+    second: cameraTutorialSpriteSheet_55
+  - first:
+      213: 5771400901338473729
+    second: cameraTutorialSpriteSheet_56
+  - first:
+      213: -3442963274865828992
+    second: cameraTutorialSpriteSheet_57
+  - first:
+      213: 4814049173009900955
+    second: cameraTutorialSpriteSheet_58
+  - first:
+      213: 8141927002317183812
+    second: cameraTutorialSpriteSheet_59
+  - first:
+      213: -64113042344507258
+    second: cameraTutorialSpriteSheet_60
+  - first:
+      213: 9094902451292098857
+    second: cameraTutorialSpriteSheet_61
+  - first:
+      213: -4717573812485050318
+    second: cameraTutorialSpriteSheet_62
+  - first:
+      213: 8296657594686356481
+    second: cameraTutorialSpriteSheet_63
+  - first:
+      213: -2821521849203077149
+    second: cameraTutorialSpriteSheet_64
+  - first:
+      213: -5644303880594038305
+    second: cameraTutorialSpriteSheet_65
+  - first:
+      213: -7574942868012098362
+    second: cameraTutorialSpriteSheet_66
+  - first:
+      213: 3731911842581350992
+    second: cameraTutorialSpriteSheet_67
+  - first:
+      213: -9100926993825231541
+    second: cameraTutorialSpriteSheet_68
+  - first:
+      213: -8776366988591099950
+    second: cameraTutorialSpriteSheet_69
+  - first:
+      213: -8965886412330071850
+    second: cameraTutorialSpriteSheet_70
+  - first:
+      213: -107845109275984347
+    second: cameraTutorialSpriteSheet_71
+  - first:
+      213: 8589503340404003678
+    second: cameraTutorialSpriteSheet_72
+  - first:
+      213: 4635531377570131405
+    second: cameraTutorialSpriteSheet_73
+  - first:
+      213: 3776302711748267048
+    second: cameraTutorialSpriteSheet_74
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8666
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984e2684ab4c48d90800000000000000
+      internalID: -7096330808471657335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 8666
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6fc0b22c0f5d740800000000000000
+      internalID: 5176308063468844739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 8666
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad23970b9aeb917d0800000000000000
+      internalID: -2947114845117795622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 8666
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f799bf61695b9850800000000000000
+      internalID: 6384795171748943860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 8666
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb61760288b5df80800000000000000
+      internalID: -8082351087653131298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8047
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95200e01af945f500800000000000000
+      internalID: 429330677857518169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 8047
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a7763bf17a783c0800000000000000
+      internalID: -4357330359861937633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 8047
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7c6c90f4bedcf60800000000000000
+      internalID: 8056354033134651387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 8047
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5139f09a529e830800000000000000
+      internalID: 4100850343738545613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 8047
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63a4871215852420800000000000000
+      internalID: 2604634272254174060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7428
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b4e2ebcee1238b0800000000000000
+      internalID: -5174039019743458456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 7428
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2a7c49a1635dd50800000000000000
+      internalID: 6761369903359828687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 7428
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0594a5799ac22b40800000000000000
+      internalID: 5414112462505284874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 7428
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8241e67d9a424c0800000000000000
+      internalID: -4313135800384214825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 7428
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b50ba85406a5e9920800000000000000
+      internalID: 2998933771405406299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6809
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7f4a2a0416083e0800000000000000
+      internalID: -2053534499846424606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 6809
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6caabb1c7ba75b0800000000000000
+      internalID: -5369777562980792610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 6809
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26610b60a0aba8a50800000000000000
+      internalID: 6524231562424227426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 6809
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e9a6801da52a440800000000000000
+      internalID: 4945615194642095672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 6809
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a859eeab2b0b6c10800000000000000
+      internalID: 2047742737816049827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6190
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939d4c559eed41970800000000000000
+      internalID: 8724843471871203641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 6190
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682eb2ef315d9b350800000000000000
+      internalID: 6033087457684873862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 6190
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d8788764a922a80800000000000000
+      internalID: -8493056319806796401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 6190
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7d9e01162880d20800000000000000
+      internalID: 3244986884927641576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 6190
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608ebe6650858b0c0800000000000000
+      internalID: -4559797842487810042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5571
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c60e215bd2daa70800000000000000
+      internalID: 8839771899327179782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 5571
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c459c1a803da85250800000000000000
+      internalID: 5933682933047792972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 5571
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56320373bb357a080800000000000000
+      internalID: -9176273652194204827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 5571
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bedf491ef6cf7f0800000000000000
+      internalID: -577463637552272492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 5571
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792cf98338da6a0b0800000000000000
+      internalID: -5717691897797950825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4952
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9c973af4d3fb290800000000000000
+      internalID: -7872506211365959221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 4952
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612d3ccb6985b6e40800000000000000
+      internalID: 5650707561901707798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 4952
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e4b1a71ba447060800000000000000
+      internalID: 6950262251057794566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4952
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e998a647f35d2530800000000000000
+      internalID: 3831811179469642213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 4952
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6294c5d5b396f4620800000000000000
+      internalID: 2760540800291719462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4333
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7054ded78a1ba1970800000000000000
+      internalID: 8726482565209081095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 4333
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fd67b5d91d20890800000000000000
+      internalID: -7493196356216496347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 4333
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d905f68be17feb10800000000000000
+      internalID: 2012952814853360087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 4333
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4d666c5de4f26e0800000000000000
+      internalID: -1860181441017096994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 4333
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5c4a8cd407c6640800000000000000
+      internalID: 5074554359520740829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3714
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df65684e56b4fd8d0800000000000000
+      internalID: -2819451940712851715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 3714
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015ef4fe257df5da0800000000000000
+      internalID: -5953803431158225648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3714
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed3b5a7b25b11c90800000000000000
+      internalID: -7200775130847691295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3714
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f915ce96af7d771b0800000000000000
+      internalID: -5658816936248847969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3714
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0501792b0ee3e6220800000000000000
+      internalID: 2480989579517562960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3095
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc96679cf738a9070800000000000000
+      internalID: 8113942263525435855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 3095
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cadc6dfa564027010800000000000000
+      internalID: 1185014486740159916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3095
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d685444c9f1592030800000000000000
+      internalID: 3470395121047197805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 3095
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9f86e6e27a40b60800000000000000
+      internalID: 7711472279827839464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3095
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9051a6dbb75bdf0800000000000000
+      internalID: -165089757870356060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2476
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283a9ed37d26db0a0800000000000000
+      internalID: -6864221580446555262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2476
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867fa0a8000bc60a0800000000000000
+      internalID: -6886936213793867928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2476
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d190938a369c9f310800000000000000
+      internalID: 1439402985782839581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2476
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4511f9d7ea184c180800000000000000
+      internalID: -9096002760949690028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 2476
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21a7cc3b918b64d0800000000000000
+      internalID: -3140273811421159124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1857
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a716208477adc5d0800000000000000
+      internalID: -3040590054597191768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1857
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10526a4aa82281050800000000000000
+      internalID: 5771400901338473729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1857
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b18e2a4232830d0800000000000000
+      internalID: -3442963274865828992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1857
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95a4888730fec240800000000000000
+      internalID: 4814049173009900955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1857
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44bd648887fedf070800000000000000
+      internalID: 8141927002317183812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1238
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688069517893c1ff0800000000000000
+      internalID: -64113042344507258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1238
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9215814b795973e70800000000000000
+      internalID: 9094902451292098857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1238
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230b421cc9fc78eb0800000000000000
+      internalID: -4717573812485050318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1238
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10cb352ff16a32370800000000000000
+      internalID: 8296657594686356481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 1238
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef4f34c3d0f7d8d0800000000000000
+      internalID: -2821521849203077149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 619
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd165d086876ba1b0800000000000000
+      internalID: -5644303880594038305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 619
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc9246689560e690800000000000000
+      internalID: -7574942868012098362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 619
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05a822e5c0a6ac330800000000000000
+      internalID: 3731911842581350992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 619
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d884e2e1303b180800000000000000
+      internalID: -9100926993825231541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 619
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df009a19b4143680800000000000000
+      internalID: -8776366988591099950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d88090bfc5c29380800000000000000
+      internalID: -8965886412330071850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e77dac17bd08ef0800000000000000
+      internalID: -107845109275984347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53dfc967cb043770800000000000000
+      internalID: 8589503340404003678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcdae315a37b45040800000000000000
+      internalID: 4635531377570131405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cameraTutorialSpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 600
+        height: 619
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c89120f4f186430800000000000000
+      internalID: 3776302711748267048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9b0c5afa110c7574ba924437ce3ff402
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

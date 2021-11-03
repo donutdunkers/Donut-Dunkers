@@ -11,25 +11,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_Main.unity
     guid: c86036355beaf6646b20eb0025dd62cb
-  - enabled: 0
-    path: Assets/Scenes/Test_CubeGame.unity
-    guid: 6ce1c9a0a8102314884c0298bf41de35
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_01.unity
-    guid: 78fc4c6ba57570348b53feb64b94ad2a
+    guid: c20b9f3a27950b0489e82ac5df6dd757
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_02.unity
-    guid: bfc4b48fbb77fb64ca29cf1533d7447a
+    guid: 8ca96b506c7564441afd3cd91c7dce46
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_03.unity
     guid: f1bca445f667fc3479757fb303aa9f36
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_04.unity
-    guid: 0cefbfb09f9427243ac553baa506c9ad
+    guid: bfc4b48fbb77fb64ca29cf1533d7447a
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_05.unity
-    guid: ac7693cb238fde546ba3bb9a9660c07f
+    guid: a16c31ac994902548a00d76e60fb138f
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_06.unity
-    guid: 69ca53c27bccd2c43973938b1eafad83
+    guid: 0cefbfb09f9427243ac553baa506c9ad
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_07.unity
+    guid: 442d813186bc0064db0c176a0f84e7e9
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_08.unity
+    guid: 13c23179f5914ec4ea99c4209a3a30d2
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_09.unity
+    guid: 68f5e3a642a702c49927f16e0025bfba
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_10.unity
+    guid: 6d7f250b4b98fb24ebbd9f62c271aee1
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_11.unity
+    guid: 268e2f393a1d7e448a555347f145c5c3
+  - enabled: 1
+    path: Assets/Scenes/World/Kitchen/Kitchen_Level_12.unity
+    guid: 4d930515aae72ad43ab6be405cc97781
   m_configObjects: {}

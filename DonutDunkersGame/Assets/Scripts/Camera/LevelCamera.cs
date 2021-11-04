@@ -85,13 +85,13 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 		
 		if (Input.GetKey(KeyCode.A)) {
 			Vector3 rot = this.pivot.eulerAngles;
-			rot.y -= curRotSpeed * Time.deltaTime;
+			rot.y += curRotSpeed * Time.deltaTime;
 			this.pivot.eulerAngles = rot;
 		//	this.DoRotation(rot * Quaternion.AngleAxis(-ROTATION_HORIZONTAL_ANGLE, Vector3.up));
 		}
 		if (Input.GetKey(KeyCode.D)) {
 			Vector3 rot = this.pivot.eulerAngles;
-			rot.y += curRotSpeed * Time.deltaTime;
+			rot.y -= curRotSpeed * Time.deltaTime;
 			this.pivot.eulerAngles = rot;
 		//	this.DoRotation(rot * Quaternion.AngleAxis(ROTATION_HORIZONTAL_ANGLE, Vector3.up));
 			

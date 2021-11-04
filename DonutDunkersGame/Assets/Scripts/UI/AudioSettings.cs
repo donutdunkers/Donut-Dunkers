@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class AudioSettings : MonoBehaviour
 {
-    FMOD.Studio.EventInstance SFXVolumeTestEvent;
+    //FMOD.Studio.EventInstance SFXVolumeTestEvent;
 
-    FMOD.Studio.Bus Music;
-    FMOD.Studio.Bus SFX;
-    FMOD.Studio.Bus Master;
+    //FMOD.Studio.Bus Music;
+    //FMOD.Studio.Bus SFX;
+    //FMOD.Studio.Bus Master;
     float MusicVolume = 0.5f;
     float SFXVolume = 0.5f;
     float MasterVolume = 1f;
 
     void Awake()
     {
-        FMODUnity.RuntimeManager.WaitForAllLoads();
+        //FMODUnity.RuntimeManager.WaitForAllLoads();
         //Music = FMODUnity.RuntimeManager.GetBus("vca:/Master/Music");
         //SFX = FMODUnity.RuntimeManager.GetBus("vca:/Master/SFX");
         //Master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
@@ -24,9 +24,9 @@ public class AudioSettings : MonoBehaviour
 
     void Update()
     {
-        Music.setVolume(MusicVolume);
-        SFX.setVolume(SFXVolume);
-        Master.setVolume(MasterVolume);
+        //Music.setVolume(MusicVolume);
+        //SFX.setVolume(SFXVolume);
+        //Master.setVolume(MasterVolume);
     }
 
     public void MasterVolumeLevel(float newMasterVolume)
@@ -39,7 +39,7 @@ public class AudioSettings : MonoBehaviour
         MusicVolume = newMusicVolume;
     }
 
-    public void SFXVolumeLevel(float newSFXVolume)
+    /*public void SFXVolumeLevel(float newSFXVolume)
     {
         SFXVolume = newSFXVolume;
 
@@ -49,5 +49,5 @@ public class AudioSettings : MonoBehaviour
         {
             SFXVolumeTestEvent.start();
         }
-    }
+    }*/
 }

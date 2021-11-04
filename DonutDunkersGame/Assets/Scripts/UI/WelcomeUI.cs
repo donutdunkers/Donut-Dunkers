@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using FMODUnity;
 
 public class WelcomeUI : MonoBehaviour
 {
@@ -54,7 +53,7 @@ public class WelcomeUI : MonoBehaviour
     {
         if(Input.anyKey)
         {
-            ResumeAudio();
+            //ResumeAudio();
             return true;
             Debug.Log("Move to Start Scene");
         }
@@ -64,7 +63,7 @@ public class WelcomeUI : MonoBehaviour
 
     bool audioResumed = false;
 
-    public void ResumeAudio() {
+    /*public void ResumeAudio() {
         if (!audioResumed) {
             var result = RuntimeManager.CoreSystem.mixerSuspend();
             Debug.Log(result);
@@ -72,5 +71,5 @@ public class WelcomeUI : MonoBehaviour
             Debug.Log(result);
             audioResumed = true;
         }
-    }
+    }*/
 }

@@ -36,6 +36,7 @@ public class WelcomeUI : MonoBehaviour
     void LoadNextScene()
     {
 		this.gotInput = true;
+		ScriptableSingleton<SoundEvent>.Instance.sndTitleScreen.Play();
         StartCoroutine(LoadSceneAsync());
     }
 

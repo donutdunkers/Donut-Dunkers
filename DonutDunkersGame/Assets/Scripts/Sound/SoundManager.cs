@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     private static SoundManager _Instance;
+	
     public static SoundManager Instance
     {
         get
@@ -16,6 +17,7 @@ public class SoundManager : MonoBehaviour
             return _Instance;
         }
     }
+	
     private void Update()
     {
         AudioSource currentSource;
@@ -28,12 +30,15 @@ public class SoundManager : MonoBehaviour
             currentSource = musicSourceB;
         }
     }
+	
     public void CrossFade(AudioClip audio, float volume, float fadetime)
     {
-
+		this.StartCoroutine(this.Fade(audio, volume, fadetime));
     }
+	
     private Coroutine currentSourceroutine; //assign it to run a numerator
     private Coroutine newSourceroutine;
+	
     private IEnumerator Fade(AudioClip audio, float volume, float fadetime)
     {
         AudioSource currentSource;
@@ -76,9 +81,12 @@ public class SoundManager : MonoBehaviour
         {
             StopCoroutine(newSourceroutine);
         }
+
         currentSourceroutine = StartCoroutine(FadeSource(currentSource, currentSource.volume, 0, fadetime));
+
         newSourceroutine = StartCoroutine(FadeSource(newSource, newSource.volume, volume, fadetime));
-        isMusicSourceA = !isMusicSourceA;
+       
+	   isMusicSourceA = !isMusicSourceA;
     }
 
     private IEnumerator FadeSource(AudioSource source, float startV, float endV, float duration)

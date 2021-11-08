@@ -93,11 +93,18 @@ public class LevelData : MonoBehaviour {
 	public Vector3 LevelStartPosition;
 	
 	private void Awake() {
+		if (SoundManager.Instance == null) {
+			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
+			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);
+		}
 		this.initialTurns = this.turns;
 		this.LevelStartPosition = BallController.Instance.transform.localPosition;
 	}
 	
 	private void Start() {
+		Sound music = ScriptableSingleton<MusicEvent>.Instance.Theme01;
+		SoundManager.Instance.CrossFade(music.audioClip, music.volume, 2.5f);
+		
 		this.GenerateGridTiles();
 		this.GenerateGridWalls();
 		

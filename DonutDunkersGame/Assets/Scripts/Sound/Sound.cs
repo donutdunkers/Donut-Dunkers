@@ -10,7 +10,7 @@ public class Sound
     [Range(0f, 1f)]
     public float volume  = 1f; 
 
-    public void playSound()
+    public void Play()
     {
         SoundManager.Instance.soundSource.PlayOneShot(this.audioClip, 1f * this.volume);
     }

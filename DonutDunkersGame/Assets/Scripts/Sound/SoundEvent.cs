@@ -16,6 +16,14 @@ public class SoundEvent : ScriptableSingleton<SoundEvent>
     public Sound sndDonuthitWindow;
     public Sound sndDonutlaunch;
 
+    //UI Sounds
+    public Sound sndButtonClickBack;
+    public Sound sndButtonClickForward;
+
+    //Title Screen sound
+    public Sound sndTitleScreen;
+
+
 
 
 

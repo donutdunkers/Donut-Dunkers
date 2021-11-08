@@ -15,9 +15,6 @@ public class WelcomeUI : MonoBehaviour
 
     void Start()
     {
-        //Check in here about past save state.
-        //Bool isReturning = false
-        //if isReturning sceneToLoad = mainMenu, else sceneToLoad = tutorial etc.
 		this.gotInput = false;
     }
     void Update()
@@ -70,13 +67,5 @@ public class WelcomeUI : MonoBehaviour
 
     bool audioResumed = false;
 
-    /*public void ResumeAudio() {
-        if (!audioResumed) {
-            var result = RuntimeManager.CoreSystem.mixerSuspend();
-            Debug.Log(result);
-            result = RuntimeManager.CoreSystem.mixerResume();
-            Debug.Log(result);
-            audioResumed = true;
-        }
-    }*/
+   
 }

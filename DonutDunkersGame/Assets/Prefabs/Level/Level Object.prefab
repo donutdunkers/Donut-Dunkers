@@ -481,8 +481,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1029967980016225034}
-  - component: {fileID: 8760056364651060863}
-  - component: {fileID: 8337633181457124187}
+  - component: {fileID: 2708826913817582139}
+  - component: {fileID: 6331021151075034568}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -504,7 +504,7 @@ Transform:
   m_Father: {fileID: 4609579839985637319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &8760056364651060863
+--- !u!20 &2708826913817582139
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -547,7 +547,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &8337633181457124187
+--- !u!114 &6331021151075034568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

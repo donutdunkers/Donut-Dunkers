@@ -34,7 +34,7 @@ public class LevelEndUI : MonoBehaviour
 
     void SetNumMoves(int value)
     {
-        this.collectionText.SetText($"You took {value} moves");
+        this.moveCountText.SetText($"You took {value} moves");
     }
 
     public void SetLevelEndUI(bool isOutOfTurns, int ringsCollected, int ringsTotal, int numMoves)

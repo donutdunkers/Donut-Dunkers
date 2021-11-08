@@ -299,7 +299,7 @@ MonoBehaviour:
   m_text: High
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -487,7 +487,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110667353}
-  - component: {fileID: 110667354}
   m_Layer: 5
   m_Name: Audio
   m_TagString: Untagged
@@ -518,18 +517,6 @@ RectTransform:
   m_AnchoredPosition: {x: 550, y: 200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &110667354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110667352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ac86f7d6bbd5f438282e41d681e2d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &117133133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1544,7 @@ MonoBehaviour:
   m_text: Audio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1766,7 +1753,7 @@ MonoBehaviour:
   m_text: Fullscreen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2170,7 +2157,7 @@ MonoBehaviour:
   m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3311,7 +3298,7 @@ MonoBehaviour:
   m_text: Option A
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3672,7 +3659,7 @@ MonoBehaviour:
   m_text: Video
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4500,7 +4487,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1512864032}
   m_FillRect: {fileID: 1692644445}
   m_HandleRect: {fileID: 1512864031}
@@ -4512,7 +4499,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 110667354}
+      - m_Target: {fileID: 1002848423}
         m_TargetAssemblyTypeName: AudioSettings, Assembly-CSharp
         m_MethodName: MusicVolumeLevel
         m_Mode: 0
@@ -5681,6 +5668,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ac86f7d6bbd5f438282e41d681e2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MasterSlider: {fileID: 1773073083}
+  MusicSlider: {fileID: 801436886}
+  SFXSlider: {fileID: 2014623227}
 --- !u!114 &1002848424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5693,7 +5683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fe793eb7f25644b90a1cdfd43f82ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
   resolutionDropdown: {fileID: 916417159}
   qualityDropdown: {fileID: 2106447783}
 --- !u!1 &1030827349
@@ -5878,7 +5867,7 @@ MonoBehaviour:
   m_text: Resolution
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6834,7 +6823,7 @@ MonoBehaviour:
   m_text: Graphics
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9383,7 +9372,7 @@ MonoBehaviour:
   m_text: Master
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10477,7 +10466,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1065669565}
   m_FillRect: {fileID: 1175573209}
   m_HandleRect: {fileID: 1065669564}
@@ -10489,7 +10478,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 110667354}
+      - m_Target: {fileID: 1002848423}
         m_TargetAssemblyTypeName: AudioSettings, Assembly-CSharp
         m_MethodName: MasterVolumeLevel
         m_Mode: 0
@@ -11785,7 +11774,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 622909606}
   m_FillRect: {fileID: 1986402573}
   m_HandleRect: {fileID: 622909605}
@@ -11797,7 +11786,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 110667354}
+      - m_Target: {fileID: 1002848423}
         m_TargetAssemblyTypeName: AudioSettings, Assembly-CSharp
         m_MethodName: SFXVolumeLevel
         m_Mode: 0
@@ -11869,7 +11858,7 @@ MonoBehaviour:
   m_text: SFX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
-  m_sharedMaterial: {fileID: -644349135677527647, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
+  m_sharedMaterial: {fileID: 4768268281175693522, guid: 555abffa0fb97d048b5a9bf16b0412a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

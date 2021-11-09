@@ -141,13 +141,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 5
-  turns: 15
+  turns: 30
   tilePrefab: {fileID: 5056693676444722562, guid: e58948b6af981804d8dbfb066c64f29e, type: 3}
   wallPrefab: {fileID: 5056693676444722562, guid: 2ff1e2c916f9bb145884e731af14baae, type: 3}
   ball: {fileID: 3039774740062608500}
   levelContainer: {fileID: 3039774740432698359}
   levelGridContainer: {fileID: 3039774738836187544}
   levelRotationContainer: {fileID: 3039774739147608108}
+  roomType: 0
 --- !u!1 &3039774739147608107
 GameObject:
   m_ObjectHideFlags: 0

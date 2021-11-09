@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using FMODUnity;
 
 public class WelcomeUI : MonoBehaviour
 {
@@ -11,12 +10,12 @@ public class WelcomeUI : MonoBehaviour
     public float osciallationOffset = 0.1f;
     public string sceneToLoad = "Menu_Main";
     public float sceneLoadDelayTime = 0.0f; //Ryan Pumo Temp WebGL Build Code!!
+	
+	private bool gotInput = false;
 
     void Start()
     {
-        //Check in here about past save state.
-        //Bool isReturning = false
-        //if isReturning sceneToLoad = mainMenu, else sceneToLoad = tutorial etc.
+		this.gotInput = false;
     }
     void Update()
     {
@@ -36,6 +35,8 @@ public class WelcomeUI : MonoBehaviour
 
     void LoadNextScene()
     {
+		this.gotInput = true;
+		ScriptableSingleton<SoundEvent>.Instance.sndTitleScreen.Play();
         StartCoroutine(LoadSceneAsync());
     }
 
@@ -52,9 +53,12 @@ public class WelcomeUI : MonoBehaviour
 
     bool CheckForInput()
     {
+		if (this.gotInput) {
+			return false;
+		}
         if(Input.anyKey)
         {
-            ResumeAudio();
+            //ResumeAudio();
             return true;
             Debug.Log("Move to Start Scene");
         }
@@ -64,13 +68,5 @@ public class WelcomeUI : MonoBehaviour
 
     bool audioResumed = false;
 
-    public void ResumeAudio() {
-        if (!audioResumed) {
-            var result = RuntimeManager.CoreSystem.mixerSuspend();
-            Debug.Log(result);
-            result = RuntimeManager.CoreSystem.mixerResume();
-            Debug.Log(result);
-            audioResumed = true;
-        }
-    }
+   
 }

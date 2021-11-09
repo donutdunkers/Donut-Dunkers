@@ -4,19 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenuUI : MonoBehaviour
-{
+public class MainMenuUI : MonoBehaviour {
     private GameObject activeUI;
     private Stack<GameObject> uiStack;
 
+	private void Awake() {
+		if (SoundManager.Instance == null) {
+			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
+			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);
+		}
+	}
+
     private void Start()
     {
+		// Currently there is no main menu music- hence why it is set to play 'null'
+		SoundManager.Instance.CrossFade(null, 0f, 1f);
+		
         uiStack = new Stack<GameObject>();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.B))
+        if(Input.GetKeyDown(KeyCode.B) && uiStack.Count > 0)
         {
             EnableFromStack();
         }
@@ -39,12 +48,9 @@ public class MainMenuUI : MonoBehaviour
 
     public void EnableFromStack()
     {
-        if (uiStack.Count > 0)
-        {
-            activeUI.SetActive(false);
-            activeUI = uiStack.Pop();
-            activeUI.SetActive(true);
-        }
+        activeUI.SetActive(false);
+        activeUI = uiStack.Pop();
+        activeUI.SetActive(true);
     }
 
     public void LoadNextScene(string sceneToLoad)

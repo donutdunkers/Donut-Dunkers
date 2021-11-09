@@ -30,8 +30,11 @@ public class LevelData : MonoBehaviour {
 	
 	public int Turns {
 		set {
-			LevelUI.Instance.SetRemainingTurns(value);
+			if (LevelUI.Instance != null) {
+				LevelUI.Instance.SetRemainingTurns(value);
+			}
 			this.turns = value;
+			Debug.Log("Updating turns");
 		} get {
 			return this.turns;
 		}
@@ -63,6 +66,8 @@ public class LevelData : MonoBehaviour {
 	[SerializeField]
 	private Transform levelGridContainer;
 	
+	public Transform levelRotationContainer;
+	
 	private Vector3 startPos;
 	
 	public Vector3 StartPos {
@@ -88,11 +93,18 @@ public class LevelData : MonoBehaviour {
 	public Vector3 LevelStartPosition;
 	
 	private void Awake() {
+		if (SoundManager.Instance == null) {
+			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
+			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);
+		}
 		this.initialTurns = this.turns;
 		this.LevelStartPosition = BallController.Instance.transform.localPosition;
 	}
 	
 	private void Start() {
+		Sound music = ScriptableSingleton<MusicEvent>.Instance.Theme01;
+		SoundManager.Instance.CrossFade(music.audioClip, music.volume, 2.5f);
+		
 		this.GenerateGridTiles();
 		this.GenerateGridWalls();
 		
@@ -284,9 +296,37 @@ public class LevelData : MonoBehaviour {
 	}
 	
 	public void ResetLevel() {
+		this.DoResetRoutine();
 		for (int i = 0; i < this.canReset.Count; i++) {
 			this.canReset[i].Initialize();
 		}
+		this.RingsCollected = 0;
 		this.Turns = this.initialTurns;
+	}
+	
+	private bool isResetting = false;
+	
+	public bool IsResetting {
+		get {
+			return this.isResetting;
+		} set {
+			this.isResetting = value;
+		}
+	}
+	
+	private void DoResetRoutine() {
+		if (this.resetRoutine != null) {
+			this.StopCoroutine(this.resetRoutine);
+			this.resetRoutine = null;
+		}
+		this.resetRoutine = this.StartCoroutine(this.ResetRoutine());
+	}
+	
+	public Coroutine resetRoutine;
+	
+	public IEnumerator ResetRoutine() {
+		this.isResetting = true;
+		yield return new WaitForSeconds(0.25f);
+		this.isResetting = false;
 	}
 }

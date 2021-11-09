@@ -5,6 +5,19 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameMenuUI : MonoBehaviour {
+	
+    private static GameMenuUI _Instance;
+    public static GameMenuUI Instance
+    {
+        get
+        {
+            if (_Instance == null)
+            {
+                _Instance = FindObjectOfType<GameMenuUI>();
+            }
+            return _Instance;
+        }
+    }
     
     [SerializeField]
     private GameObject pauseMenu;
@@ -14,6 +27,18 @@ public class GameMenuUI : MonoBehaviour {
     private string nextLevelSceneName;
 
     private bool gameEnded = false;
+	
+	public bool IsPauseMenuActive {
+		get {
+			return this.pauseMenu.activeSelf;
+		}
+	}
+	
+	public bool IsEndGameMenuActive {
+		get {
+			return this.endGameMenu.activeSelf;
+		}
+	}
 
     private void Start() {
         pauseMenu.SetActive(false);
@@ -24,9 +49,9 @@ public class GameMenuUI : MonoBehaviour {
 
 
     private void Update() {
-        bool isOutOfTurns = LevelData.Instance.Turns <= 0;
+        bool isOutOfTurns = LevelData.Instance.Turns <= 0 && BallController.Instance.CanAct;
 
-        if (isOutOfTurns || LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
+        if (isOutOfTurns || LevelData.Instance.RingsInLevel > 0 && LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {
             ShowEndScreen(isOutOfTurns);
         }
@@ -35,12 +60,18 @@ public class GameMenuUI : MonoBehaviour {
         {
             TogglePauseMenu();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartLevel();
+        }
     }
 
     public void RestartLevel() {
         HidePauseMenu();
+	     	HideEndScreen();
         gameEnded = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	    	LevelData.Instance.ResetLevel();
     }
     
     public void NextLevel() {
@@ -80,10 +111,20 @@ public class GameMenuUI : MonoBehaviour {
     public void ShowEndScreen(bool isOutOfTurns) {
         HidePauseMenu();
         endGameMenu.SetActive(true);
+        if (nextLevelSceneName.Equals(""))
+        {
+            GameObject.Find("NextLevelButton").GetComponent<Button>().interactable = false;
+        }
         endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);
         gameEnded = true;
         Time.timeScale = 0;
     }
+	
+	public void HideEndScreen() {
+		endGameMenu.SetActive(false);
+		gameEnded = false;
+		Time.timeScale = 1f;
+	}
 
     public void LoadNextScene(string sceneToLoad)
     {

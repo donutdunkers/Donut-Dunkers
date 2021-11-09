@@ -36,8 +36,22 @@ public class BallController : MonoBehaviour, ICanReset {
 	public bool IsMoving {
 		set {
 			this.isMoving = value;
+			if (value) {
+				this.CanAct = false;
+			}
 		} get {
 			return this.isMoving;
+		}
+	}
+	
+	private bool canAct;
+	
+	public bool CanAct {
+		set {
+			this.canAct = value;
+			BallSkin.Instance.ToggleArrows(value);
+		} get {
+			return this.canAct;
 		}
 	}
 	

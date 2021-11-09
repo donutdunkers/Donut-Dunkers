@@ -222,18 +222,26 @@ public class LevelData : MonoBehaviour {
 	private void GenerateGridWalls() {
 		
 		Material floorMat;
-		Material wallMat;
+		
+		Material wallLowMat;
+		Material wallMidMat;
+		Material wallHighMat;
+		
 		Material ceilingMat;
 		
 		switch (this.roomType) {
 			case RoomType.Kitchen:
 				floorMat = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.floorMat;
-				wallMat = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.wallMat;
+				wallLowMat = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.wallLowMat;
+				wallMidMat = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.wallMidMat;
+				wallHighMat = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.wallHighMat;
 				ceilingMat = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.ceilingMat;
 				break;
 			default:
 				floorMat = ScriptableSingleton<LevelRoomData>.Instance.noData.floorMat;
-				wallMat = ScriptableSingleton<LevelRoomData>.Instance.noData.wallMat;
+				wallLowMat = ScriptableSingleton<LevelRoomData>.Instance.noData.wallLowMat;
+				wallMidMat = ScriptableSingleton<LevelRoomData>.Instance.noData.wallMidMat;
+				wallHighMat = ScriptableSingleton<LevelRoomData>.Instance.noData.wallHighMat;
 				ceilingMat = ScriptableSingleton<LevelRoomData>.Instance.noData.ceilingMat;
 				break;
 		}
@@ -279,7 +287,7 @@ public class LevelData : MonoBehaviour {
 				Vector3 pos = new Vector3((this.size / 2), initY + y, initZ + z);
 				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
 				Renderer renderer = tile.GetComponentInChildren<Renderer>();
-				renderer.material = wallMat;
+				renderer.material = ((y == 0) ? wallLowMat : (y == this.size -1) ? wallHighMat : wallMidMat);
 				tile.transform.forward = -Vector3.right;
 			}
 		}
@@ -290,7 +298,7 @@ public class LevelData : MonoBehaviour {
 				Vector3 pos = new Vector3(-(this.size / 2), initY + y, initZ + z);
 				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
 				Renderer renderer = tile.GetComponentInChildren<Renderer>();
-				renderer.material = wallMat;
+				renderer.material = ((y == 0) ? wallLowMat : (y == this.size -1) ? wallHighMat : wallMidMat);
 				tile.transform.forward = Vector3.right;
 			}
 		}
@@ -301,7 +309,7 @@ public class LevelData : MonoBehaviour {
 				Vector3 pos = new Vector3(initX + x, initY + y, (this.size / 2));
 				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
 				Renderer renderer = tile.GetComponentInChildren<Renderer>();
-				renderer.material = wallMat;
+				renderer.material = ((y == 0) ? wallLowMat : (y == this.size -1) ? wallHighMat : wallMidMat);
 				tile.transform.forward = -Vector3.forward;
 			}
 		}
@@ -312,7 +320,7 @@ public class LevelData : MonoBehaviour {
 				Vector3 pos = new Vector3(initX + x, initY + y, -(this.size / 2));
 				GameObject tile = Instantiate(this.wallPrefab, pos, Quaternion.identity, this.levelGridContainer);
 				Renderer renderer = tile.GetComponentInChildren<Renderer>();
-				renderer.material = wallMat;
+				renderer.material = ((y == 0) ? wallLowMat : (y == this.size -1) ? wallHighMat : wallMidMat);
 				tile.transform.forward = Vector3.forward;
 			}
 		}

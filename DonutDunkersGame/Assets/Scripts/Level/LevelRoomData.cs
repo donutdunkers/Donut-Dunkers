@@ -14,6 +14,6 @@ public class RoomData {
 	
 	// add music to this too
 	
-	public Material floorMat, wallMat, ceilingMat;
+	public Material floorMat, wallLowMat, wallMidMat, wallHighMat, ceilingMat;
 	
 }

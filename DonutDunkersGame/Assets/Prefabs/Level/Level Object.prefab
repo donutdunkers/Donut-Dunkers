@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3039774739033002271}
   - component: {fileID: 3039774739033002256}
+  - component: {fileID: 4031060974420456360}
   m_Layer: 0
   m_Name: Level Object
   m_TagString: Untagged
@@ -142,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 5
   turns: 30
+  LevelKey: test
   tilePrefab: {fileID: 5056693676444722562, guid: e58948b6af981804d8dbfb066c64f29e, type: 3}
   wallPrefab: {fileID: 5056693676444722562, guid: 2ff1e2c916f9bb145884e731af14baae, type: 3}
   ball: {fileID: 3039774740062608500}
@@ -149,6 +151,18 @@ MonoBehaviour:
   levelGridContainer: {fileID: 3039774738836187544}
   levelRotationContainer: {fileID: 3039774739147608108}
   roomType: 0
+--- !u!114 &4031060974420456360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039774739033002270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6c2e981ffb243bc902d3f713edf937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3039774739147608107
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,11 +837,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9cd88fef03384b4b8657a6069127096, type: 3}
---- !u!4 &3039774740049768114 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5426953311872979436, guid: a9cd88fef03384b4b8657a6069127096, type: 3}
-  m_PrefabInstance: {fileID: 7025362865612570462}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3039774740062608500 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5426953311853847338, guid: a9cd88fef03384b4b8657a6069127096, type: 3}
@@ -839,6 +848,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5dfc012453fbf478859f1ad3cfb516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3039774740049768114 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5426953311872979436, guid: a9cd88fef03384b4b8657a6069127096, type: 3}
+  m_PrefabInstance: {fileID: 7025362865612570462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7584928993897516903
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e035b75d70d2f45b4803539cacbd72, type: 3}
+  m_Name: Level Room Database
+  m_EditorClassIdentifier: 
+  noData:
+    floorMat: {fileID: 2100000, guid: 993a3d69c89e4db4b8c7eb91e959d448, type: 2}
+    wallLowMat: {fileID: 2100000, guid: ceeb652448bff2748880702bd46c9165, type: 2}
+    wallMidMat: {fileID: 2100000, guid: ceeb652448bff2748880702bd46c9165, type: 2}
+    wallHighMat: {fileID: 2100000, guid: ceeb652448bff2748880702bd46c9165, type: 2}
+    ceilingMat: {fileID: 2100000, guid: d3bced2614191d743b120efe8475c47c, type: 2}
+  kitchenData:
+    floorMat: {fileID: 2100000, guid: 05f270f810c3cc94b8048af22df7cfee, type: 2}
+    wallLowMat: {fileID: 2100000, guid: 59a562d6c36e71249b3e9c714eaf0b86, type: 2}
+    wallMidMat: {fileID: 2100000, guid: 5e530337f6cb34844bed10853486d787, type: 2}
+    wallHighMat: {fileID: 2100000, guid: 95178d3135711514c895fe91e96d7fd2, type: 2}
+    ceilingMat: {fileID: 2100000, guid: 155d2c17a8d4c824b843dc6687ddf62b, type: 2}

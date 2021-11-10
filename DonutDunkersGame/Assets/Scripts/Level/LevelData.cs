@@ -110,6 +110,7 @@ public class LevelData : MonoBehaviour {
 		
 		this.GenerateGridTiles();
 		this.GenerateGridWalls();
+		this.GenerateLevelTheme();
 		
 		this.Turns = this.initialTurns;
 		
@@ -140,6 +141,43 @@ public class LevelData : MonoBehaviour {
 				}
 			}
 		}
+	}
+	
+	private void GenerateLevelTheme() {
+		
+		GameObject angleObj;
+		GameObject wallObj;
+		
+		switch(this.roomType) {
+			case RoomType.Kitchen:
+				angleObj = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.angleObj;
+				wallObj = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.wallObj;
+				break;
+			default:
+				return;
+				break;
+		}
+		
+		ObjAngle[] angles = (ObjAngle[])FindObjectsOfType(typeof(ObjAngle));
+		ObjWall[] walls = (ObjWall[])FindObjectsOfType(typeof(ObjWall));
+		
+		for (int i = 0; i < angles.Length; i++) {
+			angles[i].tempObj.SetActive(false);
+			GameObject angle = GameObject.Instantiate(angleObj, angles[i].transform.position, Quaternion.identity, angles[i].transform);
+			angle.transform.localPosition = Vector3.zero;
+			angle.transform.localEulerAngles = new Vector3(0f, 0f, -90f);
+		}
+		
+		
+		// Temporarily disabled
+		/*
+		for (int i = 0; i < walls.Length; i++) {
+			walls[i].tempObj.SetActive(false);
+			GameObject wall = GameObject.Instantiate(wallObj, walls[i].transform.position, Quaternion.identity, walls[i].transform);
+			wall.transform.localPosition = Vector3.zero;
+			wall.transform.localEulerAngles = Vector3.zero;
+		}
+		*/
 	}
 	
 	private void GenerateGridTiles() {

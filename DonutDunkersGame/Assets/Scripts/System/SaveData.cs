@@ -20,11 +20,11 @@ public class SaveData : MonoBehaviour
     private void Start() {
         string levelKey = LevelData.Instance.LevelKey;
         int didBeatLevel = PlayerPrefs.GetInt(levelKey);
+        int turns = PlayerPrefs.GetInt(levelKey + "_turns");
         if (didBeatLevel == 1) {
-            Debug.Log(levelKey + " has been beaten");
-            PlayerPrefs.SetInt(levelKey, 0);
+            Debug.Log(levelKey + " has been beaten in " + turns + "turns");
         } else {
-            Debug.Log(levelKey + "has not been beaten");
+            Debug.Log(levelKey + " has not been beaten");
         }
     }
 
@@ -33,6 +33,7 @@ public class SaveData : MonoBehaviour
         {
             Debug.Log("Beat level: " + LevelData.Instance.LevelKey);
             PlayerPrefs.SetInt(LevelData.Instance.LevelKey, 1);
+            PlayerPrefs.SetInt(LevelData.Instance.LevelKey + "_turns", LevelData.Instance.TurnsTaken);
             PlayerPrefs.Save();
         }
     }

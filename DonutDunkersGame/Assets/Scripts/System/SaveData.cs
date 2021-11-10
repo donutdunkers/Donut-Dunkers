@@ -31,9 +31,17 @@ public class SaveData : MonoBehaviour
     private void Update() {
         if (LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {
+            int turns = PlayerPrefs.GetInt(LevelData.Instance.LevelKey + "_turns");
+            bool didBeatLevel = PlayerPrefs.GetInt(LevelData.Instance.LevelKey) == 1;
+            if (didBeatLevel) {
+                turns = turns < LevelData.Instance.TurnsTaken ? turns : LevelData.Instance.TurnsTaken;
+            } else {
+                turns = LevelData.Instance.TurnsTaken;
+            }
+
             Debug.Log("Beat level: " + LevelData.Instance.LevelKey);
             PlayerPrefs.SetInt(LevelData.Instance.LevelKey, 1);
-            PlayerPrefs.SetInt(LevelData.Instance.LevelKey + "_turns", LevelData.Instance.TurnsTaken);
+            PlayerPrefs.SetInt(LevelData.Instance.LevelKey + "_turns", turns);
             PlayerPrefs.Save();
         }
     }

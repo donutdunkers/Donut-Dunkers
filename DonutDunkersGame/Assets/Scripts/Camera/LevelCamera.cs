@@ -25,6 +25,7 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 	[NonSerialized]
 	public Camera camera;
 	
+	[SerializeField]
 	private Transform pivot;
 	
 	[SerializeField]
@@ -45,7 +46,7 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 		
 		float average = (LevelData.Instance.size + LevelData.Instance.size + LevelData.Instance.size) / 3f;
 		this.camera.transform.position = -this.camera.transform.forward * (100f * LevelData.Instance.size);
-		this.pivot = LevelData.Instance.levelRotationContainer;
+	//	this.pivot = LevelData.Instance.levelRotationContainer;
 		this.baseRotation = this.pivot.rotation;
 		this.Initialize();
 	}
@@ -84,13 +85,13 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 		
 		if (Input.GetKey(KeyCode.A)) {
 			Vector3 rot = this.pivot.eulerAngles;
-			rot.y -= curRotSpeed * Time.deltaTime;
+			rot.y += curRotSpeed * Time.deltaTime;
 			this.pivot.eulerAngles = rot;
 		//	this.DoRotation(rot * Quaternion.AngleAxis(-ROTATION_HORIZONTAL_ANGLE, Vector3.up));
 		}
 		if (Input.GetKey(KeyCode.D)) {
 			Vector3 rot = this.pivot.eulerAngles;
-			rot.y += curRotSpeed * Time.deltaTime;
+			rot.y -= curRotSpeed * Time.deltaTime;
 			this.pivot.eulerAngles = rot;
 		//	this.DoRotation(rot * Quaternion.AngleAxis(ROTATION_HORIZONTAL_ANGLE, Vector3.up));
 			

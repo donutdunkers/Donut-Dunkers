@@ -17,8 +17,23 @@ public class SaveData : MonoBehaviour
         }
     }
 
-    public void BeatLevel(string levelKey) {
-        PlayerPrefs.SetInt(levelKey, 1);
-        PlayerPrefs.Save();
+    private void Start() {
+        string levelKey = LevelData.Instance.LevelKey;
+        int didBeatLevel = PlayerPrefs.GetInt(levelKey);
+        if (didBeatLevel == 1) {
+            Debug.Log(levelKey + " has been beaten");
+            PlayerPrefs.SetInt(levelKey, 0);
+        } else {
+            Debug.Log(levelKey + "has not been beaten");
+        }
+    }
+
+    private void Update() {
+        if (LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
+        {
+            Debug.Log("Beat level: " + LevelData.Instance.LevelKey);
+            PlayerPrefs.SetInt(LevelData.Instance.LevelKey, 1);
+            PlayerPrefs.Save();
+        }
     }
 }

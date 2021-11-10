@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObjAngle : ObjectInteraction, ICanReset {
 	
+	public GameObject tempObj;
+	
 	public void Initialize() {
 		this.ResetRoutine();
 	}

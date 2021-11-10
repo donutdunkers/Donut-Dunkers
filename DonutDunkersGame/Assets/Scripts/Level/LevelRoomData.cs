@@ -16,4 +16,6 @@ public class RoomData {
 	
 	public Material floorMat, wallLowMat, wallMidMat, wallHighMat, ceilingMat;
 	
+	public GameObject wallObj, angleObj;
+	
 }

@@ -1,4 +1,4 @@
-Shader "Custom/Toon_Extrude_Outline_Shader"
+Shader "Custom/Toon_Extrude_Transparent"
 {
     Properties
     {
@@ -8,13 +8,21 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
         _ShadeNum ("Shade Number", Range(1,40)) = 3.0
         _Gloss ("Gloss", Range (0,1)) = 0.5
         _ShadowColor ("Shadow Color", Color) = (0,0,0,1)
+        _Opacity ("Opacity", Range (0,1)) = 1.0
+        _WiggleIntensity ("Wiggle Intensity", Range (0,1)) = 1.0
+        _WiggleSpeed ("Wiggle Speed", Range (0,10)) = 1.0
+        _WiggleDir ("Wiggle Direction", Vector) = (1,0,0)
 
       
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "Queue" = "Transparent" "RenderType"="Transparent" }
         LOD 100
+
+        ZWrite Off
+        Blend SrcAlpha OneMinusSrcAlpha
+
         Pass
         {
             CGPROGRAM
@@ -53,11 +61,15 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
             float3 _ShadowColor;
             float3 _SpecularIntensity;
             half4 _BaseColor;
+            float _Opacity;
+            float _WiggleIntensity;
+            float _WiggleSpeed;
+            float3 _WiggleDir; 
 
             v2f vert (appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.vertex = UnityObjectToClipPos(v.vertex + (normalize(_WiggleDir) * ((v.vertex.y+0.5) * _WiggleIntensity * sin(_Time.z * _WiggleSpeed))));
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.normal = UnityObjectToWorldNormal (v.normal);
                 o.worldTangent = UnityObjectToWorldDir (v.tangent.xyz);
@@ -67,7 +79,7 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            half4 frag (v2f i) : SV_Target
             {
                 float3 NormalMap = UnpackNormal (tex2D (_BumpMap, i.uv));
                 float3x3 tangentMatrix = {
@@ -92,19 +104,19 @@ Shader "Custom/Toon_Extrude_Outline_Shader"
                 float specularFalloff = dot (viewReflect, _WorldSpaceLightPos0.xyz)*0.5 +0.5;
 
                 float specularExponent = exp2( _Gloss * 11) + 2; 
-                float specularLight = pow (specularFalloff, specularExponent) * _Gloss * _ShadeNum;
+                float specularLight = pow (specularFalloff, specularExponent) * _ShadeNum;
                 
                 // Outline
                 //float outline = 1-step(dot(normalize(tangentNormal), normalize (viewDir)), 0.35);
 
 
-                fixed4 col =(tex2D(_MainTex, i.uv)* fixed4(colorLight,1) + (round(specularLight)/_ShadeNum)) * _BaseColor;
+                half4 col =(tex2D(_MainTex, i.uv)* fixed4(colorLight,1) + (round(specularLight)/_ShadeNum)) * _BaseColor;
 
-                return col;
+                return half4 (col.x, col.y, col.z, _Opacity);
             }
             ENDCG
         }
-
         
     }
+    
 }

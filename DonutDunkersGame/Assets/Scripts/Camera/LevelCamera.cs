@@ -41,13 +41,23 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 	
 	private float curRotSpeed = 0f;
 	
+	private bool isPerspective;
+	
+	private float PERSPECTIVE_VIEW_TOGGLE_SPEED = 15f;
+	
 	private void Start() {
 		this.camera = this.GetComponentInChildren<Camera>();
 		
 		float average = (LevelData.Instance.size + LevelData.Instance.size + LevelData.Instance.size) / 3f;
 		this.camera.transform.position = -this.camera.transform.forward * (100f * LevelData.Instance.size);
+		this.camera.fieldOfView = 1f;
 	//	this.pivot = LevelData.Instance.levelRotationContainer;
 		this.baseRotation = this.pivot.rotation;
+		this.isPerspective = false;
+		
+		float distance = Vector3.Distance(this.camera.transform.position, Vector3.zero);
+		this.initHeightAtDist = this.FrustumHeightAtDistance(distance);
+		
 		this.Initialize();
 	}
 	
@@ -73,6 +83,10 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 			if (TutorialWindow.Instance.IsTutorialActive()) {
 				return;
 			}
+		}
+		
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			this.TogglePerspective();
 		}
 		
 		if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive) {
@@ -152,5 +166,40 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 		rot.y = Mathf.Round(rot.y);
 		this.pivot.eulerAngles = rot;
 		this.isRotating = false;
+	}
+
+	private void TogglePerspective() {
+		if (this.perspectiveRoutine != null) {
+			this.StopCoroutine(this.perspectiveRoutine);
+		}
+		this.perspectiveRoutine = this.StartCoroutine(this.PerspectiveRoutine());
+	}
+
+	private Coroutine perspectiveRoutine;
+
+	private float initHeightAtDist;
+
+    // Calculate the frustum height at a given distance from the camera.
+	private float FrustumHeightAtDistance(float distance) {
+        return 2.0f * distance * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad);
+    }
+
+    // Calculate the FOV needed to get a given frustum height at a given distance.
+    private float FOVForHeightAndDistance(float height, float distance) {
+        return 2.0f * Mathf.Atan(height * 0.5f / distance) * Mathf.Rad2Deg;
+    }
+	
+	public IEnumerator PerspectiveRoutine() {
+		float zPos = (this.isPerspective) ? -100f * LevelData.Instance.size : (LevelData.Instance.size * -1f) - (LevelData.Instance.size * 1.5f);
+		Vector3 targetPos = new Vector3(0f, 0f, zPos);
+		float speed = (this.isPerspective) ? PERSPECTIVE_VIEW_TOGGLE_SPEED / (PERSPECTIVE_VIEW_TOGGLE_SPEED * 4f) : PERSPECTIVE_VIEW_TOGGLE_SPEED;
+		this.isPerspective = !this.isPerspective;
+		while (this.camera.transform.localPosition != targetPos) {
+			this.camera.transform.localPosition = Vector3.Lerp(this.camera.transform.localPosition, targetPos, Time.deltaTime * speed);
+			float currDistance = Vector3.Distance(this.camera.transform.position, Vector3.zero);
+			this.camera.fieldOfView = FOVForHeightAndDistance(this.initHeightAtDist, currDistance);
+			yield return null;
+		}
+		this.perspectiveRoutine = null;
 	}
 }

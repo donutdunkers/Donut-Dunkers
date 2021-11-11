@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912d543aa230773439e2c83fbc4e83f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomType: 0
   size: 5
   turns: 30
   LevelKey: test
@@ -150,19 +151,6 @@ MonoBehaviour:
   levelContainer: {fileID: 3039774740432698359}
   levelGridContainer: {fileID: 3039774738836187544}
   levelRotationContainer: {fileID: 3039774739147608108}
-  roomType: 0
---- !u!114 &4031060974420456360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039774739033002270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f6c2e981ffb243bc902d3f713edf937, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3039774739147608107
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +768,7 @@ MonoBehaviour:
     m_Bits: 576
   idleColor: {r: 0, g: 1, b: 0.98039216, a: 0.2509804}
   highlightColor: {r: 1, g: 0.9292666, b: 0, a: 0.2509804}
+  CanSelect: 0
 --- !u!1001 &7025362865612570462
 PrefabInstance:
   m_ObjectHideFlags: 0

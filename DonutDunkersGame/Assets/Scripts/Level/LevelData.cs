@@ -18,6 +18,9 @@ public class LevelData : MonoBehaviour {
         }
     }
 	
+	[SerializeField]
+	private RoomType roomType;
+	
 	[SerializeField, Range(4, 20)]
 	public int size = 4;
 	
@@ -92,9 +95,6 @@ public class LevelData : MonoBehaviour {
 	[NonSerialized]
 	public Vector3 LevelStartPosition;
 	
-	[SerializeField]
-	private RoomType roomType;
-	
 	private void Awake() {
 		if (SoundManager.Instance == null) {
 			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
@@ -119,7 +119,7 @@ public class LevelData : MonoBehaviour {
 	}
 	
 	private void Update() {
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.F1)) {
 			this.ResetLevel();
 		}
 	}

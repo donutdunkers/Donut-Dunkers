@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912d543aa230773439e2c83fbc4e83f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomType: 0
   size: 5
   turns: 30
   tilePrefab: {fileID: 5056693676444722562, guid: e58948b6af981804d8dbfb066c64f29e, type: 3}
@@ -148,7 +149,6 @@ MonoBehaviour:
   levelContainer: {fileID: 3039774740432698359}
   levelGridContainer: {fileID: 3039774738836187544}
   levelRotationContainer: {fileID: 3039774739147608108}
-  roomType: 0
 --- !u!1 &3039774739147608107
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +766,7 @@ MonoBehaviour:
     m_Bits: 576
   idleColor: {r: 0, g: 1, b: 0.98039216, a: 0.2509804}
   highlightColor: {r: 1, g: 0.9292666, b: 0, a: 0.2509804}
+  CanSelect: 0
 --- !u!1001 &7025362865612570462
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -32,7 +32,15 @@ public class PlayerGridSelection : MonoBehaviour {
 	
 	public Color idleColor, highlightColor;
 	
-	public bool CanSelect = false;
+	private bool canSelect = true;
+	
+	public bool CanSelect {
+		get {
+			return this.canSelect;
+		} set {
+			this.canSelect = value;
+		}
+	}
 	
 	private void Update() {
 		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive || LevelData.Instance.IsResetting || !this.CanSelect) {

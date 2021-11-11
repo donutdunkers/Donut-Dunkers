@@ -27,7 +27,7 @@ public class LevelData : MonoBehaviour {
 	private int ringsCollected = 0;
 
 	private int initialTurns;
-	
+	public String LevelKey = "test";
 	public int Turns {
 		set {
 			if (LevelUI.Instance != null) {

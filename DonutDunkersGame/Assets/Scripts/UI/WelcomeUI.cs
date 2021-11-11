@@ -60,13 +60,10 @@ public class WelcomeUI : MonoBehaviour
         {
             //ResumeAudio();
             return true;
-            Debug.Log("Move to Start Scene");
         }
 
         return false;
     }
 
     bool audioResumed = false;
-
-   
 }

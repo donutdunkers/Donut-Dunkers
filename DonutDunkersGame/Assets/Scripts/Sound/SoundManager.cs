@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
 
         if (currentSource.clip == audio)
         {
-            currentSource.volume = 1f;
+            currentSource.volume = volume;
             yield break;
         }
 

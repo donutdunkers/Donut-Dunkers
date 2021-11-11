@@ -106,7 +106,7 @@ public class LevelData : MonoBehaviour {
 	
 	private void Start() {
 		Sound music = ScriptableSingleton<MusicEvent>.Instance.Theme01;
-		SoundManager.Instance.CrossFade(music.audioClip, music.volume, 2.5f);
+		SoundManager.Instance.CrossFade(music.audioClip, AudioSettings.MusicVol, 2.5f);
 		
 		this.GenerateGridTiles();
 		this.GenerateGridWalls();
@@ -155,7 +155,6 @@ public class LevelData : MonoBehaviour {
 				break;
 			default:
 				return;
-				break;
 		}
 		
 		ObjAngle[] angles = (ObjAngle[])FindObjectsOfType(typeof(ObjAngle));

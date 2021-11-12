@@ -32,8 +32,18 @@ public class PlayerGridSelection : MonoBehaviour {
 	
 	public Color idleColor, highlightColor;
 	
+	private bool canSelect = true;
+	
+	public bool CanSelect {
+		get {
+			return this.canSelect;
+		} set {
+			this.canSelect = value;
+		}
+	}
+	
 	private void Update() {
-		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive || LevelData.Instance.IsResetting) {
+		if (LevelData.Instance.Turns <= 0 || GameMenuUI.Instance.IsPauseMenuActive || GameMenuUI.Instance.IsEndGameMenuActive || LevelData.Instance.IsResetting || !this.CanSelect) {
 			return;
 		}
 		if (TutorialWindow.Instance != null) {

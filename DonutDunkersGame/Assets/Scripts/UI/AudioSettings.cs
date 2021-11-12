@@ -18,6 +18,22 @@ public class AudioSettings : MonoBehaviour
     static float SFXVolume = 1f;
     static float MasterVolume = 1f;
 
+    public static float MusicVol
+    {
+        get
+        {
+            return MasterVolume * MusicVolume;
+        }
+    }
+
+    public static float SFXVol
+    {
+        get
+        {
+            return MasterVolume * SFXVolume;
+        }
+    }
+
     private void Awake()
     {
         MasterSlider.value = MasterVolume;

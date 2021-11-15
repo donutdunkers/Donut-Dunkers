@@ -22,6 +22,12 @@ public class BallSkin : MonoBehaviour, ICanReset {
 	[SerializeField]
 	private Transform ballTransform;
 	
+	public Transform BallTransform {
+		get {
+			return this.ballTransform;
+		}
+	}
+	
 	[SerializeField]
 	public GameObject[] directionArrows = new GameObject[6];
 	
@@ -30,7 +36,7 @@ public class BallSkin : MonoBehaviour, ICanReset {
 	}
 	
 	public void Initialize() {
-		this.ToggleArrows(true);
+	//	this.ToggleArrows(true);
 	}
 	
 	private void Update() {

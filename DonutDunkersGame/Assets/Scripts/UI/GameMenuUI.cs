@@ -68,9 +68,9 @@ public class GameMenuUI : MonoBehaviour {
     }
 
     public void RestartLevel() {
-        HidePauseMenu();
+			HidePauseMenu();
 	     	HideEndScreen();
-        gameEnded = false;
+			gameEnded = false;
 	    	LevelData.Instance.ResetLevel();
     }
     
@@ -99,6 +99,7 @@ public class GameMenuUI : MonoBehaviour {
     }
     //time scale doesn't really do what we want here, need to block input seperately
     private void ShowPauseMenu() {
+		PlayerGridSelection.Instance.CanSelect = false;
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }
@@ -106,7 +107,20 @@ public class GameMenuUI : MonoBehaviour {
     private void HidePauseMenu() {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+		if (this.pauseRoutine != null) {
+			this.StopCoroutine(this.pauseRoutine);
+		}
+		this.pauseRoutine = this.StartCoroutine(this.PauseRoutine());
     }
+	
+	private Coroutine pauseRoutine;
+	
+	private IEnumerator PauseRoutine() {
+		yield return new WaitForSeconds(0.05f);
+		PlayerGridSelection.Instance.CanSelect = true;
+		yield return null;
+	}
+		
 
     public void ShowEndScreen(bool isOutOfTurns) {
         HidePauseMenu();

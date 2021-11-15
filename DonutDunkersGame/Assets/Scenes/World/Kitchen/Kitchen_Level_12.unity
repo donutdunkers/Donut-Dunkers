@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44836205, g: 0.49839514, b: 0.575612, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -251,7 +251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7075420868929414739, guid: 816b7e0d6d9df49419f83655d2f257a6, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7075420868929414739, guid: 816b7e0d6d9df49419f83655d2f257a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -368,6 +368,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1029967980016225034, guid: 5559b6c2fb84fb644bc6ecabf8cb9f1b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1393982295242075612, guid: 5559b6c2fb84fb644bc6ecabf8cb9f1b, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9203639
@@ -392,6 +396,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 2708826913817582139, guid: 5559b6c2fb84fb644bc6ecabf8cb9f1b, type: 3}
+      propertyPath: field of view
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3037893847599809546, guid: 5559b6c2fb84fb644bc6ecabf8cb9f1b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -409,12 +417,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3039774739033002256, guid: 5559b6c2fb84fb644bc6ecabf8cb9f1b, type: 3}
-      propertyPath: size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3039774739033002256, guid: 5559b6c2fb84fb644bc6ecabf8cb9f1b, type: 3}
-      propertyPath: turns
-      value: 30
+      propertyPath: LevelKey
+      value: lvl_12
+      propertyPath: roomType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3039774739033002270, guid: 5559b6c2fb84fb644bc6ecabf8cb9f1b, type: 3}
       propertyPath: m_Name
@@ -1063,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4927137071942162485, guid: e8539e9b0fcafc94a9cf020a5fc2e297, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4927137071942162485, guid: e8539e9b0fcafc94a9cf020a5fc2e297, type: 3}
       propertyPath: m_LocalPosition.x

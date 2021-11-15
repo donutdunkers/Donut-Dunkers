@@ -49,7 +49,7 @@ public class BallController : MonoBehaviour, ICanReset {
 	public bool CanAct {
 		set {
 			this.canAct = value;
-			BallSkin.Instance.ToggleArrows(value);
+		//	BallSkin.Instance.ToggleArrows(value);
 		} get {
 			return this.canAct;
 		}
@@ -77,12 +77,14 @@ public class BallController : MonoBehaviour, ICanReset {
 	
 	public void Initialize() {
 		this.transform.localPosition = LevelData.Instance.LevelStartPosition;
+		BallSkin.Instance.BallTransform.localPosition = this.transform.localPosition;
+		BallSkin.Instance.BallTransform.gameObject.SetActive(true);
 		this.isMoving = false;
 		this.isAlive = true;
 	}
 	
 	private void Update() {
-		this.HandleLevelExit();
+	//	this.HandleLevelExit();
 	}
 	
 	private void HandleLevelExit() {
@@ -91,9 +93,7 @@ public class BallController : MonoBehaviour, ICanReset {
 		bool flagY = this.transform.position.y > distance || this.transform.position.y < -distance;
 		bool flagZ = this.transform.position.z > distance || this.transform.position.z < -distance;
 		if (flagX || flagY || flagZ) {
-			this.transform.localPosition = LevelData.Instance.StartPos;
-			this.isMoving = false;
-			LevelData.Instance.ResetLevel();
+			this.Explode();
 		}
 	}
 	
@@ -120,5 +120,15 @@ public class BallController : MonoBehaviour, ICanReset {
 		if (interaction != null) {
 			interaction.PlayerInteraction();
 		}
+	}
+	
+	public void Disable() {
+		this.IsMoving = false;
+		this.CanAct = false;
+	}
+	
+	public void Explode() {
+		BallSkin.Instance.BallTransform.gameObject.SetActive(false);
+		// Play VFX for explosion
 	}
 }

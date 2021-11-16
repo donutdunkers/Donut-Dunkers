@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &8402551047856876289
 Transform:
@@ -53,7 +53,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1833620167313227978
 Transform:
@@ -125,6 +125,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Fridge '
       objectReference: {fileID: 0}
+    - target: {fileID: 1666145378286623679, guid: dc8f2d7323a2aa2429429a899622a530, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609648581099964449, guid: dc8f2d7323a2aa2429429a899622a530, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741675523541410779, guid: dc8f2d7323a2aa2429429a899622a530, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378225098200036780, guid: dc8f2d7323a2aa2429429a899622a530, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8f2d7323a2aa2429429a899622a530, type: 3}
 --- !u!4 &1833620167958910583 stripped
@@ -139,9 +155,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -201,9 +225,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -263,9 +295,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -325,9 +365,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -387,9 +435,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -453,6 +509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Stove '
       objectReference: {fileID: 0}
+    - target: {fileID: 1021985564612692028, guid: 290c620e9e2d5614b9e1c597ab842f6a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1021985564612692031, guid: 290c620e9e2d5614b9e1c597ab842f6a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -497,6 +557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6928656254607971134, guid: 290c620e9e2d5614b9e1c597ab842f6a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290c620e9e2d5614b9e1c597ab842f6a, type: 3}
 --- !u!4 &1683362916045074044 stripped
@@ -511,9 +575,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -573,9 +645,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder

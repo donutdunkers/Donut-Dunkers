@@ -24,8 +24,6 @@ public class ObjRing : ObjectInteraction, ICanReset {
 	}
 	
 	public override bool CanMoveTowards() {
-		float angle = Vector3.Dot(this.transform.forward, (BallController.Instance.transform.position - this.transform.position).normalized);
-		Debug.Log(angle);
-		return angle > 0.3f;
+		return true;
 	}
 }

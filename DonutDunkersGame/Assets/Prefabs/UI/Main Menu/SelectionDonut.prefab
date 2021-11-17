@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseWidth: 0
-  highlightWidth: 5
-  selectedWidth: 10
+  highlightWidth: 7
+  selectedWidth: 9.65
   levelIndex: 0
   isSelected: 0

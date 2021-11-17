@@ -1245,11 +1245,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5763527956346873524, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -60
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5763527956346873524, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5763527956942171426, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
       propertyPath: m_Name
@@ -1390,6 +1390,18 @@ PrefabInstance:
     - target: {fileID: 6456711178316389467, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864619167660596453, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864619167660596453, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864619167660596453, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
+      propertyPath: m_characterSpacing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7083502294563530550, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
       propertyPath: m_AnchoredPosition.x

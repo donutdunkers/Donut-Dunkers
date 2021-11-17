@@ -79,9 +79,12 @@ public class GameMenuUI : MonoBehaviour {
     }
     
     public void NextLevel() {
-        if (nextLevelSceneName != "") {
-            LoadNextScene(LevelInfo.Instance.currWorld.GetNextLevel());
+        if(!LevelInfo.Instance.currWorld) {
+            //When loading level from Editor, this won't work 
+            Debug.LogError("World Not Set, this scene was probably loaded from the Editor");
         }
+        LoadNextScene(LevelInfo.Instance.currWorld.GetNextLevel());
+        
     }
 
     public void ExitToMain() {

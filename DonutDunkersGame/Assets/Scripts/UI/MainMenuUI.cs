@@ -9,6 +9,7 @@ public class MainMenuUI : MonoBehaviour {
     private Stack<GameObject> uiStack;
 
 	private void Awake() {
+        Time.timeScale = 1f;
 		if (SoundManager.Instance == null) {
 			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
 			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);

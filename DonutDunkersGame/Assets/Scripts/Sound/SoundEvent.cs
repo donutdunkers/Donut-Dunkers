@@ -7,14 +7,14 @@ using UnityEngine;
 public class SoundEvent : ScriptableSingleton<SoundEvent>
 {
     //variable for each sound effect we have, one time sounds
-    public Sound sndDonutget;
-    public Sound sndDonuthitWall;
+    public Sound sndDonutmoving; //faint sound that plays as ball is moving
+    public SoundArray sndDonuthitWall;
     public Sound sndDonuthitJelly;
-    public Sound sndDonuthitWater;
+    public SoundArray sndDonuthitWater;
     public Sound sndDonuthitFullsink;
     public Sound sndDonuthitPlate;
     public Sound sndDonuthitWindow;
-    public Sound sndDonutlaunch;
+    public SoundArray sndDonutlaunch;
 
     //UI Sounds
     public Sound sndButtonClickBack;

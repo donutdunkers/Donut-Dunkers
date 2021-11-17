@@ -12,17 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f6c679141d1e54fa5362f235bbef6f, type: 3}
   m_Name: Audio_Sound
   m_EditorClassIdentifier: 
-  sndDonutget:
-    audioClip: {fileID: 8300000, guid: e08a5dc2c6ca0b24ba6d5fcbc2afd1d6, type: 3}
+  sndDonutmoving:
+    audioClip: {fileID: 8300000, guid: 8ac3735e504c308428fcc2496c326d8a, type: 3}
     volume: 1
   sndDonuthitWall:
-    audioClip: {fileID: 8300000, guid: 8183ac5357c400442972ba71bfd37567, type: 3}
+    audioCliplist:
+    - {fileID: 8300000, guid: 733a525d57abbf74f803183b8de10c01, type: 3}
+    - {fileID: 8300000, guid: 5620a6437f39a8847834dc7a3aedebde, type: 3}
+    - {fileID: 8300000, guid: 700c1261485238b41add689c77e1dba0, type: 3}
+    - {fileID: 8300000, guid: 23e48d4a40e479640af6b20ba69734f6, type: 3}
+    - {fileID: 8300000, guid: df5c9c57478c698458612a6f5b309fe6, type: 3}
+    - {fileID: 8300000, guid: ff3a0ee4412bbdb44be4f9ecd554cdfd, type: 3}
+    - {fileID: 8300000, guid: d9fcea18e9050b34a9e79e5d3039f925, type: 3}
+    - {fileID: 8300000, guid: 145b42526475b7749b5c65e7f33f767c, type: 3}
+    - {fileID: 8300000, guid: 95b37dc75c1640a49948d57e5144a10b, type: 3}
     volume: 1
   sndDonuthitJelly:
     audioClip: {fileID: 8300000, guid: 1002bcf9f19fb9345856d3df939b6a8c, type: 3}
     volume: 1
   sndDonuthitWater:
-    audioClip: {fileID: 8300000, guid: 6c526ded49bdd184c8722935ecf73466, type: 3}
+    audioCliplist:
+    - {fileID: 8300000, guid: 81f1314109402a8498aebb1419ef91bb, type: 3}
+    - {fileID: 8300000, guid: 45858f3a8d50e824bb29c2f5d1f0a020, type: 3}
+    - {fileID: 8300000, guid: fe38ddeebf1b6dd48aae5a4f29a7b078, type: 3}
+    - {fileID: 8300000, guid: 0b3a631921820f045a226c800be86a8f, type: 3}
+    - {fileID: 8300000, guid: d0fea0f5f3229f5458db8faeab191093, type: 3}
+    - {fileID: 8300000, guid: df8a2fff5ad5d7447b99c408706537dc, type: 3}
+    - {fileID: 8300000, guid: 058b2bec2c9cf0b45b6c27dafd82c3fa, type: 3}
+    - {fileID: 8300000, guid: 5a5c74aca9cc8194494781bc4dd9c854, type: 3}
+    - {fileID: 8300000, guid: 06e6306f3c9e2034281b02886080f926, type: 3}
     volume: 1
   sndDonuthitFullsink:
     audioClip: {fileID: 8300000, guid: 9de626a23b6c7c34987ba9d8e2fab3ee, type: 3}
@@ -34,14 +52,19 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 61e347ae8fc02bd419e41bb20cfee3e0, type: 3}
     volume: 1
   sndDonutlaunch:
-    audioClip: {fileID: 8300000, guid: 7e5507a946975ef4e9ab30bab4206317, type: 3}
+    audioCliplist:
+    - {fileID: 8300000, guid: 9611d6e63cc341d4cb4323ece1e3b1ae, type: 3}
+    - {fileID: 8300000, guid: af66bbec8fd7cbf4eb32dc1904a7b3cc, type: 3}
+    - {fileID: 8300000, guid: b9f5167a5295c1048ac3ab8600164c08, type: 3}
+    - {fileID: 8300000, guid: 2e1b501faf34c5041b012b2fc81a4859, type: 3}
+    - {fileID: 8300000, guid: 01d957fb027b6404bb0fdd3d68e154c7, type: 3}
     volume: 1
   sndButtonClickBack:
-    audioClip: {fileID: 8300000, guid: d2942837fc50f414b83e0dd8efb1e498, type: 3}
+    audioClip: {fileID: 8300000, guid: b82ffceccb7b5c649aaa1d4078b5b447, type: 3}
     volume: 1
   sndButtonClickForward:
-    audioClip: {fileID: 8300000, guid: 1367762533e32c5438f015b39f500a26, type: 3}
+    audioClip: {fileID: 8300000, guid: bf8e60c41a4bf794db34df39f13af8c7, type: 3}
     volume: 1
   sndTitleScreen:
-    audioClip: {fileID: 8300000, guid: 2a55c4884dc9e3b4d8739fbfbe4253eb, type: 3}
+    audioClip: {fileID: 8300000, guid: 21ac58cca03eb9740b037c5c2e58cf6d, type: 3}
     volume: 1

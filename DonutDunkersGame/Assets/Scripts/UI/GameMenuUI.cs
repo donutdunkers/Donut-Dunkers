@@ -25,8 +25,6 @@ public class GameMenuUI : MonoBehaviour {
     private GameObject pauseMenu;
     [SerializeField]
     private GameObject endGameMenu;
-    [SerializeField, Tooltip("Set this for each level")]
-    private string nextLevelSceneName;
 
     private bool gameEnded = false;
 	
@@ -83,7 +81,9 @@ public class GameMenuUI : MonoBehaviour {
             //When loading level from Editor, this won't work 
             Debug.LogError("World Not Set, this scene was probably loaded from the Editor");
         }
-        LoadNextScene(LevelInfo.Instance.currWorld.GetNextLevel());
+        LevelSettings nextLevel = LevelInfo.Instance.currWorld.GetNextLevel();
+        LevelInfo.Instance.currLevel = nextLevel;
+        LoadNextScene(nextLevel.sceneName);
         
     }
 
@@ -132,8 +132,7 @@ public class GameMenuUI : MonoBehaviour {
     public void ShowEndScreen(bool isOutOfTurns) {
         HidePauseMenu();
         endGameMenu.SetActive(true);
-        if (nextLevelSceneName.Equals(""))
-        {
+        if (LevelInfo.Instance.currWorld.GetNextLevel() == null){
             GameObject.Find("NextLevelButton").GetComponent<Button>().interactable = false;
         }
         endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);

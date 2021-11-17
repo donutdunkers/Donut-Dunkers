@@ -12514,10 +12514,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1030827352}
+    - target: {fileID: 8643267984582631680, guid: a6496acdde4f5f042b5c0549424b3028, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8643267984745450194, guid: a6496acdde4f5f042b5c0549424b3028, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 147209574}
+    - target: {fileID: 8643267984745450198, guid: a6496acdde4f5f042b5c0549424b3028, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8643267985118836004, guid: a6496acdde4f5f042b5c0549424b3028, type: 3}
       propertyPath: m_Name
       value: WorldBox1

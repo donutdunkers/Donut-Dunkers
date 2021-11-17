@@ -37,7 +37,6 @@ public class LevelData : MonoBehaviour {
 				LevelUI.Instance.SetRemainingTurns(value);
 			}
 			this.turns = value;
-			Debug.Log("Updating turns");
 		} get {
 			return this.turns;
 		}

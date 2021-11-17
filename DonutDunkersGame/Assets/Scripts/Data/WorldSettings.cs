@@ -10,8 +10,10 @@ public class WorldSettings : ScriptableObject {
     public int worldIndex;
     public List<LevelSettings> levels;
 
-    public string GetNextLevel(int currLevelIndex) {
-        if (currLevelIndex < levels.Count - 1) {
+    public string GetNextLevel() {
+        int currLevelIndex = LevelInfo.Instance.currLevel.levelIndex;
+        if (currLevelIndex + 1 < levels.Count - 1) {
+            currLevelIndex++;
             return levels[currLevelIndex].sceneName;
         }
         return "Menu_Main";

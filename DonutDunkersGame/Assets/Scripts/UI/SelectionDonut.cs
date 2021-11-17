@@ -12,10 +12,10 @@ public class SelectionDonut : MonoBehaviour {
     public int levelIndex;
     public bool isSelected;
 
-    private LevelSelectManager selectionManager;
+    private LevelSelectController selectionController;
     void Awake() {
         materials = GetComponentInChildren<Renderer>().materials;
-        selectionManager = GetComponentInParent<LevelSelectManager>();
+        selectionController = GetComponentInParent<LevelSelectController>();
     }
 
     public void Initialize(int index) {
@@ -31,14 +31,13 @@ public class SelectionDonut : MonoBehaviour {
     void OnMouseEnter() {
         if (isSelected) return;
         SetOutlineWidth(highlightWidth);
-        Debug.Log("Mouse Enter");
     }
 
     void OnMouseDown() {
         if (isSelected) return;
             
         OnSelected();
-        SetOutlineWidth(selectedWidth);
+        
     }
 
     void OnMouseExit() {
@@ -46,9 +45,10 @@ public class SelectionDonut : MonoBehaviour {
         SetOutlineWidth(baseWidth); 
     }
 
-    void OnSelected() {
-        if (selectionManager.SelectLevel(levelIndex)) {
+    public void OnSelected() {
+        if (selectionController.SelectLevel(levelIndex)) {
             isSelected = true;
+            SetOutlineWidth(selectedWidth);
         }
     }
 

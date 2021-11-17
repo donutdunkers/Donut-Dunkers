@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pixelplacement;
+using TMPro;
 
 public class WorldBoxController : MonoBehaviour
 {
@@ -17,17 +18,20 @@ public class WorldBoxController : MonoBehaviour
     public Canvas WorldUICanvas;
     public Animator boxAnimator;
 
+    public TextMeshProUGUI worldNameText;
+
     private Vector3 standardScale;
     private Vector3 standardRotation;
     private Canvas worldCanvas;
 
-    private LevelSelectManager selectionManager;
+    private LevelSelectController selectionController;
     void Start()
     {
-        selectionManager = GetComponentInChildren<LevelSelectManager>();
+        selectionController = GetComponentInChildren<LevelSelectController>();
         standardScale = boxGeo.localScale;
         standardRotation = boxGeo.localEulerAngles;
         boxGeo.localScale = unfocusedScale;
+        worldNameText.SetText(worldSettings.worldName);
     }
 
     public void BoxGainFocus()
@@ -43,7 +47,7 @@ public class WorldBoxController : MonoBehaviour
     public void Open()
     {
         StartCoroutine(EnabledUIOnDelay(1.1f, LevelUICanvas));
-        selectionManager.SelectWorld(worldSettings);
+        selectionController.SelectWorld();
         WorldUICanvas.gameObject.SetActive(false);
         Tween.LocalRotation(boxGeo, Vector3.zero, 0.75f, 0, Tween.EaseInOut);
         boxAnimator.SetBool("isOpen", true);
@@ -52,7 +56,7 @@ public class WorldBoxController : MonoBehaviour
     public void Close()
     {
         StartCoroutine(EnabledUIOnDelay(1.1f, WorldUICanvas));
-        selectionManager.DeselectWorld();
+        selectionController.DeselectWorld();
 
         LevelUICanvas.gameObject.SetActive(false);
         Tween.LocalRotation(boxGeo, standardRotation, 0.75f, 0, Tween.EaseInOut);

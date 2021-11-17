@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +18,8 @@ public class GameMenuUI : MonoBehaviour {
             return _Instance;
         }
     }
+
+    
     
     [SerializeField]
     private GameObject pauseMenu;
@@ -39,6 +41,8 @@ public class GameMenuUI : MonoBehaviour {
 			return this.endGameMenu.activeSelf;
 		}
 	}
+
+    
 
     private void Start() {
         pauseMenu.SetActive(false);
@@ -76,12 +80,12 @@ public class GameMenuUI : MonoBehaviour {
     
     public void NextLevel() {
         if (nextLevelSceneName != "") {
-            SceneManager.LoadScene(nextLevelSceneName);
+            LoadNextScene(LevelInfo.Instance.currWorld.GetNextLevel());
         }
     }
 
     public void ExitToMain() {
-        SceneManager.LoadScene("Menu_Main");
+        LoadNextScene("Menu_Main");
     }
 
     public void TogglePauseMenu() {

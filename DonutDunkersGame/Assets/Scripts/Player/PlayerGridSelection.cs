@@ -72,6 +72,7 @@ public class PlayerGridSelection : MonoBehaviour {
 				BallController.Instance.SetForwardDirection(-this.currentGrid.transform.forward);
 				BallController.Instance.IsMoving = true;
 				LevelData.Instance.Turns--;
+				ScriptableSingleton<SoundEvent>.Instance.sndDonutlaunch.Play();
 			}
 		}
 	}

@@ -81,6 +81,7 @@ public class GameMenuUI : MonoBehaviour {
             //When loading level from Editor, this won't work 
             Debug.LogError("World Not Set, this scene was probably loaded from the Editor");
         }
+        Time.timeScale = 1f;
         LevelSettings nextLevel = LevelInfo.Instance.currWorld.GetNextLevel();
         LevelInfo.Instance.currLevel = nextLevel;
         LoadNextScene(nextLevel.sceneName);
@@ -88,6 +89,7 @@ public class GameMenuUI : MonoBehaviour {
     }
 
     public void ExitToMain() {
+        Time.timeScale = 1f;
         LoadNextScene("Menu_Main");
     }
 
@@ -154,6 +156,7 @@ public class GameMenuUI : MonoBehaviour {
     IEnumerator LoadSceneAsync(string sceneToLoad)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
         while (!asyncLoad.isDone)
         {
             yield return null;

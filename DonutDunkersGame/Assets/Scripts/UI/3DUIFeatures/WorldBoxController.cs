@@ -22,8 +22,6 @@ public class WorldBoxController : MonoBehaviour
 
     private Vector3 standardScale;
     private Vector3 standardRotation;
-    private Canvas worldCanvas;
-
     private LevelSelectController selectionController;
     void Start()
     {

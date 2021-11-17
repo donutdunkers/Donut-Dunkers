@@ -61,6 +61,7 @@ public class MainMenuUI : MonoBehaviour {
     IEnumerator LoadSceneAsync(string sceneToLoad)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
+  
         while (!asyncLoad.isDone)
         {
             yield return null;

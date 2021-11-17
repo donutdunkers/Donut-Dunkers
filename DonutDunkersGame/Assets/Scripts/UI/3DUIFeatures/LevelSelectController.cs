@@ -42,6 +42,8 @@ public class LevelSelectController : MonoBehaviour {
         currLevelId = levelId; 
         currLevel = world.levels[currLevelId];
 
+
+        LevelInfo.Instance.currWorld = world;
         LevelInfo.Instance.currLevel = currLevel;
         statsController.UpdateStats();
 
@@ -54,7 +56,6 @@ public class LevelSelectController : MonoBehaviour {
         //select first donut by default
         selectionDonuts[0].OnSelected();
         currLevel = world.levels[0];
-
 
         LevelInfo.Instance.currWorld = world;
         LevelInfo.Instance.currLevel = currLevel;

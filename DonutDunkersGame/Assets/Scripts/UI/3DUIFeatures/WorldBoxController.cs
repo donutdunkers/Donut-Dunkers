@@ -5,6 +5,9 @@ using Pixelplacement;
 
 public class WorldBoxController : MonoBehaviour
 {
+
+    public WorldSettings worldSettings;
+
     public Transform cameraTopViewTransform;
     public Transform cameraInnerViewTransform;
     public Transform boxGeo;

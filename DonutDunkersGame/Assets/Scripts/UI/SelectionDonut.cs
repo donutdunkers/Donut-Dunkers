@@ -9,15 +9,17 @@ public class SelectionDonut : MonoBehaviour {
     Material[] materials;
 
     public float baseWidth, highlightWidth, selectedWidth;
-    public int levelId;
+    public int levelIndex;
     public bool isSelected;
+
+    private LevelSelectManager selectionManager;
     void Awake() {
         materials = GetComponentInChildren<Renderer>().materials;
-
+        selectionManager = GetComponentInParent<LevelSelectManager>();
     }
 
-    public void Initialize(int id) {
-        levelId = id;
+    public void Initialize(int index) {
+        levelIndex = index;
         isSelected = false;
         SetOutlineWidth(baseWidth);
     }
@@ -27,25 +29,32 @@ public class SelectionDonut : MonoBehaviour {
     }
 
     void OnMouseEnter() {
+        if (isSelected) return;
         SetOutlineWidth(highlightWidth);
         Debug.Log("Mouse Enter");
     }
 
     void OnMouseDown() {
+        if (isSelected) return;
+            
         OnSelected();
         SetOutlineWidth(selectedWidth);
     }
 
     void OnMouseExit() {
-        if (!isSelected) {
-            SetOutlineWidth(baseWidth); 
-        }
-       
-        Debug.Log("Mouse Exit");
+        if (isSelected) return;
+        SetOutlineWidth(baseWidth); 
     }
 
     void OnSelected() {
-        LevelSelectManager.Instance.SelectLevel(levelId);
+        if (selectionManager.SelectLevel(levelIndex)) {
+            isSelected = true;
+        }
+    }
+
+    public void ClearSelection() {
+        isSelected = false;
+        SetOutlineWidth(baseWidth);
     }
 
     

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LevelKitchen07
   m_EditorClassIdentifier: 
   sceneName: Kitchen_Level_07
-  levelID: 6
+  levelIndex: 6

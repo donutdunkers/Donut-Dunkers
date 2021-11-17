@@ -7,6 +7,7 @@ public class WorldBoxController : MonoBehaviour
 {
 
     public WorldSettings worldSettings;
+    
 
     public Transform cameraTopViewTransform;
     public Transform cameraInnerViewTransform;
@@ -19,8 +20,11 @@ public class WorldBoxController : MonoBehaviour
     private Vector3 standardScale;
     private Vector3 standardRotation;
     private Canvas worldCanvas;
+
+    private LevelSelectManager selectionManager;
     void Start()
     {
+        selectionManager = GetComponentInChildren<LevelSelectManager>();
         standardScale = boxGeo.localScale;
         standardRotation = boxGeo.localEulerAngles;
         boxGeo.localScale = unfocusedScale;
@@ -39,6 +43,7 @@ public class WorldBoxController : MonoBehaviour
     public void Open()
     {
         StartCoroutine(EnabledUIOnDelay(1.1f, LevelUICanvas));
+        selectionManager.SelectWorld(worldSettings);
         WorldUICanvas.gameObject.SetActive(false);
         Tween.LocalRotation(boxGeo, Vector3.zero, 0.75f, 0, Tween.EaseInOut);
         boxAnimator.SetBool("isOpen", true);
@@ -47,6 +52,8 @@ public class WorldBoxController : MonoBehaviour
     public void Close()
     {
         StartCoroutine(EnabledUIOnDelay(1.1f, WorldUICanvas));
+        selectionManager.DeselectWorld();
+
         LevelUICanvas.gameObject.SetActive(false);
         Tween.LocalRotation(boxGeo, standardRotation, 0.75f, 0, Tween.EaseInOut);
         boxAnimator.SetBool("isOpen", false);

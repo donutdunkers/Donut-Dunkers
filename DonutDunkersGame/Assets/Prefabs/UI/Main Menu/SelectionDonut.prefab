@@ -223,6 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8af4670e3ec944385b66d902f0254b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseWidth: 5
-  highlightWidth: 10
-  selectedWidth: 7.5
+  baseWidth: 0
+  highlightWidth: 5
+  selectedWidth: 10
+  levelIndex: 0
+  isSelected: 0

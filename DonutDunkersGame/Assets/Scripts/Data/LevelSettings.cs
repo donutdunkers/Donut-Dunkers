@@ -5,5 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/Levels/Level", fileName = "Level")]
 public class LevelSettings : ScriptableObject {
     public string sceneName;
-    public int levelID;
+    public int levelIndex;
+
+    
 }

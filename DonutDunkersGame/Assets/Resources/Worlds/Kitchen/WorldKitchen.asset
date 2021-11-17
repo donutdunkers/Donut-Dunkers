@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84aaf98502058f2448fd3150fe65df29, type: 3}
   m_Name: WorldKitchen
   m_EditorClassIdentifier: 
-  worldID: 0
+  worldName: Kitchen
+  worldIndex: 0
   levels:
   - {fileID: 11400000, guid: 346a82819cae8c645b115a334ab44d20, type: 2}
   - {fileID: 11400000, guid: 460b8f38a80e4d541a8eaf967464640b, type: 2}

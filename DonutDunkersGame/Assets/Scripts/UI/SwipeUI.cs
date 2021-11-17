@@ -9,10 +9,6 @@ public class swipeMenu : MonoBehaviour
 
     float scrollPosition = 0;
     float[] positions;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

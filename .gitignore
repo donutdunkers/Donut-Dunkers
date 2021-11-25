@@ -71,3 +71,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 DonutDunkersGame/.vsconfig
 DonutDunkersGame/.vs
+.DS_Store

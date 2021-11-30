@@ -10,6 +10,8 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 	[NonSerialized]
 	public Collider collider;
 	
+	private const float WAIT_TIME = 0.25f;
+	
 	private void Awake() {
 		this.collider = this.GetComponent<Collider>();
 	}
@@ -39,12 +41,15 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 		otherCup.collider.enabled = false;
 		BallController.Instance.IsMoving = false;
 		BallController.Instance.transform.position = this.transform.position;
-		yield return new WaitForSeconds(0.1f);
+		BallSkin.Instance.Trail.enabled = false;
+		yield return new WaitForSeconds(WAIT_TIME);
 		BallController.Instance.transform.position = otherCup.transform.position;
 		BallSkin.Instance.transform.position = BallController.Instance.transform.position;
 		BallController.Instance.SetForwardDirection(otherCup.transform.forward);
 		BallController.Instance.IsMoving = true;
-		yield return new WaitForSeconds(0.1f);
+		BallSkin.Instance.Trail.Clear();
+		BallSkin.Instance.Trail.enabled = true;
+		yield return new WaitForSeconds(WAIT_TIME);
 		otherCup.collider.enabled = true;
 		this.warpRoutine = null;
 	}

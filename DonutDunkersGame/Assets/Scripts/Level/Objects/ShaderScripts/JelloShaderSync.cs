@@ -39,7 +39,8 @@ public class JelloShaderSync : MonoBehaviour
     void UpdateWiggleDir(){
         GameObject donutHole = GameObject.Find("Ball Controller");
         if (!donutHole){
-            Debug.Log("Not Found!");
+            Debug.Log("DonutHole Object Not Found!");
+            return;
         }
         Vector3 wiggleDir = Vector3.Normalize (donutHole.transform.position - this.transform.position); 
         if (wiggleDir.magnitude < 0.02){

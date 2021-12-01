@@ -155,9 +155,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -217,9 +225,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -279,9 +295,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -341,9 +365,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -403,9 +435,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -535,9 +575,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder
@@ -597,9 +645,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8402551047856876289}
     m_Modifications:
+    - target: {fileID: 4291041934144429874, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_Name
       value: Cabnets (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202216928629333319, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7202216928629333320, guid: 5d106948f1fc7114293f4ea9697840fc, type: 3}
       propertyPath: m_RootOrder

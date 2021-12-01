@@ -16,9 +16,27 @@ public class SaveData : MonoBehaviour
             return _Instance;
         }
     }
+ 
+    // Returns true if level has been complete false otherwise
+    public bool IsLevelComplete(string levelkey) {
+        if (PlayerPrefs.HasKey(levelkey)) {
+            return PlayerPrefs.GetInt(levelkey) == 0;
+        }
+        return false;
+    }
+
+    // Returns lowest number of turns level has been completed in; -1 if level has not been completed
+    public int BestTurnsToComplete(string levelkey) {
+        if (PlayerPrefs.HasKey(levelkey + "_turns")) {
+            return PlayerPrefs.GetInt(levelkey + "_turns");
+        }
+        return -1;
+    }
 
     private void Start() {
-        string levelKey = LevelData.Instance.LevelKey;
+        LevelSettings currLevel = LevelInfo.Instance.currLevel;
+
+        string levelKey = currLevel.sceneName;
         int didBeatLevel = PlayerPrefs.GetInt(levelKey);
         int turns = PlayerPrefs.GetInt(levelKey + "_turns");
         if (didBeatLevel == 1) {
@@ -29,19 +47,22 @@ public class SaveData : MonoBehaviour
     }
 
     private void Update() {
+        LevelSettings currLevel = LevelInfo.Instance.currLevel;
+        string levelKey = currLevel.sceneName;
+
         if (LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {
-            int turns = PlayerPrefs.GetInt(LevelData.Instance.LevelKey + "_turns");
-            bool didBeatLevel = PlayerPrefs.GetInt(LevelData.Instance.LevelKey) == 1;
+            int turns = PlayerPrefs.GetInt(levelKey + "_turns");
+            bool didBeatLevel = PlayerPrefs.GetInt(levelKey) == 1;
             if (didBeatLevel) {
                 turns = turns < LevelData.Instance.TurnsTaken ? turns : LevelData.Instance.TurnsTaken;
             } else {
                 turns = LevelData.Instance.TurnsTaken;
             }
 
-            Debug.Log("Beat level: " + LevelData.Instance.LevelKey);
-            PlayerPrefs.SetInt(LevelData.Instance.LevelKey, 1);
-            PlayerPrefs.SetInt(LevelData.Instance.LevelKey + "_turns", turns);
+            Debug.Log("Beat level: " + levelKey);
+            PlayerPrefs.SetInt(levelKey, 1);
+            PlayerPrefs.SetInt(levelKey + "_turns", turns);
             PlayerPrefs.Save();
         }
     }

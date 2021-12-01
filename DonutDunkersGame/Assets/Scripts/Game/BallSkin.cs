@@ -31,6 +31,18 @@ public class BallSkin : MonoBehaviour, ICanReset {
 	[SerializeField]
 	public GameObject[] directionArrows = new GameObject[6];
 	
+	private TrailRenderer trail;
+	
+	public TrailRenderer Trail {
+		get {
+			return this.trail;
+		}
+	}
+	
+	private void Awake() {
+		this.trail = this.GetComponentInChildren<TrailRenderer>();
+	}
+	
 	private void Start() {
 		this.Initialize();
 	}

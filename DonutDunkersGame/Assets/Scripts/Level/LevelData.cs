@@ -108,8 +108,8 @@ public class LevelData : MonoBehaviour {
 		SoundManager.Instance.CrossFade(music.audioClip, AudioSettings.MusicVol, 2.5f);
 		
 		this.GenerateGridTiles();
-		this.GenerateGridWalls();
-		this.GenerateLevelTheme();
+	//	this.GenerateGridWalls();
+	//	this.GenerateLevelTheme();
 		
 		this.Turns = this.initialTurns;
 		
@@ -142,10 +142,10 @@ public class LevelData : MonoBehaviour {
 		}
 	}
 	
-	private void GenerateLevelTheme() {
+	public void GenerateLevelTheme() {
 		
-		GameObject angleObj;
-		GameObject wallObj;
+		GameObject angleObj = null;
+		GameObject wallObj = null;
 		
 		switch(this.roomType) {
 			case RoomType.Kitchen:
@@ -153,17 +153,24 @@ public class LevelData : MonoBehaviour {
 				wallObj = ScriptableSingleton<LevelRoomData>.Instance.kitchenData.wallObj;
 				break;
 			default:
-				return;
+				break;
 		}
 		
 		ObjAngle[] angles = (ObjAngle[])FindObjectsOfType(typeof(ObjAngle));
 		ObjWall[] walls = (ObjWall[])FindObjectsOfType(typeof(ObjWall));
 		
 		for (int i = 0; i < angles.Length; i++) {
-			angles[i].tempObj.SetActive(false);
-			GameObject angle = GameObject.Instantiate(angleObj, angles[i].transform.position, Quaternion.identity, angles[i].transform);
-			angle.transform.localPosition = Vector3.zero;
-			angle.transform.localEulerAngles = new Vector3(0f, 0f, -90f);
+			angles[i].tempObj.SetActive(this.roomType == RoomType.None);
+			if (this.roomType == RoomType.None) {
+				if (angles[i].themedObj != null) {
+					DestroyImmediate(angles[i].themedObj);
+				}
+			} else {
+				GameObject angle = GameObject.Instantiate(angleObj, angles[i].transform.position, Quaternion.identity, angles[i].transform);
+				angles[i].themedObj = angle;
+				angle.transform.localPosition = Vector3.zero;
+				angle.transform.localEulerAngles = new Vector3(0f, 0f, -90f);
+			}
 		}
 		
 		
@@ -253,6 +260,13 @@ public class LevelData : MonoBehaviour {
 			gridTile.gridSide = LevelGridSelection.GridSide.Back;
 			gridTile = null;
 		}
+	}
+	
+	public void GenerateWalls() {
+		for (int i = this.levelGridContainer.childCount; i > 0; --i) {
+			DestroyImmediate(this.levelGridContainer.GetChild(0).gameObject);
+		}
+		this.GenerateGridWalls();
 	}
 
 	private void GenerateGridWalls() {

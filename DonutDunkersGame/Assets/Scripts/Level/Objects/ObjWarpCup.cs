@@ -10,6 +10,8 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 	[NonSerialized]
 	public Collider collider;
 	
+	private const float WAIT_TIME = 0.5f;
+	
 	private void Awake() {
 		this.collider = this.GetComponent<Collider>();
 	}
@@ -39,11 +41,20 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 		otherCup.collider.enabled = false;
 		BallController.Instance.IsMoving = false;
 		BallController.Instance.transform.position = this.transform.position;
-		yield return new WaitForSeconds(0.1f);
+		BallSkin.Instance.Trail.enabled = false;
+		Vector3 efPos = this.transform.position + (this.transform.forward * 0.5f);
+		Quaternion rotation = this.transform.rotation * Quaternion.Euler(new Vector3(90f, 0f, 0f));
+		ObjectParticleDatabase.Instance.cupSplash.Emit(efPos, rotation);
+		yield return new WaitForSeconds(WAIT_TIME);
 		BallController.Instance.transform.position = otherCup.transform.position;
 		BallSkin.Instance.transform.position = BallController.Instance.transform.position;
+		efPos = otherCup.transform.position + (otherCup.transform.forward * 0.5f);
+		rotation = otherCup.transform.rotation * Quaternion.Euler(new Vector3(90f, 0f, 0f));
+		ObjectParticleDatabase.Instance.cupSplash.Emit(efPos, rotation);
 		BallController.Instance.SetForwardDirection(otherCup.transform.forward);
 		BallController.Instance.IsMoving = true;
+		BallSkin.Instance.Trail.Clear();
+		BallSkin.Instance.Trail.enabled = true;
 		yield return new WaitForSeconds(0.1f);
 		otherCup.collider.enabled = true;
 		this.warpRoutine = null;

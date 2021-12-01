@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3039774739033002271}
   - component: {fileID: 3039774739033002256}
+  - component: {fileID: 2782747363897470903}
   m_Layer: 0
   m_Name: Level Object
   m_TagString: Untagged
@@ -151,6 +152,18 @@ MonoBehaviour:
   levelContainer: {fileID: 3039774740432698359}
   levelGridContainer: {fileID: 3039774738836187544}
   levelRotationContainer: {fileID: 3039774739147608108}
+--- !u!114 &2782747363897470903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039774739033002270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e83899c8457cf141a7d98031a2ec049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3039774739147608107
 GameObject:
   m_ObjectHideFlags: 0

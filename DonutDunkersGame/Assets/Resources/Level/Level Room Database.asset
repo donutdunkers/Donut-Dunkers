@@ -27,4 +27,4 @@ MonoBehaviour:
     wallHighMat: {fileID: 2100000, guid: 95178d3135711514c895fe91e96d7fd2, type: 2}
     ceilingMat: {fileID: 2100000, guid: 155d2c17a8d4c824b843dc6687ddf62b, type: 2}
     wallObj: {fileID: 0}
-    angleObj: {fileID: 919132149155446097, guid: 4f50010626eb760479dc336cf7f3eba3, type: 3}
+    angleObj: {fileID: 3829957110495901382, guid: 1406bafcaa3515c47b3c2b93772f3ae9, type: 3}

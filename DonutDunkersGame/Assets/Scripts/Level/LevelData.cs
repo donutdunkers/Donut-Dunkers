@@ -48,6 +48,20 @@ public class LevelData : MonoBehaviour {
 		}
     }
 
+	public int Stars
+    {
+		get
+        {
+			int par = LevelInfo.Instance.currLevel.levelPar;
+			if (TurnsTaken > par)
+				return 1;
+			else if (TurnsTaken == par)
+				return 2;
+			else
+				return 3;
+        }
+    }
+
 	public int RingsCollected
     {
 		set {

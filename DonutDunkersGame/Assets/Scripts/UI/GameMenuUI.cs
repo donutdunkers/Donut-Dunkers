@@ -137,6 +137,10 @@ public class GameMenuUI : MonoBehaviour {
         if (LevelInfo.Instance.currWorld.GetNextLevel() == null){
             GameObject.Find("NextLevelButton").GetComponent<Button>().interactable = false;
         }
+        if(!isOutOfTurns)
+        {
+            LevelInfo.Instance.currLevel.SaveLevelData();
+        }
         endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);
         gameEnded = true;
         Time.timeScale = 0;
@@ -156,7 +160,6 @@ public class GameMenuUI : MonoBehaviour {
     IEnumerator LoadSceneAsync(string sceneToLoad)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
-        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
         while (!asyncLoad.isDone)
         {
             yield return null;

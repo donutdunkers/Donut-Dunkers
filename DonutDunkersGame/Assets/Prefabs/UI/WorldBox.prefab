@@ -1156,6 +1156,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 8104710271757365434}
     m_Modifications:
     - target: {fileID: 134728594179711772, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
+      propertyPath: numStarsText
+      value: 
+      objectReference: {fileID: 579470019}
+    - target: {fileID: 134728594179711772, guid: 09d18272b6c689e45afaef0f19c52bab, type: 3}
       propertyPath: minNumMovesText
       value: 
       objectReference: {fileID: 1590552636}

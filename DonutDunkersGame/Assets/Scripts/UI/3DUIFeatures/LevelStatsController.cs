@@ -16,6 +16,8 @@ public class LevelStatsController : MonoBehaviour {
 
         worldNameText.SetText(LevelInfo.Instance.currWorld.worldName);
         levelNumText.SetText("Level " + (currLevel.levelIndex + 1));
+        minNumMovesText.SetText(currLevel.minTurns.ToString());
+        numStarsText.SetText(currLevel.maxStars.ToString());
     }
 
     public void LoadLevel() {

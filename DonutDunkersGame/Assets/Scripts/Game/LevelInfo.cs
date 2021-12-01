@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelInfo : MonoBehaviour {
     public WorldSettings currWorld;
     public LevelSettings currLevel;
+    public List<WorldSettings> allWorlds;
     private static LevelInfo _Instance;
 
     public static LevelInfo Instance {
@@ -25,5 +26,46 @@ public class LevelInfo : MonoBehaviour {
         } else {
             _Instance = this;
         }
+    }
+
+    public void InitializeWorlds()
+    {
+        foreach(WorldSettings world in allWorlds)
+        {
+            world.InitializeLevels();
+        }
+    }
+
+    public string FindLevel(int worldIndex, int levelIndex)
+    {
+        WorldSettings world = allWorlds[worldIndex];
+        if(levelIndex < world.levels.Count)
+        {
+            foreach(LevelSettings level in world.levels)
+            {
+                if (level.levelIndex == levelIndex)
+                    return level.sceneName;
+            }
+        }
+        return "Menu_Main";
+    }
+
+    public string FindNextLevel(int worldIndex, int levelIndex)
+    {
+        WorldSettings world = allWorlds[worldIndex];
+        if(levelIndex + 1 < world.levels.Count)
+        {
+            foreach (LevelSettings level in world.levels)
+            {
+                if (level.levelIndex == levelIndex + 1)
+                    return level.sceneName;
+            }
+        }
+        else if (worldIndex + 1 < allWorlds.Count)
+        {
+            return allWorlds[worldIndex + 1].levels[0].sceneName;
+        }
+
+        return "Menu_Main";
     }
 }

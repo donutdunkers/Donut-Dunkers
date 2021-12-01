@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ParticleEmitter : MonoBehaviour {
+public class ParticleEmitter : MonoBehaviour, ICanReset {
 	
 	private ParticleSystem[] childParticles;
 	
@@ -12,6 +12,10 @@ public class ParticleEmitter : MonoBehaviour {
 	private Vector3 position;
 	
 	private Quaternion rotation;
+	
+	public void Initialize() {
+		this.StopAndClearEmit();
+	}
 	
 	private void Awake() {
 		this.childParticles = this.GetComponentsInChildren<ParticleSystem>();

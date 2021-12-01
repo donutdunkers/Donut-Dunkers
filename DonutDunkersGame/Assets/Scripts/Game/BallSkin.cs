@@ -48,6 +48,10 @@ public class BallSkin : MonoBehaviour, ICanReset {
 	}
 	
 	public void Initialize() {
+		this.transform.position = BallController.Instance.transform.position;
+		BallSkin.Instance.Trail.enabled = false;
+		this.trail.Clear();
+		BallSkin.Instance.Trail.enabled = true;
 	//	this.ToggleArrows(true);
 	}
 	

@@ -8,6 +8,7 @@ public class WorldSettings : ScriptableObject {
 
     public string worldName;
     public int worldIndex;
+    public int starsCollected;
     public List<LevelSettings> levels;
 
     public LevelSettings GetNextLevel() {
@@ -17,5 +18,15 @@ public class WorldSettings : ScriptableObject {
             return levels[currLevelIndex];
         }
         return null;
+    }
+
+    public void InitializeLevels()
+    {
+        starsCollected = 0;
+        foreach(LevelSettings level in levels)
+        {
+            level.GetLevelSaveData();
+            starsCollected += level.maxStars;
+        }
     }
 }

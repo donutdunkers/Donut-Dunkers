@@ -53,7 +53,7 @@ public class GameMenuUI : MonoBehaviour {
     private void Update() {
         bool isOutOfTurns = LevelData.Instance.Turns <= 0 && BallController.Instance.CanAct;
 
-        if (isOutOfTurns || LevelData.Instance.RingsInLevel > 0 && LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
+        if (!gameEnded && isOutOfTurns || LevelData.Instance.RingsInLevel > 0 && LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
         {
             ShowEndScreen(isOutOfTurns);
         }
@@ -137,10 +137,12 @@ public class GameMenuUI : MonoBehaviour {
         if (LevelInfo.Instance.currWorld.GetNextLevel() == null){
             GameObject.Find("NextLevelButton").GetComponent<Button>().interactable = false;
         }
+
         if(!isOutOfTurns)
         {
             LevelInfo.Instance.currLevel.SaveLevelData();
         }
+
         endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);
         gameEnded = true;
         Time.timeScale = 0;

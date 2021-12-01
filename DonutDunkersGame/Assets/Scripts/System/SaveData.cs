@@ -29,20 +29,24 @@ public class SaveData : MonoBehaviour
         {
             PlayerPrefs.SetInt("lastComplete_level", -1);
             PlayerPrefs.SetInt("lastComplete_world", -1);
+            PlayerPrefs.Save();
         }
     }
 
     public void SaveMasterVolume(float masterVol)
     {
         PlayerPrefs.SetFloat("vol_master", masterVol);
+        PlayerPrefs.Save();
     }
     public void SaveMusicVolume(float musicVol)
     {
         PlayerPrefs.SetFloat("vol_music", musicVol);
+        PlayerPrefs.Save();
     }
     public void SaveSFXVolume(float SFXVol)
     {
         PlayerPrefs.SetFloat("vol_sfx", SFXVol);
+        PlayerPrefs.Save();
     }
 
     public float LoadMasterVolume()

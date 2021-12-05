@@ -52,11 +52,10 @@ public class GameMenuUI : MonoBehaviour {
 
     private void Update() {
         bool isOutOfTurns = LevelData.Instance.Turns <= 0 && BallController.Instance.CanAct;
-
-        if (!gameEnded && isOutOfTurns || LevelData.Instance.RingsInLevel > 0 && LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel)
-        {
-            ShowEndScreen(isOutOfTurns);
-        }
+		
+		if (isOutOfTurns || LevelData.Instance.RingsInLevel > 0 && LevelData.Instance.RingsCollected == LevelData.Instance.RingsInLevel) {
+			return;
+		}
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -132,6 +131,16 @@ public class GameMenuUI : MonoBehaviour {
 		
 
     public void ShowEndScreen(bool isOutOfTurns) {
+        if (this.endRoutine != null) {
+			this.StopCoroutine(this.endRoutine);
+		}
+		this.endRoutine = this.StartCoroutine(this.EndRoutine(isOutOfTurns));
+    }
+	
+	private Coroutine endRoutine;
+	
+	private IEnumerator EndRoutine(bool isOutOfTurns) {
+		yield return new WaitForSeconds(1f);
         HidePauseMenu();
         endGameMenu.SetActive(true);
         if (LevelInfo.Instance.currWorld.GetNextLevel() == null){
@@ -146,7 +155,8 @@ public class GameMenuUI : MonoBehaviour {
         endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);
         gameEnded = true;
         Time.timeScale = 0;
-    }
+		
+	}
 	
 	public void HideEndScreen() {
 		endGameMenu.SetActive(false);

@@ -37,6 +37,9 @@ public class LevelData : MonoBehaviour {
 				LevelUI.Instance.SetRemainingTurns(value);
 			}
 			this.turns = value;
+			if (value <= 0) {
+				GameMenuUI.Instance.ShowEndScreen(true);
+			}
 		} get {
 			return this.turns;
 		}
@@ -66,6 +69,11 @@ public class LevelData : MonoBehaviour {
     {
 		set {
 			ringsCollected = value;
+			if (value == this.RingsInLevel) {
+				GameMenuUI.Instance.ShowEndScreen(false);
+				BallController.Instance.IsMoving = false;
+				BallController.Instance.CanAct = false;
+			}
         } get {
 			return this.ringsCollected;
         }

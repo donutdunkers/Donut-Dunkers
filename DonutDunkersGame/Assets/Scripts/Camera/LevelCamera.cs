@@ -57,6 +57,7 @@ public class LevelCamera : MonoBehaviour, ICanReset {
 		
 		float distance = Vector3.Distance(this.camera.transform.position, Vector3.zero);
 		this.initHeightAtDist = this.FrustumHeightAtDistance(distance);
+		TogglePerspective();
 		
 		this.Initialize();
 	}

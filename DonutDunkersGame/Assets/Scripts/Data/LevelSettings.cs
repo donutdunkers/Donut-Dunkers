@@ -23,7 +23,6 @@ public class LevelSettings : ScriptableObject {
                 numStars++;
             }
         }
-        Debug.Log("Player earned " + numStars + " stars");
         return numStars;
     }
 

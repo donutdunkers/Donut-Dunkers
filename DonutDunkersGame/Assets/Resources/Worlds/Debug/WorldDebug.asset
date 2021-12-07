@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84aaf98502058f2448fd3150fe65df29, type: 3}
   m_Name: WorldDebug
   m_EditorClassIdentifier: 
-  worldName: Debug
+  worldName: More Coming Soon!
   worldIndex: 1
+  starsCollected: 0
   levels:
   - {fileID: 11400000, guid: 3085bcd99a8e5864ea58461f8e2fa757, type: 2}

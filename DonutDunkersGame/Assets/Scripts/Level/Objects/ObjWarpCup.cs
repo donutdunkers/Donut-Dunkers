@@ -46,6 +46,7 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 		Vector3 efPos = this.transform.position + (this.transform.forward * 0.5f);
 		Quaternion rotation = this.transform.rotation * Quaternion.Euler(new Vector3(90f, 0f, 0f));
 		ObjectParticleDatabase.Instance.cupSplash.Emit(efPos, rotation);
+		ScriptableSingleton<SoundEvent>.Instance.sndDonuthitWater.Play();
 		yield return new WaitForSeconds(WAIT_TIME);
 		BallController.Instance.transform.position = otherCup.transform.position;
 		BallSkin.Instance.transform.position = BallController.Instance.transform.position;

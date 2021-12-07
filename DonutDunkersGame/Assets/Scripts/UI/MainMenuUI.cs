@@ -22,12 +22,16 @@ public class MainMenuUI : MonoBehaviour {
         {
             continueButton.interactable = true;
         }
+		if (SoundManager.Instance == null) {
+			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
+			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);
+		}
 	}
 
     private void Start()
     {
-		// Currently there is no main menu music- hence why it is set to play 'null'
-		SoundManager.Instance.CrossFade(null, 0f, 1f);
+		Sound music = ScriptableSingleton<MusicEvent>.Instance.MainMenu;
+		SoundManager.Instance.CrossFade(music.audioClip, AudioSettings.MusicVol, 2.5f);
 		
         uiStack = new Stack<GameObject>();
     }

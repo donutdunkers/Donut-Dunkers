@@ -27,8 +27,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 145b42526475b7749b5c65e7f33f767c, type: 3}
     - {fileID: 8300000, guid: 95b37dc75c1640a49948d57e5144a10b, type: 3}
     volume: 1
-  sndDonuthitJelly:
-    audioClip: {fileID: 8300000, guid: 1002bcf9f19fb9345856d3df939b6a8c, type: 3}
+  sndDonuthitGelatin:
+    audioCliplist:
+    - {fileID: 8300000, guid: db3728de106d7d34a8324e58563c4a3a, type: 3}
+    - {fileID: 8300000, guid: a80abc9299743d443b3eb186a9d2a877, type: 3}
+    - {fileID: 8300000, guid: 3522bca63dbcf3a4c9d1e5da4f077139, type: 3}
+    - {fileID: 8300000, guid: a805b6099b135aa4d958e9c93b31e6af, type: 3}
+    - {fileID: 8300000, guid: 7a6a3a7803dd76941b55d081ba885898, type: 3}
+    - {fileID: 8300000, guid: e6efc058f6aa02a44978f763312db64d, type: 3}
     volume: 1
   sndDonuthitWater:
     audioCliplist:
@@ -42,14 +48,14 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 5a5c74aca9cc8194494781bc4dd9c854, type: 3}
     - {fileID: 8300000, guid: 06e6306f3c9e2034281b02886080f926, type: 3}
     volume: 1
-  sndDonuthitFullsink:
-    audioClip: {fileID: 8300000, guid: 9de626a23b6c7c34987ba9d8e2fab3ee, type: 3}
-    volume: 1
-  sndDonuthitPlate:
-    audioClip: {fileID: 8300000, guid: 95ea4ea14c5d7cc46b77f1338f051357, type: 3}
-    volume: 1
-  sndDonuthitWindow:
-    audioClip: {fileID: 8300000, guid: 61e347ae8fc02bd419e41bb20cfee3e0, type: 3}
+  sndDonuthitGlass:
+    audioCliplist:
+    - {fileID: 8300000, guid: 4bcd3fe074810934d894c1b73d46078e, type: 3}
+    - {fileID: 8300000, guid: 0d26c9bb7727b3d4ebda45729d6389df, type: 3}
+    - {fileID: 8300000, guid: 8ba67c9048269bf49884864dffc77965, type: 3}
+    - {fileID: 8300000, guid: 416ed79771b060544b28048cc506bd6d, type: 3}
+    - {fileID: 8300000, guid: 8901d15aa713dab4ba4c1ac9d80cb1c5, type: 3}
+    - {fileID: 8300000, guid: 8e100c64ea8933343acd53483bd8d957, type: 3}
     volume: 1
   sndDonutlaunch:
     audioCliplist:

@@ -7,6 +7,7 @@ public class ObjRing : ObjectInteraction, ICanReset {
 		bool flag = Vector3.Angle(BallController.Instance.transform.forward, this.transform.up) < 1f || Vector3.Angle(BallController.Instance.transform.forward, -this.transform.up) < 1f;
 		if (flag) {
 			LevelData.Instance.RingsCollected += 1;
+			ObjectParticleDatabase.Instance.donutGet.Emit(this.transform.position);
 			this.gameObject.SetActive(false);
 		} else {
 			BallController.Instance.IsMoving = false;

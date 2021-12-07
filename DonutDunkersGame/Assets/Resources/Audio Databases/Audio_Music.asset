@@ -15,3 +15,6 @@ MonoBehaviour:
   Theme01:
     audioClip: {fileID: 8300000, guid: 94f7c9f94c65d994e951e551fe0c1c11, type: 3}
     volume: 1
+  MainMenu:
+    audioClip: {fileID: 8300000, guid: e3e493ceedf875d49acfd0c2f09b23dd, type: 3}
+    volume: 1

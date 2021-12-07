@@ -6,6 +6,7 @@ using UnityEngine;
 public class MusicEvent : ScriptableSingleton<MusicEvent>
 {
     
-    public Sound Theme01;
+    public Sound Theme01; //music that plays during gameplay
+    public Sound MainMenu; // music that plays on main menu
 
 }

@@ -42,6 +42,7 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 		BallController.Instance.IsMoving = false;
 		BallController.Instance.transform.position = this.transform.position;
 		BallSkin.Instance.Trail.enabled = false;
+		BallSkin.Instance.BallTransform.gameObject.SetActive(false);
 		Vector3 efPos = this.transform.position + (this.transform.forward * 0.5f);
 		Quaternion rotation = this.transform.rotation * Quaternion.Euler(new Vector3(90f, 0f, 0f));
 		ObjectParticleDatabase.Instance.cupSplash.Emit(efPos, rotation);
@@ -53,6 +54,7 @@ public class ObjWarpCup : ObjectInteraction, ICanReset {
 		ObjectParticleDatabase.Instance.cupSplash.Emit(efPos, rotation);
 		BallController.Instance.SetForwardDirection(otherCup.transform.forward);
 		BallController.Instance.IsMoving = true;
+		BallSkin.Instance.BallTransform.gameObject.SetActive(true);
 		BallSkin.Instance.Trail.Clear();
 		BallSkin.Instance.Trail.enabled = true;
 		yield return new WaitForSeconds(0.1f);

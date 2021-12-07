@@ -6,6 +6,8 @@ public class ObjAngle : ObjectInteraction, ICanReset {
 	
 	public GameObject tempObj;
 	
+	public GameObject themedObj;
+	
 	public void Initialize() {
 		this.ResetRoutine();
 	}

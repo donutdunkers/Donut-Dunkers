@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Donut Dunkers</title>
+    <title>Unity WebGL Player | Donut Dunkers</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -22,20 +22,20 @@
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Donut Dunkers Beta 1.1</div>
+        <div id="unity-build-title">Donut Dunkers</div>
       </div>
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build.loader.js";
+      var loaderUrl = buildUrl + "/docs.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build.data",
-        frameworkUrl: buildUrl + "/Build.framework.js",
-        codeUrl: buildUrl + "/Build.wasm",
+        dataUrl: buildUrl + "/docs.data",
+        frameworkUrl: buildUrl + "/docs.framework.js",
+        codeUrl: buildUrl + "/docs.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Donut Dunkers",
-        productName: "Donut Dunkers Alpha",
-        productVersion: "1.1",
+        productName: "Donut Dunkers",
+        productVersion: "1.3",
       };
 
       var container = document.querySelector("#unity-container");

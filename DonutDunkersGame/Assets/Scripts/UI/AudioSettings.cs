@@ -18,6 +18,8 @@ public class AudioSettings : MonoBehaviour
     static float SFXVolume = 1f;
     static float MasterVolume = 1f;
 
+    private bool savedLevelsLoaded = false;
+
     public static float MusicVol
     {
         get
@@ -36,6 +38,13 @@ public class AudioSettings : MonoBehaviour
 
     private void Awake()
     {
+        if(!savedLevelsLoaded)
+        {
+            MusicVolume = SaveData.Instance.LoadMasterVolume();
+            SFXVolume = SaveData.Instance.LoadMusicVolume();
+            MasterVolume = SaveData.Instance.LoadSFXVolume();
+            savedLevelsLoaded = true;
+        }
         MasterSlider.value = MasterVolume;
         MusicSlider.value = MusicVolume;
         SFXSlider.value = SFXVolume;
@@ -47,6 +56,8 @@ public class AudioSettings : MonoBehaviour
         SoundManager.Instance.musicSourceA.volume = newMasterVolume;
         SoundManager.Instance.musicSourceB.volume = newMasterVolume;
         SoundManager.Instance.soundSource.volume = newMasterVolume;
+
+        SaveData.Instance.SaveMasterVolume(newMasterVolume);
     }
 
     public void MusicVolumeLevel(float newMusicVolume)
@@ -54,11 +65,15 @@ public class AudioSettings : MonoBehaviour
         MusicVolume = newMusicVolume;
         SoundManager.Instance.musicSourceA.volume = MasterVolume * newMusicVolume;
         SoundManager.Instance.musicSourceB.volume = MasterVolume * newMusicVolume;
+
+        SaveData.Instance.SaveMusicVolume(newMusicVolume);
     }
 
     public void SFXVolumeLevel(float newSFXVolume)
     {
         SFXVolume = newSFXVolume;
         SoundManager.Instance.soundSource.volume = MasterVolume * newSFXVolume;
+
+        SaveData.Instance.SaveSFXVolume(newSFXVolume);
     }
 }

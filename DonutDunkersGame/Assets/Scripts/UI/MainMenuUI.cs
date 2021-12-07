@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour {
     private GameObject activeUI;
     private Stack<GameObject> uiStack;
+    public Button continueButton;
 
 	private void Awake() {
         Time.timeScale = 1f;
@@ -14,6 +15,13 @@ public class MainMenuUI : MonoBehaviour {
 			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
 			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);
 		}
+
+        LevelInfo.Instance.InitializeWorlds();
+
+        if(SaveData.Instance.GetLastCompletedLevelIndex() != -1)
+        {
+            continueButton.interactable = true;
+        }
 	}
 
     private void Start()
@@ -52,6 +60,13 @@ public class MainMenuUI : MonoBehaviour {
         activeUI.SetActive(false);
         activeUI = uiStack.Pop();
         activeUI.SetActive(true);
+    }
+
+    public void ContinueFromLastLevel()
+    {
+        int levelIndex = SaveData.Instance.GetLastCompletedLevelIndex();
+        int worldIndex = SaveData.Instance.GetLastCompletedWorldIndex();
+        LoadNextScene(LevelInfo.Instance.FindNextLevel(worldIndex, levelIndex));
     }
 
     public void LoadNextScene(string sceneToLoad)

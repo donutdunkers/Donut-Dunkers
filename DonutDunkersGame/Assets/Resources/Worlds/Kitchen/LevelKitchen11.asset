@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Kitchen_Level_11
   levelIndex: 10
+  levelPar: 0
+  minTurns: 0
+  maxStars: 0
+  starMoveThresholds: 0b0000000800000005000000
+  isLevelComplete: 0

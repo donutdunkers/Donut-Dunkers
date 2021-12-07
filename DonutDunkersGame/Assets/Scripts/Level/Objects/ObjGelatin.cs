@@ -8,6 +8,7 @@ public class ObjGelatin : ObjectInteraction {
 		BallController.Instance.transform.position = this.transform.position;
 		BallController.Instance.IsMoving = false;
 		BallController.Instance.CanAct = true;
+		ScriptableSingleton<SoundEvent>.Instance.sndDonuthitGelatin.Play();
 	}
 	
 	public override bool CanMoveTowards() {

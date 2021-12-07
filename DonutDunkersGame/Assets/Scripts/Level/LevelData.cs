@@ -55,13 +55,13 @@ public class LevelData : MonoBehaviour {
     {
 		get
         {
-			int par = LevelInfo.Instance.currLevel.levelPar;
-			if (TurnsTaken > par)
-				return 1;
-			else if (TurnsTaken == par)
-				return 2;
-			else
-				return 3;
+			return LevelInfo.Instance.currLevel.GetNumStars(TurnsTaken);
+			// if (TurnsTaken > par)
+			// 	return 1;
+			// else if (TurnsTaken == par)
+			// 	return 2;
+			// else
+			// 	return 3;
         }
     }
 

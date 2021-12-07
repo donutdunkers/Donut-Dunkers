@@ -140,9 +140,10 @@ public class GameMenuUI : MonoBehaviour {
 	private Coroutine endRoutine;
 	
 	private IEnumerator EndRoutine(bool isOutOfTurns) {
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(.5f);
         HidePauseMenu();
         endGameMenu.SetActive(true);
+        LevelInfo.Instance.currLevel.GetNumStars(LevelData.Instance.Turns);
         if (LevelInfo.Instance.currWorld.GetNextLevel() == null){
             GameObject.Find("NextLevelButton").GetComponent<Button>().interactable = false;
         }

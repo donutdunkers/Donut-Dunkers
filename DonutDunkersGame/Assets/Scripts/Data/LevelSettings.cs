@@ -11,7 +11,21 @@ public class LevelSettings : ScriptableObject {
     public int minTurns;
     public int maxStars;
 
+    [Tooltip("Min num of moves to earn first second and third star")]
+    public int[] starMoveThresholds = new int[3];
+
     public bool isLevelComplete = false;
+
+    public int GetNumStars(int numMoves) {
+        int numStars = 0;
+        for (int i = 0; i < starMoveThresholds.Length; i++) {
+            if (numMoves <= starMoveThresholds[i]) {
+                numStars++;
+            }
+        }
+        Debug.Log("Player earned " + numStars + " stars");
+        return numStars;
+    }
 
     public void SaveLevelData()
     {

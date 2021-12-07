@@ -33,13 +33,13 @@ EditorBuildSettings:
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_07.unity
     guid: 442d813186bc0064db0c176a0f84e7e9
   - enabled: 1
-    path: Assets/Scenes/World/Kitchen/Kitchen_Level_08.unity
+    path: Assets/Scenes/World/Kitchen/Old/Kitchen_Level_08 Old.unity
     guid: 13c23179f5914ec4ea99c4209a3a30d2
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_09.unity
     guid: b3c98ba2f0271d348bb2a64348c2ac71
   - enabled: 1
-    path: Assets/Scenes/World/Kitchen/Kitchen_Level_10.unity
+    path: Assets/Scenes/World/Kitchen/Old/Kitchen_Level_10 Old.unity
     guid: 6d7f250b4b98fb24ebbd9f62c271aee1
   - enabled: 1
     path: Assets/Scenes/World/Kitchen/Kitchen_Level_11.unity

@@ -15,7 +15,7 @@ MonoBehaviour:
   sceneName: Kitchen_Level_01
   levelIndex: 0
   levelPar: 0
-  minTurns: 2
-  maxStars: 3
-  starMoveThresholds: 0d0000000300000002000000
-  isLevelComplete: 1
+  minTurns: 0
+  maxStars: 0
+  starMoveThresholds: 060000000300000002000000
+  isLevelComplete: 0

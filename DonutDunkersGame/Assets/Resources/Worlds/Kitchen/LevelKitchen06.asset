@@ -17,5 +17,5 @@ MonoBehaviour:
   levelPar: 0
   minTurns: 0
   maxStars: 0
-  starMoveThresholds: 0b0000000900000007000000
+  starMoveThresholds: 0c0000000a00000008000000
   isLevelComplete: 0

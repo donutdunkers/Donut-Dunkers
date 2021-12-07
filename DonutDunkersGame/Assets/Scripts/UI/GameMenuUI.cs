@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameMenuUI : MonoBehaviour {
 	
@@ -25,6 +26,8 @@ public class GameMenuUI : MonoBehaviour {
     private GameObject pauseMenu;
     [SerializeField]
     private GameObject endGameMenu;
+    [SerializeField]
+    private TextMeshProUGUI pauseLevelIndicator;
 
     private bool gameEnded = false;
 	
@@ -108,6 +111,7 @@ public class GameMenuUI : MonoBehaviour {
     //time scale doesn't really do what we want here, need to block input seperately
     private void ShowPauseMenu() {
 		PlayerGridSelection.Instance.CanSelect = false;
+        pauseLevelIndicator.SetText("Level " + (LevelInfo.Instance.currLevel.levelIndex + 1) );
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
     }

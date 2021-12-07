@@ -43,18 +43,11 @@ public class LevelEndUI : MonoBehaviour
     
     void SetStars(int numStars) {
         for(int i = 0; i < numStars; i++) {
-            // Vector2 starStarSize = new Vector2(0f, 0f);
-            Vector2 starEndSize = stars[i].rectTransform.sizeDelta;
             stars[i].gameObject.SetActive(true);
-            stars[i].rectTransform.localScale = Vector3.zero;
             Tween.LocalScale(stars[i].rectTransform, Vector3.zero, Vector3.one, starAnimationTime, ((i + 1) * delayBetweenStars), easeCurve, Tween.LoopType.None, null, null, false);
         }
     }
 
-    // void SetDonutsCollected(int collected, int total)
-    // {
-    //     this.collectionText.SetText($"You collected {collected} / {total} donuts");
-    // }
 
     void SetNumMoves(int value) {
         this.moveCountText.SetText($"You took {value} moves");
@@ -66,9 +59,9 @@ public class LevelEndUI : MonoBehaviour
 
     public void SetLevelEndUI(bool isOutOfTurns, int ringsCollected, int ringsTotal, int numMoves) {
         LevelSettings currLevel = LevelInfo.Instance.currLevel;
+
         SetTitleText(isOutOfTurns);
         SetLevelNumber(currLevel.levelIndex + 1, !isOutOfTurns);
-        // SetDonutsCollected(ringsCollected, ringsTotal);
         SetNumMoves(numMoves);
         SetStars(currLevel.GetNumStars(numMoves));
     }

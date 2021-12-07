@@ -42,9 +42,16 @@ public class LevelEndUI : MonoBehaviour
     }
     
     void SetStars(int numStars) {
+        ClearStars();
         for(int i = 0; i < numStars; i++) {
             stars[i].gameObject.SetActive(true);
             Tween.LocalScale(stars[i].rectTransform, Vector3.zero, Vector3.one, starAnimationTime, ((i + 1) * delayBetweenStars), easeCurve, Tween.LoopType.None, null, null, false);
+        }
+    }
+
+    public void ClearStars() {
+        for(int i = 0; i < stars.Length; i++) {
+            stars[i].gameObject.SetActive(false);
         }
     }
 
@@ -63,6 +70,10 @@ public class LevelEndUI : MonoBehaviour
         SetTitleText(isOutOfTurns);
         SetLevelNumber(currLevel.levelIndex + 1, !isOutOfTurns);
         SetNumMoves(numMoves);
-        SetStars(currLevel.GetNumStars(numMoves));
+        if (!isOutOfTurns) {
+            SetStars(currLevel.GetNumStars(numMoves));
+        } else {
+            ClearStars();
+        }
     }
 }

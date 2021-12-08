@@ -17,9 +17,13 @@ public class MainMenuUI : MonoBehaviour {
 			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);
 		}
 
-        if(SaveData.Instance.GetLastCompletedLevelIndex() != -1)
+        if (SaveData.Instance.GetLastCompletedLevelIndex() >= 0 && LevelInfo.Instance.allowContinue)
         {
             continueButton.interactable = true;
+        }
+        else
+        {
+            continueButton.interactable = false;
         }
 		if (SoundManager.Instance == null) {
 			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
@@ -90,6 +94,7 @@ public class MainMenuUI : MonoBehaviour {
         else
         {
             continueButton.interactable = false;
+            LevelInfo.Instance.allowContinue = false;
         }
     }
 

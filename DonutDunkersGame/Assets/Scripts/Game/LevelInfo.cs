@@ -6,6 +6,8 @@ public class LevelInfo : MonoBehaviour {
     public WorldSettings currWorld;
     public LevelSettings currLevel;
     public List<WorldSettings> allWorlds;
+    public bool allowContinue = true;
+
     private static LevelInfo _Instance;
 
     public static LevelInfo Instance {
@@ -20,7 +22,6 @@ public class LevelInfo : MonoBehaviour {
 
     private void Awake()
     {
-        Debug.Log(allWorlds[0].levels.Count);
         if (_Instance != null && _Instance != this)
         {
             Destroy(this.gameObject);

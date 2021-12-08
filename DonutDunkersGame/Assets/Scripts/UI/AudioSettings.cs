@@ -14,11 +14,11 @@ public class AudioSettings : MonoBehaviour
     [SerializeField]
     Slider SFXSlider;
 
-    static float MusicVolume = 1f;
-    static float SFXVolume = 1f;
-    static float MasterVolume = 1f;
+    static float MusicVolume = 0.5f;
+    static float SFXVolume = 0.5f;
+    static float MasterVolume = 0.5f;
 
-    private bool savedLevelsLoaded = false;
+    private static bool savedLevelsLoaded = false;
 
     public static float MusicVol
     {
@@ -36,13 +36,17 @@ public class AudioSettings : MonoBehaviour
         }
     }
 
-    private void Awake()
+    public void InitializeAudio()
     {
-        if(!savedLevelsLoaded)
+        if (!savedLevelsLoaded)
         {
-            MusicVolume = SaveData.Instance.LoadMasterVolume();
-            SFXVolume = SaveData.Instance.LoadMusicVolume();
-            MasterVolume = SaveData.Instance.LoadSFXVolume();
+            MasterVolume = SaveData.Instance.LoadMasterVolume();
+            MusicVolume = SaveData.Instance.LoadMusicVolume();
+            SFXVolume = SaveData.Instance.LoadSFXVolume();
+
+            SoundManager.Instance.CurrentSource.volume = MasterVolume * MusicVolume;
+            SoundManager.Instance.soundSource.volume = MasterVolume * SFXVolume;
+
             savedLevelsLoaded = true;
         }
         MasterSlider.value = MasterVolume;
@@ -53,9 +57,8 @@ public class AudioSettings : MonoBehaviour
     public void MasterVolumeLevel(float newMasterVolume)
     {
         MasterVolume = newMasterVolume;
-        SoundManager.Instance.musicSourceA.volume = newMasterVolume;
-        SoundManager.Instance.musicSourceB.volume = newMasterVolume;
-        SoundManager.Instance.soundSource.volume = newMasterVolume;
+        SoundManager.Instance.CurrentSource.volume = MasterVolume * MusicVolume;
+        SoundManager.Instance.soundSource.volume = MasterVolume * SFXVolume;
 
         SaveData.Instance.SaveMasterVolume(newMasterVolume);
     }
@@ -63,17 +66,16 @@ public class AudioSettings : MonoBehaviour
     public void MusicVolumeLevel(float newMusicVolume)
     {
         MusicVolume = newMusicVolume;
-        SoundManager.Instance.musicSourceA.volume = MasterVolume * newMusicVolume;
-        SoundManager.Instance.musicSourceB.volume = MasterVolume * newMusicVolume;
+        SoundManager.Instance.CurrentSource.volume = MasterVolume * MusicVolume;
 
-        SaveData.Instance.SaveMusicVolume(newMusicVolume);
+        SaveData.Instance.SaveMusicVolume(MusicVolume);
     }
 
     public void SFXVolumeLevel(float newSFXVolume)
     {
         SFXVolume = newSFXVolume;
-        SoundManager.Instance.soundSource.volume = MasterVolume * newSFXVolume;
+        SoundManager.Instance.soundSource.volume = MasterVolume * SFXVolume;
 
-        SaveData.Instance.SaveSFXVolume(newSFXVolume);
+        SaveData.Instance.SaveSFXVolume(SFXVolume);
     }
 }

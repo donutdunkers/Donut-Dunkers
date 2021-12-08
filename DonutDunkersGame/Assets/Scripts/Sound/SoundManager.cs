@@ -5,7 +5,21 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     private static SoundManager _Instance;
-	
+
+    public AudioSource CurrentSource
+    {
+        get
+        {
+            if (isMusicSourceA)
+            {
+                return musicSourceA;
+            }
+            else
+            {
+                return musicSourceB;
+            }
+        }
+    }
     public static SoundManager Instance
     {
         get

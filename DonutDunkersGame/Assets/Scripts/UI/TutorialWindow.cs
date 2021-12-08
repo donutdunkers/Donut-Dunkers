@@ -20,7 +20,19 @@ public class TutorialWindow : MonoBehaviour {
 	[SerializeField]
 	private GameObject[] tutorialWindows;
 	
-	public bool IsTutorialActive() {
+	[SerializeField]
+	private GameObject HUD;
+
+    private void Start()
+    {
+        if(LevelInfo.Instance.currLevel.isLevelComplete)
+        {
+            DeactivateTutorial();
+			HUD.SetActive(true);
+        }
+    }
+
+    public bool IsTutorialActive() {
 		bool flag = false;
 		for (int i = 0; i < this.tutorialWindows.Length; i++) {
 			flag = this.tutorialWindows[i].activeSelf;
@@ -29,5 +41,20 @@ public class TutorialWindow : MonoBehaviour {
 			}
 		}
 		return false;
+	}
+
+	public void DeactivateTutorial()
+    {
+		foreach(Transform child in this.transform)
+        {
+			child.gameObject.SetActive(false);
+        }
+		StartCoroutine(SendDelayedDisabled(1f));
+    }
+
+	IEnumerator SendDelayedDisabled(float time)
+	{
+		yield return new WaitForSeconds(time);
+		this.gameObject.SetActive(false);
 	}
 }

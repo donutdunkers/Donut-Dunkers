@@ -8,6 +8,7 @@ public class MainMenuUI : MonoBehaviour {
     private GameObject activeUI;
     private Stack<GameObject> uiStack;
     public Button continueButton;
+    public AudioSettings audioSettings;
 
 	private void Awake() {
         Time.timeScale = 1f;
@@ -15,8 +16,6 @@ public class MainMenuUI : MonoBehaviour {
 			GameManager gameManager = Resources.Load<GameManager>("Game Manager");
 			GameObject.Instantiate(gameManager.soundManager, Vector3.zero, Quaternion.identity);
 		}
-
-        LevelInfo.Instance.InitializeWorlds();
 
         if(SaveData.Instance.GetLastCompletedLevelIndex() != -1)
         {
@@ -30,7 +29,10 @@ public class MainMenuUI : MonoBehaviour {
 
     private void Start()
     {
-		Sound music = ScriptableSingleton<MusicEvent>.Instance.MainMenu;
+        audioSettings.InitializeAudio();
+        LevelInfo.Instance.InitializeWorlds();
+
+        Sound music = ScriptableSingleton<MusicEvent>.Instance.MainMenu;
 		SoundManager.Instance.CrossFade(music.audioClip, AudioSettings.MusicVol, 2.5f);
 		
         uiStack = new Stack<GameObject>();
@@ -70,7 +72,25 @@ public class MainMenuUI : MonoBehaviour {
     {
         int levelIndex = SaveData.Instance.GetLastCompletedLevelIndex();
         int worldIndex = SaveData.Instance.GetLastCompletedWorldIndex();
-        LoadNextScene(LevelInfo.Instance.FindNextLevel(worldIndex, levelIndex));
+
+        LevelSettings nextLevel;
+        if (LevelInfo.Instance.FindNextLevel(worldIndex, levelIndex, out nextLevel))
+        {
+            LevelInfo.Instance.currLevel = nextLevel;
+            if (nextLevel.levelIndex < levelIndex)
+            {
+                LevelInfo.Instance.currWorld = LevelInfo.Instance.allWorlds[worldIndex + 1];
+            }
+            else
+            {
+                LevelInfo.Instance.currWorld = LevelInfo.Instance.allWorlds[worldIndex];
+            }
+            LoadNextScene(nextLevel.sceneName);
+        }
+        else
+        {
+            continueButton.interactable = false;
+        }
     }
 
     public void LoadNextScene(string sceneToLoad)

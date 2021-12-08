@@ -23,14 +23,37 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
-    private void Awake() {
+    private void Awake() 
+    {
+        if (_Instance != null && _Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _Instance = this;
+        }
 
-        if(!PlayerPrefs.HasKey("lastComplete_level"))
+        if (!PlayerPrefs.HasKey("lastComplete_level"))
         {
             PlayerPrefs.SetInt("lastComplete_level", -1);
             PlayerPrefs.SetInt("lastComplete_world", -1);
-            PlayerPrefs.Save();
         }
+
+        if(!PlayerPrefs.HasKey("vol_master"))
+        {
+            PlayerPrefs.SetFloat("vol_master", 0.5f);
+        }
+        if (!PlayerPrefs.HasKey("vol_music"))
+        {
+            PlayerPrefs.SetFloat("vol_music", 0.5f);
+        }
+        if (!PlayerPrefs.HasKey("vol_sfx"))
+        {
+            PlayerPrefs.SetFloat("vol_sfx", 0.5f);
+        }
+
+        PlayerPrefs.Save();
     }
 
     public void SaveMasterVolume(float masterVol)

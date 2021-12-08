@@ -20,6 +20,7 @@ public class LevelInfo : MonoBehaviour {
 
     private void Awake()
     {
+        Debug.Log(allWorlds[0].levels.Count);
         if (_Instance != null && _Instance != this)
         {
             Destroy(this.gameObject);
@@ -50,7 +51,7 @@ public class LevelInfo : MonoBehaviour {
         return "Menu_Main";
     }
 
-    public string FindNextLevel(int worldIndex, int levelIndex)
+    public bool FindNextLevel(int worldIndex, int levelIndex, out LevelSettings nextLevel)
     {
         WorldSettings world = allWorlds[worldIndex];
         if(levelIndex + 1 < world.levels.Count)
@@ -58,14 +59,18 @@ public class LevelInfo : MonoBehaviour {
             foreach (LevelSettings level in world.levels)
             {
                 if (level.levelIndex == levelIndex + 1)
-                    return level.sceneName;
+                {
+                    nextLevel = level;
+                    return true;
+                }
             }
         }
         else if (worldIndex + 1 < allWorlds.Count)
         {
-            return allWorlds[worldIndex + 1].levels[0].sceneName;
+            nextLevel = allWorlds[worldIndex + 1].levels[0];
+            return true;
         }
-
-        return "Menu_Main";
+        nextLevel = null;
+        return false;
     }
 }

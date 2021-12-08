@@ -25033,7 +25033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -25050,7 +25050,7 @@ PrefabInstance:
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1731588625}
+      objectReference: {fileID: 1731588626}
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -25073,7 +25073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
+      value: DeactivateTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -25081,7 +25081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: TutorialWindow, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1530847822645891172, guid: d170c64fe50e812449371b25dfc4cdd7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName

@@ -13,7 +13,7 @@ public class WorldSettings : ScriptableObject {
 
     public LevelSettings GetNextLevel() {
         int currLevelIndex = LevelInfo.Instance.currLevel.levelIndex;
-        if (currLevelIndex + 1 < levels.Count - 1) {
+        if (currLevelIndex + 1 < levels.Count) {
             currLevelIndex++;
             return levels[currLevelIndex];
         }

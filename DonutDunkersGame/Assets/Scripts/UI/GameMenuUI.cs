@@ -27,6 +27,8 @@ public class GameMenuUI : MonoBehaviour {
     [SerializeField]
     private GameObject endGameMenu;
     [SerializeField]
+    private AudioSettings audioSettings;
+    [SerializeField]
     private TextMeshProUGUI pauseLevelIndicator;
 
     private bool gameEnded = false;
@@ -46,6 +48,7 @@ public class GameMenuUI : MonoBehaviour {
     
 
     private void Start() {
+        audioSettings.InitializeAudio();
         pauseMenu.SetActive(false);
         endGameMenu.SetActive(false);
         Time.timeScale = 1;
@@ -138,7 +141,13 @@ public class GameMenuUI : MonoBehaviour {
         if (this.endRoutine != null) {
 			this.StopCoroutine(this.endRoutine);
 		}
-		this.endRoutine = this.StartCoroutine(this.EndRoutine(isOutOfTurns));
+
+        if (!isOutOfTurns)
+        {
+            LevelInfo.Instance.currLevel.SaveLevelData();
+        }
+
+        this.endRoutine = this.StartCoroutine(this.EndRoutine(isOutOfTurns));
     }
 	
 	private Coroutine endRoutine;
@@ -150,11 +159,6 @@ public class GameMenuUI : MonoBehaviour {
         LevelInfo.Instance.currLevel.GetNumStars(LevelData.Instance.Turns);
         if (LevelInfo.Instance.currWorld.GetNextLevel() == null){
             GameObject.Find("NextLevelButton").GetComponent<Button>().interactable = false;
-        }
-
-        if(!isOutOfTurns)
-        {
-            LevelInfo.Instance.currLevel.SaveLevelData();
         }
 
         endGameMenu.GetComponent<LevelEndUI>().SetLevelEndUI(isOutOfTurns, LevelData.Instance.RingsCollected, LevelData.Instance.RingsInLevel, LevelData.Instance.TurnsTaken);

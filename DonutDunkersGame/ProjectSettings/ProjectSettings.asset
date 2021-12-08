@@ -153,7 +153,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DonutDunkers.DonutDunkersFirstPlayable
+    Standalone: com.DonutDunkers.DonutDunkers
   buildNumber:
     Standalone: 0
     iPhone: 0

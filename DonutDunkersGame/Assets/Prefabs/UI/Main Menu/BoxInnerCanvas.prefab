@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5763527956942171424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1849,7 +1849,7 @@ MonoBehaviour:
   - {fileID: 3534655360543128283}
   - {fileID: 7045953179485826797}
   starAnimationTime: 0.5
-  starAnimationDelay: 0.5
+  starAnimationDelay: 0
   easeCurve:
     serializedVersion: 2
     m_Curve:

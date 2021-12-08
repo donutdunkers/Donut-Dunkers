@@ -21948,6 +21948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialWindows:
   - {fileID: 1731588625}
+  HUD: {fileID: 46149481}
 --- !u!1 &1732561966
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,12 +19,16 @@ public class TutorialWindow : MonoBehaviour {
 	
 	[SerializeField]
 	private GameObject[] tutorialWindows;
+	
+	[SerializeField]
+	private GameObject HUD;
 
     private void Start()
     {
         if(LevelInfo.Instance.currLevel.isLevelComplete)
         {
             DeactivateTutorial();
+			HUD.SetActive(true);
         }
     }
 
